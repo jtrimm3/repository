@@ -1,4 +1,6 @@
 package edu.gatech.oad.antlab.person;
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *  A simple class for person 2
@@ -31,7 +33,21 @@ public class Person2 {
 	 */
 	private String calc(String input) {
 	  //Person 2 put your implementation here
-	  return null;
+            int count = 0;
+            int num = input.length();
+            String newStr = "";
+            Random rn = new Random();
+            ArrayList<Integer> included = new ArrayList();
+            while (count < num) {
+                int rand = rn.nextInt(num);
+                while(included.contains(rand)) {
+                    rand = rn.nextInt(num);
+                } 
+                newStr += input.charAt(rand);
+                included.add(rand);
+                count++;
+            }
+	    return newStr;
 	}
 	/**
 	 * Return a string rep of this object
