@@ -27,7 +27,7 @@ public class Person5 {
 	 * 2 positions.
 	 * given "gtg123b" it should return
 	 * "g123bgt".
-	 *
+	 *what what what what
 	 * @param input the string to be modified
 	 * @return the modified string
 	 */
