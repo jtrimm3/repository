@@ -1,4 +1,4 @@
 # repository
-Julianna
+Julianna Trimm
 902880027
 Extra Credit:
