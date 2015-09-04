@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/M2/src/main/main.iml" filepath="$PROJECT_DIR$/M2/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bsmith33/bsmith33.iml" filepath="$PROJECT_DIR$/bsmith33/bsmith33.iml" />
+      <module fileurl="file://$PROJECT_DIR$/repository.iml" filepath="$PROJECT_DIR$/repository.iml" />
     </modules>
   </component>
 </project>
