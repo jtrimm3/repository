@@ -14,3 +14,6 @@ repositories {
 dependencies {
     compile files('lib/resources.jar')
 }
+javadoc {
+    source = sourceSets.main.allJava
+}
