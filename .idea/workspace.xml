@@ -5,51 +5,70 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74b33f80-e9a2-418e-b84c-dae199be8136" name="Default" comment="Added P1 name and gtid">
-      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\.idea\libraries\Gradle__junit_junit_4_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\.idea\libraries\Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\ConfigComplete.fxml" afterPath="$PROJECT_DIR$/pkg2340/resources/ConfigComplete.fxml" />
-      <change type="MOVED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\ConfigCompleteController.java" afterPath="$PROJECT_DIR$/pkg2340/pkg2340/ConfigCompleteController.java" />
-      <change type="MOVED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\HomepageController.java" afterPath="$PROJECT_DIR$/pkg2340/pkg2340/HomepageController.java" />
-      <change type="MOVED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\MULE.java" afterPath="$PROJECT_DIR$/pkg2340/pkg2340/MULE.java" />
-      <change type="MOVED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\Players.fxml" afterPath="$PROJECT_DIR$/pkg2340/resources/Players.fxml" />
-      <change type="MOVED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\PlayersController.java" afterPath="$PROJECT_DIR$/pkg2340/pkg2340/PlayersController.java" />
-      <change type="MOVED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\homepage.fxml" afterPath="$PROJECT_DIR$/pkg2340/resources/homepage.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/libs/M2.jar" afterPath="$PROJECT_DIR$/M2/build/libs/M2.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/.gradle/2.6/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/M2/.gradle/2.6/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/.gradle/2.6/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/M2/.gradle/2.6/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/.gradle/2.6/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/M2/.gradle/2.6/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/.gradle/2.6/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/M2/.gradle/2.6/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/.gradle/2.6/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/M2/.gradle/2.6/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg1/AntLab11.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg1/AntLab11.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg1/AntLab12.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg1/AntLab12.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg2/AntLab21.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg2/AntLab21.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg2/AntLab22.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg2/AntLab22.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg1/AntLabMain.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg1/AntLabMain.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/person/Person1.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/person/Person1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/person/Person2.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/person/Person2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/person/Person3.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/person/Person3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/person/Person4.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/person/Person4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/person/Person5.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/person/Person5.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/allclasses-frame.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/allclasses-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/allclasses-noframe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/constant-values.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/constant-values.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/deprecated-list.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/deprecated-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/help-doc.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/help-doc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/index-all.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/index-all.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/index.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/overview-frame.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/overview-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/overview-summary.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/overview-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/overview-tree.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/overview-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/person/package-frame.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/person/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg1/package-frame.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg1/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg2/package-frame.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg2/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/person/package-summary.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/person/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg1/package-summary.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg1/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg2/package-summary.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg2/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/person/package-tree.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/person/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg1/package-tree.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg1/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg2/package-tree.html" afterPath="$PROJECT_DIR$/M2/build/docs/javadoc/edu/gatech/oad/antlab/pkg2/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/build/classes/.netbeans_automatic_build" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/build/classes/.netbeans_update_resources" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/build/classes/cs/pkg2340/ConfigCompleteController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/build/classes/cs/pkg2340/HomepageController$1.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/build/classes/cs/pkg2340/HomepageController$2.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/build/classes/cs/pkg2340/HomepageController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/build/classes/cs/pkg2340/MULE.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/build/classes/cs/pkg2340/PlayersController$1.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/build/classes/cs/pkg2340/PlayersController$2.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/build/classes/cs/pkg2340/PlayersController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/nbproject/build-impl.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/build.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/nbproject/genfiles.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/manifest.mf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/nbproject/private/private.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/nbproject/private/private.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/nbproject/project.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CS 2340/nbproject/project.xml" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\build\pkg2340\ConfigCompleteController.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\build\pkg2340\HomepageController$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\build\pkg2340\HomepageController$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\build\pkg2340\HomepageController.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\build\pkg2340\MULE.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\build\pkg2340\PlayersController$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\build\pkg2340\PlayersController$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\build\pkg2340\PlayersController.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\.idea\compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\.idea\copyright\profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\.idea\uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\.idea\workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\.idea\compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\.idea\copyright\profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\.idea\workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\pkg2340.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\pkg2340\ConfigCompleteController.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\pkg2340\HomepageController$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\pkg2340\HomepageController$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\pkg2340\HomepageController.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\pkg2340\MULE.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\pkg2340\PlayersController$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\pkg2340\PlayersController$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\pkg2340\PlayersController.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\resources\ConfigComplete.fxml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\resources\Players.fxml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\out\production\pkg2340\resources\homepage.fxml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\pkg2340.iml" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\pkg2340\ConfigCompleteController.java" afterPath="$PROJECT_DIR$/CS 2340/src/ConfigCompleteController.java" />
+      <change type="MOVED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\pkg2340\HomepageController.java" afterPath="$PROJECT_DIR$/CS 2340/src/HomepageController.java" />
+      <change type="MOVED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\pkg2340\MULE.java" afterPath="$PROJECT_DIR$/CS 2340/src/MULE.java" />
+      <change type="MOVED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\pkg2340\PlayersController.java" afterPath="$PROJECT_DIR$/CS 2340/src/PlayersController.java" />
+      <change type="MOVED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\resources\ConfigComplete.fxml" afterPath="$PROJECT_DIR$/CS 2340/resources/ConfigComplete.fxml" />
+      <change type="MOVED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\resources\Players.fxml" afterPath="$PROJECT_DIR$/CS 2340/resources/Players.fxml" />
+      <change type="MOVED" beforePath="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\resources\homepage.fxml" afterPath="$PROJECT_DIR$/CS 2340/resources/homepage.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CS 2340/build/classes/cs/pkg2340/ConfigComplete.fxml" afterPath="$PROJECT_DIR$/CS 2340/build/classes/cs/pkg2340/ConfigComplete.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CS 2340/build/classes/cs/pkg2340/Players.fxml" afterPath="$PROJECT_DIR$/CS 2340/build/classes/cs/pkg2340/Players.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CS 2340/build/classes/cs/pkg2340/homepage.fxml" afterPath="$PROJECT_DIR$/CS 2340/build/classes/cs/pkg2340/homepage.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/repository.iml" afterPath="$PROJECT_DIR$/repository.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -107,83 +126,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MULE.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg2340/pkg2340/MULE.java">
+      <file leaf-file-name="HomepageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CS 2340/src/HomepageController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#1154#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MULE.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CS 2340/src/MULE.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33333334">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfigComplete.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CS 2340/resources/ConfigComplete.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="homepage.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg2340/resources/homepage.fxml">
+        <entry file="file://$PROJECT_DIR$/CS 2340/resources/homepage.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Players.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg2340/resources/Players.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomepageController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg2340/pkg2340/HomepageController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayersController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg2340/pkg2340/PlayersController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+            <state vertical-scroll-proportion="-14.655172">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="ConfigCompleteController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg2340/pkg2340/ConfigCompleteController.java">
+        <entry file="file://$PROJECT_DIR$/CS 2340/src/ConfigCompleteController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConfigComplete.fxml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pkg2340/resources/ConfigComplete.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4831261">
-              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -435,6 +428,8 @@
         <option value="$PROJECT_DIR$/pkg2340/PlayersController.java" />
         <option value="$PROJECT_DIR$/pkg2340/ConfigCompleteController.java" />
         <option value="$PROJECT_DIR$/pkg2340/pkg2340/MULE.java" />
+        <option value="$PROJECT_DIR$/CS 2340/src/ConfigCompleteController.java" />
+        <option value="$PROJECT_DIR$/CS 2340/src/MULE.java" />
       </list>
     </option>
   </component>
@@ -449,8 +444,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="960" />
-    <option name="height" value="1040" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -475,6 +472,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -493,59 +491,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pkg2340" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pkg2340" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pkg2340" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pkg2340" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -666,9 +616,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -684,42 +631,13 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Peter\Desktop\CS2340\repository\CS 2340\resources" />
+      <recent name="C:\Users\Peter\Desktop\CS2340\repository\CS 2340\src" />
       <recent name="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\resources" />
       <recent name="C:\Users\Peter\Desktop\CS2340\repository\pkg2340\pkg2340" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MULE (1)">
-    <configuration default="false" name="bsmith33" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
-      <module name="repository" />
-      <setting name="path" value="file://$PROJECT_DIR$/M2/bsmith33.gradle" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="file://$PROJECT_DIR$/M2" />
-      <setting name="debug" value="false" />
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="false" name="AntLabMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="edu.gatech.oad.antlab.pkg1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="edu.gatech.oad.antlab.pkg1.AntLabMain" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="repository" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.MULE (3)">
     <configuration default="false" name="pkoplik3" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
       <module name="repository" />
       <setting name="path" value="file://$PROJECT_DIR$/M2/pkoplik3.gradle" />
@@ -759,6 +677,41 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="pkg2340.MULE" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="repository" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="MULE (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cs.pkg2340.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="cs.pkg2340.MULE" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="repository" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="MULE (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="MULE" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -928,19 +881,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Groovy.bsmith33" />
-      <item index="1" class="java.lang.String" itemvalue="Application.AntLabMain" />
-      <item index="2" class="java.lang.String" itemvalue="Groovy.pkoplik3" />
-      <item index="3" class="java.lang.String" itemvalue="Application.MULE" />
-      <item index="4" class="java.lang.String" itemvalue="Application.MULE (1)" />
+      <item index="0" class="java.lang.String" itemvalue="Groovy.pkoplik3" />
+      <item index="1" class="java.lang.String" itemvalue="Application.MULE" />
+      <item index="2" class="java.lang.String" itemvalue="Application.MULE (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Application.MULE (2)" />
+      <item index="4" class="java.lang.String" itemvalue="Application.MULE (3)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.MULE (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Application.MULE" />
-        <item index="2" class="java.lang.String" itemvalue="Groovy.pkoplik3" />
-        <item index="3" class="java.lang.String" itemvalue="Application.AntLabMain" />
-        <item index="4" class="java.lang.String" itemvalue="Groovy.bsmith33" />
+        <item index="0" class="java.lang.String" itemvalue="Application.MULE (3)" />
+        <item index="1" class="java.lang.String" itemvalue="Application.MULE (2)" />
+        <item index="2" class="java.lang.String" itemvalue="Application.MULE (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Application.MULE" />
+        <item index="4" class="java.lang.String" itemvalue="Groovy.pkoplik3" />
       </list>
     </recent_temporary>
   </component>
@@ -963,7 +916,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="960" height="1040" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -974,10 +927,10 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3340494" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3336853" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284055" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33050847" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33020833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1016,56 +969,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/M2/src/main/java/edu/gatech/oad/antlab/person/Person2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M2/src/main/java/edu/gatech/oad/antlab/pkg1/AntLab11.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M2/src/main/java/edu/gatech/oad/antlab/pkg1/AntLab12.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M2/src/main/java/edu/gatech/oad/antlab/pkg1/AntLabMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M2/bsmith33.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M2/jtrimm3.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M2/src/main/java/edu/gatech/oad/antlab/person/Person4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/M2/src/main/java/edu/gatech/oad/antlab/person/Person2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1320,22 +1223,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg2340/pkg2340/HomepageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg2340/pkg2340/PlayersController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_40/src.zip!/java/net/URLClassLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33223686">
@@ -1343,54 +1230,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg2340/pkg2340/ConfigCompleteController.java">
+    <entry file="file://$PROJECT_DIR$/CS 2340/src/PlayersController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+        <state vertical-scroll-proportion="-0.8606965">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg2340/resources/homepage.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
+    <entry file="file://$PROJECT_DIR$/CS 2340/src/HomepageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding />
+        </state>
       </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_40/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3100" column="0" selection-start-line="3100" selection-start-column="0" selection-end-line="3100" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CS 2340/manifest.mf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.028192371">
+          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CS 2340/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33830845">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CS 2340/src/ConfigCompleteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CS 2340/build/classes/cs/pkg2340/ConfigCompleteController.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg2340/resources/Players.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg2340/pkg2340/MULE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
           <folding>
-            <element signature="e#0#1154#0" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#505#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg2340/resources/ConfigComplete.fxml">
+    <entry file="file://$PROJECT_DIR$/CS 2340/build/classes/cs/pkg2340/homepage.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4831261">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CS 2340/resources/ConfigComplete.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CS 2340/resources/homepage.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.655172">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CS 2340/src/MULE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
