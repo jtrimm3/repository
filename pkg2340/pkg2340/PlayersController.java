@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package cs.pkg2340;
+package pkg2340;
 
 
 import java.io.IOException;
@@ -118,7 +118,7 @@ public class PlayersController implements Initializable {
             Node node = (Node) event.getSource();
             stage = (Stage) node.getScene().getWindow();
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Players.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/Players.fxml"));
             Scene scene = new Scene(loader.load());
             stage.setScene(scene);
 
@@ -133,7 +133,7 @@ public class PlayersController implements Initializable {
         } else {
             Node node = (Node) event.getSource();
             stage = (Stage) node.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("ConfigComplete.fxml"));
+            root = FXMLLoader.load(getClass().getResource("../resources/ConfigComplete.fxml"));
 
             Scene scene = new Scene(root);
             stage.setScene(scene);

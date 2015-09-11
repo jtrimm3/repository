@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package cs.pkg2340;
+package pkg2340;
 
 import java.net.URL;
 import java.util.ResourceBundle;

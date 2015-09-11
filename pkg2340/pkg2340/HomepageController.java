@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package cs.pkg2340;
+package pkg2340;
 
 import java.io.IOException;
 import java.net.URL;
@@ -15,18 +15,14 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.Slider;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
@@ -136,7 +132,7 @@ public class HomepageController implements Initializable {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Players.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/Players.fxml"));
         Scene scene = new Scene(loader.load());
         stage.setScene(scene);
         

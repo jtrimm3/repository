@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs.pkg2340.PlayersController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg2340.PlayersController">
    <children>
       <Label fx:id="playerNum" contentDisplay="CENTER" layoutX="251.0" layoutY="62.0" text="Create Player" textAlignment="CENTER" />
       <Label layoutX="197.0" layoutY="122.0" text="Name:" />

@@ -4,15 +4,13 @@
  * and open the template in the editor.
  */
 
-package cs.pkg2340;
+package pkg2340;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
+
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -26,7 +24,7 @@ public class MULE extends Application {
         @Override
         public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(
-                getClass().getResource("homepage.fxml"));
+                getClass().getResource("../resources/homepage.fxml"));
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
