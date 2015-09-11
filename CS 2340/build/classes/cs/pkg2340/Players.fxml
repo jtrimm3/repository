@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs.pkg2340.PlayersController">
+   <children>
+      <Label fx:id="playerNum" contentDisplay="CENTER" layoutX="251.0" layoutY="62.0" text="Create Player" textAlignment="CENTER" />
+      <Label layoutX="197.0" layoutY="122.0" text="Name:" />
+      <Label layoutX="197.0" layoutY="192.0" text="Race:" />
+      <Label layoutX="197.0" layoutY="266.0" text="Color:" />
+      <TextField fx:id="name" layoutX="275.0" layoutY="118.0" onAction="#namePlayer" />
+      <ComboBox fx:id="raceBox" layoutX="275.0" layoutY="188.0" onAction="#selectRace" prefWidth="150.0" />
+      <ColorPicker fx:id="colorBox" layoutX="275.0" layoutY="262.0" onAction="#selectColor" />
+      <Button fx:id="done" layoutX="274.0" layoutY="332.0" mnemonicParsing="false" onAction="#complete" text="Done" />
+   </children>
+</AnchorPane>
