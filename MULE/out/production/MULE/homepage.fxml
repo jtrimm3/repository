@@ -17,8 +17,9 @@
       <Label layoutX="154.0" layoutY="266.0" text="Number of players:" />
       <ComboBox fx:id="map" layoutX="259.0" layoutY="179.0" onAction="#selectMap" prefWidth="150.0" />
       <Button fx:id="contin" layoutX="277.0" layoutY="317.0" mnemonicParsing="false" onAction="#next" text="Continue" />
-      <RadioButton fx:id="numPlay2" layoutX="277.0" layoutY="266.0" mnemonicParsing="false" onAction="#selectPlayerNum" text="2" />
-      <RadioButton fx:id="numPlay3" layoutX="323.0" layoutY="266.0" mnemonicParsing="false" onAction="#selectPlayerNum" text="3" />
-      <RadioButton fx:id="numPlay4" layoutX="365.0" layoutY="266.0" mnemonicParsing="false" onAction="#selectPlayerNum" text="4" />
+      <RadioButton fx:id="numPlay1" layoutX="277.0" layoutY="266.0" mnemonicParsing="false" onAction="#selectPlayerNum" text="1" />
+      <RadioButton fx:id="numPlay2" layoutX="320.0" layoutY="266.0" mnemonicParsing="false" onAction="#selectPlayerNum" text="2" />
+      <RadioButton fx:id="numPlay3" layoutX="359.0" layoutY="266.0" mnemonicParsing="false" onAction="#selectPlayerNum" text="3" />
+      <RadioButton fx:id="numPlay4" layoutX="400.0" layoutY="266.0" mnemonicParsing="false" onAction="#selectPlayerNum" text="4" />
    </children>
 </AnchorPane>

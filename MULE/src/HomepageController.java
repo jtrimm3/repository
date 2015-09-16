@@ -7,6 +7,7 @@
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
@@ -59,9 +60,6 @@ public class HomepageController implements Initializable {
     private RadioButton tournament = new RadioButton();
     
     @FXML
-    private RadioButton numPlay1 = new RadioButton();
-    
-    @FXML
     private RadioButton numPlay2 = new RadioButton();
     
     @FXML
@@ -85,12 +83,11 @@ public class HomepageController implements Initializable {
         beginner.setToggleGroup(group);
         standard.setToggleGroup(group);
         tournament.setToggleGroup(group);
-        numPlay1.setToggleGroup(group2);
         numPlay2.setToggleGroup(group2);
         numPlay3.setToggleGroup(group2);
         numPlay4.setToggleGroup(group2);
-        numPlay1.fire();
-        players = 1;
+        numPlay2.fire();
+        players = 2;
         mapChoices = new ArrayList<>();
         mapChoices.add("Forrest");
         mapChoices.add("Space");
@@ -137,7 +134,7 @@ public class HomepageController implements Initializable {
        //STATIC  Parent root = FXMLLoader.load(getClass().getResource("Players.fxml"));
         
         PlayersController controller = loader.<PlayersController>getController();
-        controller.initData(players, ++playerPageCount);
+        controller.initData(players, ++playerPageCount, new HashMap<Integer, Player>());
 
         
         stage.show();

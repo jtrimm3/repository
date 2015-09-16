@@ -8,6 +8,7 @@
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
@@ -40,6 +41,7 @@ public class PlayersController implements Initializable {
     private String selectedRace;
     private Color selectedColor;
     private int players, pageCount;
+    private HashMap<Integer, Player> playerHashMap;
     
     @FXML
     private TextField name = new TextField();
@@ -62,23 +64,21 @@ public class PlayersController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         races = new ArrayList<>();
-        races.add("Packer");
-        races.add("Spheroid");
-        races.add("Humanoid");
-        races.add("Leggite");
+        races.add("Human");
         races.add("Flapper");
         races.add("Bonzoid");
-        races.add("Mechtron");
-        races.add("Gollumer");
+        races.add("Ugaite");
+        races.add("Buzzite");
         selectedRace = null;
         selectedColor = null;
         raceBox.setValue("Choose a race!");
         raceBox.setItems(FXCollections.observableArrayList(races));
     } 
     
-    public void initData(int noOfPlayers, int pageCount) {
+    public void initData(int noOfPlayers, int count, HashMap<Integer, Player> map) {
         players = noOfPlayers;
-        this.pageCount = pageCount;
+        pageCount = count;
+        playerHashMap = map;
         playerNum.setText("Create Player " + pageCount);
     }
     
@@ -121,10 +121,15 @@ public class PlayersController implements Initializable {
             stage.setScene(scene);
 
            //STATIC  Parent root = FXMLLoader.load(getClass().getResource("Players.fxml"));
+            String playerName = (String) name.getCharacters().toString();
+            String playerRace = (String) raceBox.getValue();
+            Color playerColor = (Color) colorBox.getValue();
+            Player player = new Player(playerName, pageCount, playerRace, playerColor);
+            playerHashMap.put(player.getPlayerNumber(), player);
             System.out.println(players);
             System.out.println(pageCount);
             PlayersController controller = loader.<PlayersController>getController();
-            controller.initData(players, ++pageCount);
+            controller.initData(players, ++pageCount, playerHashMap);
 
 
             stage.show();
@@ -132,10 +137,20 @@ public class PlayersController implements Initializable {
             Node node = (Node) event.getSource();
             stage = (Stage) node.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("ConfigComplete.fxml"));
+            //Println test for players
 
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            String playerName = (String) name.getCharacters().toString();
+            String playerRace = (String) raceBox.getValue();
+            Color playerColor = (Color) colorBox.getValue();
+            Player player = new Player(playerName, pageCount, playerRace, playerColor);
+            playerHashMap.put(player.getPlayerNumber(), player);
+
             stage.show();
+            for (Integer key : playerHashMap.keySet()) {
+                System.out.println(playerHashMap.get(key));
+            }
         }
         
     }
