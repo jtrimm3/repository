@@ -73,7 +73,7 @@ import edu.gatech.oad.antlab.pkg2.*;
                   toPrint += p4.toString("rli96");
                   //Person5 replace P4 with your name
                   //and gburdell5 with your gt id
-                  Person5 p5 = new Person5("Ben");
+                  Person5 p5 = new Person5("Benjamin Smith");
                   toPrint += p5.toString("bsmith33");
 		  
         System.out.println(toPrint);
@@ -84,6 +84,7 @@ import edu.gatech.oad.antlab.pkg2.*;
     
     /**
      * entry point for the program
+     * @param args No arguments here
      */
      public static void main(String[] args) {
         

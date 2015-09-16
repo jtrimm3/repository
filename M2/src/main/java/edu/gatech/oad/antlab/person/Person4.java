@@ -31,7 +31,7 @@ public class Person4 {
      */
     private String calc(String input) {
       char[] characters = input.toCharArray();
-      for (int i = 0; i < characters.lemgth; i++) {
+      for (int i = 0; i < characters.length; i++) {
         char c = characters[i];
         int ascii = (int) c;
         ascii++;
