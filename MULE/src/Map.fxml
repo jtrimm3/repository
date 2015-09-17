@@ -24,7 +24,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -33,7 +33,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -42,7 +42,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain3.png" />
+                <Image url="@mountain3.png" />
               </image>
             </ImageView>
           </graphic>
@@ -51,7 +51,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -60,7 +60,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -69,7 +69,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -78,7 +78,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain1.PNG" />
+                <Image url="@mountain1.PNG" />
               </image>
             </ImageView>
           </graphic>
@@ -87,7 +87,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -96,7 +96,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain2.PNG" />
+                <Image url="@mountain2.PNG" />
               </image>
             </ImageView>
           </graphic>
@@ -105,7 +105,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -114,7 +114,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain1.PNG" />
+                <Image url="@mountain1.PNG" />
               </image>
             </ImageView>
           </graphic>
@@ -123,7 +123,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -132,7 +132,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -141,7 +141,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -150,7 +150,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain2.PNG" />
+                <Image url="@mountain2.PNG" />
               </image>
             </ImageView>
           </graphic>
@@ -159,7 +159,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -168,7 +168,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -177,7 +177,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -186,7 +186,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -195,7 +195,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -204,7 +204,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/river.png" />
+                <Image url="@river.png" />
               </image>
             </ImageView>
           </graphic>
@@ -213,7 +213,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/river.png" />
+                <Image url="@river.png" />
               </image>
             </ImageView>
           </graphic>
@@ -222,7 +222,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/town.PNG" />
+                <Image url="@town.PNG" />
               </image>
             </ImageView>
           </graphic>
@@ -231,7 +231,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/river.png" />
+                <Image url="@river.png" />
               </image>
             </ImageView>
           </graphic>
@@ -240,7 +240,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/river.png" />
+                <Image url="@river.png" />
               </image>
             </ImageView>
           </graphic>
@@ -249,7 +249,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -258,7 +258,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -267,7 +267,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -276,7 +276,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -285,7 +285,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -294,7 +294,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain3.png" />
+                <Image url="@mountain3.png" />
               </image>
             </ImageView>
           </graphic>
@@ -303,7 +303,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -312,7 +312,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -321,7 +321,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain2.PNG" />
+                <Image url="@mountain2.PNG" />
               </image>
             </ImageView>
           </graphic>
@@ -330,7 +330,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -339,7 +339,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -348,7 +348,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -357,7 +357,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -366,7 +366,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -375,7 +375,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -384,7 +384,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -393,7 +393,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain3.png" />
+                <Image url="@mountain3.png" />
               </image>
             </ImageView>
           </graphic>
@@ -402,7 +402,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain1.PNG" />
+                <Image url="@mountain1.PNG" />
               </image>
             </ImageView>
           </graphic>
@@ -411,7 +411,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -420,7 +420,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain2.PNG" />
+                <Image url="@mountain2.PNG" />
               </image>
             </ImageView>
           </graphic>
