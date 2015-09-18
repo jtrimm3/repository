@@ -101,31 +101,37 @@ public class MapController implements Initializable {
             Integer yInd = mapGridPane.getRowIndex(node);
             if (townCoordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
+                townImageView = new ImageView(TOWN_IMAGE);
                 townImageView.setFitHeight(button.getMinHeight());
                 townImageView.setFitWidth(button.getMinWidth());
-                button.setGraphic(townImageView);
+                button.setGraphic(new ImageView(TOWN_IMAGE));
             } else if (mountain1Coordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
+                m1ImageView = new ImageView(M1_IMAGE);
                 m1ImageView.setFitHeight(button.getMinHeight());
                 m1ImageView.setFitWidth(button.getMinWidth());
-                button.setGraphic(m1ImageView);
+                button.setGraphic(new ImageView(M1_IMAGE));
             } else if (mountain2Coordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
+                m2ImageView = new ImageView(M2_IMAGE);
                 m2ImageView.setFitHeight(button.getMinHeight());
                 m2ImageView.setFitWidth(button.getMinWidth());
                 button.setGraphic(m2ImageView);
             } else if (mountain3Coordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
+                m3ImageView = new ImageView(M3_IMAGE);
                 m3ImageView.setFitHeight(button.getMinHeight());
                 m3ImageView.setFitWidth(button.getMinWidth());
                 button.setGraphic(m3ImageView);
             } else if (riverCoordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
+                riverImageView = new ImageView(RIVER_IMAGE);
                 riverImageView.setFitHeight(button.getMinHeight());
                 riverImageView.setFitWidth(button.getMinWidth());
                 button.setGraphic(riverImageView);
             } else if (plainCoordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
+                plainImageView = new ImageView(PLAIN_IMAGE);
                 plainImageView.setFitHeight(button.getMinHeight());
                 plainImageView.setFitWidth(button.getMinWidth());
                 button.setGraphic(plainImageView);
