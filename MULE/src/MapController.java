@@ -1,8 +1,11 @@
 import javafx.collections.ObservableList;
+import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.control.Button;
 
@@ -33,6 +36,9 @@ public class MapController implements Initializable {
 
     @FXML
     private GridPane mapGridPane = new GridPane();
+
+    @FXML
+    private AnchorPane anchor = new AnchorPane();
 
     @FXML
     private void highlight() {
@@ -150,6 +156,7 @@ public class MapController implements Initializable {
 
 
         }
+        
 
 
     }
