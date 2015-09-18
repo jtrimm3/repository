@@ -7,10 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.image.*;
 import javafx.scene.image.Image;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.*;
 import javafx.scene.control.Button;
 import javafx.scene.Parent;
 import javax.print.DocFlavor;
@@ -123,37 +120,49 @@ public class MapController implements Initializable {
             Integer yInd = mapGridPane.getRowIndex(node);
             if (townCoordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
-                townImageView = new BackgroundImage(new Image(TOWN_IMAGE),null,null,null,null);
+                BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
+                        false,false,false,false);
+                townImageView = new BackgroundImage(new Image(TOWN_IMAGE),null,null,null,size);
 //                townImageView.setFitHeight(button.getMinHeight());
 //                townImageView.setFitWidth(button.getMinWidth());
                 button.setBackground(new Background(townImageView));
             } else if (mountain1Coordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
-                m1ImageView = new BackgroundImage(new Image(M1_IMAGE),null,null,null,null);
+                BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
+                        false,false,false,false);
+                m1ImageView = new BackgroundImage(new Image(M1_IMAGE),null,null,null,size);
 //                m1ImageView.setFitHeight(button.getMinHeight());
 //                m1ImageView.setFitWidth(button.getMinWidth());
                 button.setBackground(new Background(m1ImageView));
             } else if (mountain2Coordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
-                m2ImageView = new BackgroundImage(new Image(M2_IMAGE),null,null,null,null);
+                BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
+                        false,false,false,false);
+                m2ImageView = new BackgroundImage(new Image(M2_IMAGE),null,null,null,size);
 //                townImageView.setFitHeight(button.getMinHeight());
 //                townImageView.setFitWidth(button.getMinWidth());
                 button.setBackground(new Background(m2ImageView));
             } else if (mountain3Coordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
-                m3ImageView = new BackgroundImage(new Image(M3_IMAGE),null,null,null,null);
+                BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
+                        false,false,false,false);
+                m3ImageView = new BackgroundImage(new Image(M3_IMAGE),null,null,null,size);
 //                townImageView.setFitHeight(button.getMinHeight());
 //                townImageView.setFitWidth(button.getMinWidth());
                 button.setBackground(new Background(m3ImageView));
             } else if (riverCoordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
-                riverImageView = new BackgroundImage(new Image(RIVER_IMAGE),null,null,null,null);
+                BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
+                        false,false,false,false);
+                riverImageView = new BackgroundImage(new Image(RIVER_IMAGE),null,null,null,size);
 //                townImageView.setFitHeight(button.getMinHeight());
 //                townImageView.setFitWidth(button.getMinWidth());
                 button.setBackground(new Background(riverImageView));
             } else if (plainCoordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
-                plainImageView = new BackgroundImage(new Image(PLAIN_IMAGE),null,null,null,null);
+                BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
+                        false,false,false,false);
+                plainImageView = new BackgroundImage(new Image(PLAIN_IMAGE),null,null,null,size);
 //                townImageView.setFitHeight(button.getMinHeight());
 //                townImageView.setFitWidth(button.getMinWidth());
                 button.setBackground(new Background(plainImageView));
@@ -168,6 +177,13 @@ public class MapController implements Initializable {
                     square.setFitHeight(button.getMinHeight());
                     square.setFitWidth(button.getMinWidth());
                     button.setGraphic(square);
+                }
+            });
+
+            button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_EXITED, new EventHandler<javafx.scene.input.MouseEvent>() {
+                @Override
+                public void handle(javafx.scene.input.MouseEvent event) {
+                    button.setGraphic(null);
                 }
             });
         }
