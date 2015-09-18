@@ -29,9 +29,20 @@ public class MapController implements Initializable {
     private final String M1_IMAGE = "mountain1.png";
     private final String M2_IMAGE = "mountain2.png";
     private final String M3_IMAGE = "mountain3.png";
+    private final String SQUARE_IMAGE = "TransparentSquare.png";
 
     @FXML
     private GridPane mapGridPane = new GridPane();
+
+    @FXML
+    private void highlight() {
+
+    }
+
+    @FXML
+    private void unhighlight() {
+
+    }
 
 
     @Override
@@ -139,6 +150,7 @@ public class MapController implements Initializable {
 
 
         }
+
 
     }
 }
