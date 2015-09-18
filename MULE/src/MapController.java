@@ -1,5 +1,6 @@
 import javafx.collections.ObservableList;
 import javafx.event.*;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -11,6 +12,7 @@ import javafx.scene.control.Button;
 
 import javax.print.DocFlavor;
 import java.awt.*;
+import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -153,10 +155,19 @@ public class MapController implements Initializable {
                 plainImageView.setFitWidth(button.getMinWidth());
                 button.setGraphic(plainImageView);
             }
-
-
         }
-        
+        for (Node node : paneChildren) {
+            Button button = (Button) node;
+            button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_ENTERED, new EventHandler<Event>() {
+                @Override
+                public void handle(Event event) {
+                    System.out.print(mapGridPane.getRowIndex(node));
+                    System.out.println(mapGridPane.getColumnIndex(node));
+                }
+            });
+        }
+
+
 
 
     }
