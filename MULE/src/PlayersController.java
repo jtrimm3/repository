@@ -136,7 +136,7 @@ public class PlayersController implements Initializable {
         } else {
             Node node = (Node) event.getSource();
             stage = (Stage) node.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("ConfigComplete.fxml"));
+            root = FXMLLoader.load(getClass().getResource("Map.fxml"));
             //Println test for players
 
             Scene scene = new Scene(root);
