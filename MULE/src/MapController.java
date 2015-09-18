@@ -104,13 +104,13 @@ public class MapController implements Initializable {
                 townImageView = new ImageView(TOWN_IMAGE);
                 townImageView.setFitHeight(button.getMinHeight());
                 townImageView.setFitWidth(button.getMinWidth());
-                button.setGraphic(new ImageView(TOWN_IMAGE));
+                button.setGraphic(townImageView);
             } else if (mountain1Coordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
                 m1ImageView = new ImageView(M1_IMAGE);
                 m1ImageView.setFitHeight(button.getMinHeight());
                 m1ImageView.setFitWidth(button.getMinWidth());
-                button.setGraphic(new ImageView(M1_IMAGE));
+                button.setGraphic(m1ImageView);
             } else if (mountain2Coordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
                 m2ImageView = new ImageView(M2_IMAGE);
