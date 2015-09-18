@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" fx:id="map" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MapController">
+  <children>
+    <Label layoutX="267.0" layoutY="0.0" text="Map">
+      <font>
+        <Font size="32.0" />
+      </font>
+    </Label>
+    <GridPane fx:id="mapGridPane" prefHeight="318.0" prefWidth="572.0" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="41.0">
+      <children>
+        <Button contentDisplay="TOP" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <font>
+            <Font size="12.0" fx:id="x1" />
+          </font>
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@plain.png" />
+                     </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="0" GridPane.rowIndex="1">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" />
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="0" GridPane.rowIndex="2">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/mountain3.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="0" GridPane.rowIndex="3">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="0" GridPane.rowIndex="4">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="1" GridPane.rowIndex="0">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/mountain1.PNG" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/mountain2.PNG" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="2" GridPane.rowIndex="0">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/mountain1.PNG" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="2" GridPane.rowIndex="1">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="2" GridPane.rowIndex="2">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="2" GridPane.rowIndex="3">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="2" GridPane.rowIndex="4">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/mountain2.PNG" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="3" GridPane.rowIndex="0">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="3" GridPane.rowIndex="1">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" />
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="3" GridPane.rowIndex="3">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="3" GridPane.rowIndex="4">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="4" GridPane.rowIndex="0">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/river.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="4" GridPane.rowIndex="1">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/river.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="4" GridPane.rowIndex="2">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/town.PNG" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="4" GridPane.rowIndex="3">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/river.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="4" GridPane.rowIndex="4">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/river.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="5" GridPane.rowIndex="0">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="5" GridPane.rowIndex="1">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="5" GridPane.rowIndex="2">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="5" GridPane.rowIndex="3">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="5" GridPane.rowIndex="4">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="6" GridPane.rowIndex="0">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/mountain3.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="6" GridPane.rowIndex="1">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="6" GridPane.rowIndex="2">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="6" GridPane.rowIndex="3">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/mountain2.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="6" GridPane.rowIndex="4">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="7" GridPane.rowIndex="0">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="7" GridPane.rowIndex="1">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="7" GridPane.rowIndex="2">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="7" GridPane.rowIndex="3">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="7" GridPane.rowIndex="4">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="8" GridPane.rowIndex="0">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" />
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="8" GridPane.rowIndex="1">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" />
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="8" GridPane.rowIndex="2">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/mountain1.PNG" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="8" GridPane.rowIndex="3">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/plain.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="8" GridPane.rowIndex="4">
+          <graphic>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../src/mountain2.PNG" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+</AnchorPane>
