@@ -23,12 +23,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ColorPicker;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -45,6 +43,9 @@ public class PlayersController implements Initializable {
     
     @FXML
     private TextField name = new TextField();
+
+    @FXML
+    private Text errorTextArea = new Text();
     
     @FXML
     private ComboBox raceBox = new ComboBox();
@@ -62,7 +63,8 @@ public class PlayersController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        errorTextArea.setFill(Color.RED);
+        validateName();
         races = new ArrayList<>();
         races.add("Human");
         races.add("Flapper");
@@ -73,6 +75,12 @@ public class PlayersController implements Initializable {
         selectedColor = null;
         raceBox.setValue("Choose a race!");
         raceBox.setItems(FXCollections.observableArrayList(races));
+        name.addEventHandler(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                validateName();
+            }
+        });
     } 
     
     public void initData(int noOfPlayers, int count, HashMap<Integer, Player> map) {
@@ -103,7 +111,7 @@ public class PlayersController implements Initializable {
     private void selectColor() {
         colorBox.setOnAction(new EventHandler() {
             public void handle(Event t) {
-                selectedColor = colorBox.getValue();               
+                selectedColor = colorBox.getValue();
             }
         });        
     }
@@ -154,5 +162,32 @@ public class PlayersController implements Initializable {
         }
         
     }
-    
+
+    private void validateName() {
+        String currentEntry = name.getCharacters().toString();
+        System.out.println("huh");
+        boolean nameTaken = false;
+        boolean nameEmpty = false;
+        if (currentEntry.isEmpty()) {
+            nameEmpty = true;
+        } else {
+            for (Integer key : playerHashMap.keySet()) {
+                Player playerChecking = playerHashMap.get(key);
+                if (currentEntry.equalsIgnoreCase(playerChecking.getName())) {
+                    nameTaken = true;
+                    break;
+                }
+            }
+        }
+        if (nameTaken) {
+            done.setDisable(true);
+            errorTextArea.setText(currentEntry + " is taken already");
+        } else if (nameEmpty){
+            done.setDisable(true);
+            errorTextArea.setText("Please choose a name");
+        } else {
+            done.setDisable(false);
+            errorTextArea.setText(null);
+        }
+    }
 }
