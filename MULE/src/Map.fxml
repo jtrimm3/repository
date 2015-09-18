@@ -8,14 +8,14 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" fx:id="map" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MapController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="MapController">
   <children>
     <Label layoutX="267.0" layoutY="0.0" text="Map">
       <font>
         <Font size="32.0" />
       </font>
     </Label>
-    <GridPane fx:id="mapGridPane" prefHeight="318.0" prefWidth="572.0" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="41.0">
+    <GridPane prefHeight="318.0" prefWidth="572.0" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="41.0">
       <children>
         <Button contentDisplay="TOP" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="0" GridPane.rowIndex="0">
           <font>
@@ -23,22 +23,26 @@
           </font>
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@plain.png" />
-                     </image>
+              <image>
+                <Image url="@plain.png" />
+              </image>
             </ImageView>
           </graphic>
         </Button>
         <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="0" GridPane.rowIndex="1">
           <graphic>
-            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@plain.png" />
+              </image>
+            </ImageView>
           </graphic>
         </Button>
         <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="0" GridPane.rowIndex="2">
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain3.png" />
+                <Image url="@mountain3.png" />
               </image>
             </ImageView>
           </graphic>
@@ -47,7 +51,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -56,7 +60,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -65,7 +69,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -74,7 +78,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain1.PNG" />
+                <Image url="@mountain1.PNG" />
               </image>
             </ImageView>
           </graphic>
@@ -83,7 +87,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -92,7 +96,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain2.PNG" />
+                <Image url="@mountain2.PNG" />
               </image>
             </ImageView>
           </graphic>
@@ -101,7 +105,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -110,7 +114,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain1.PNG" />
+                <Image url="@mountain1.PNG" />
               </image>
             </ImageView>
           </graphic>
@@ -119,7 +123,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -128,7 +132,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -137,7 +141,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -146,7 +150,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain2.PNG" />
+                <Image url="@mountain2.PNG" />
               </image>
             </ImageView>
           </graphic>
@@ -155,21 +159,25 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
         </Button>
         <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="3" GridPane.rowIndex="1">
           <graphic>
-            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@plain.png" />
+              </image>
+            </ImageView>
           </graphic>
         </Button>
         <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -178,7 +186,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -187,7 +195,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -196,7 +204,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/river.png" />
+                <Image url="@river.png" />
               </image>
             </ImageView>
           </graphic>
@@ -205,7 +213,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/river.png" />
+                <Image url="@river.png" />
               </image>
             </ImageView>
           </graphic>
@@ -214,7 +222,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/town.PNG" />
+                <Image url="@town.PNG" />
               </image>
             </ImageView>
           </graphic>
@@ -223,7 +231,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/river.png" />
+                <Image url="@river.png" />
               </image>
             </ImageView>
           </graphic>
@@ -232,7 +240,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/river.png" />
+                <Image url="@river.png" />
               </image>
             </ImageView>
           </graphic>
@@ -241,7 +249,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -250,7 +258,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -259,7 +267,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -268,7 +276,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -277,7 +285,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -286,7 +294,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain3.png" />
+                <Image url="@mountain3.png" />
               </image>
             </ImageView>
           </graphic>
@@ -295,7 +303,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -304,7 +312,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -313,7 +321,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain2.PNG" />
+                <Image url="@mountain2.PNG" />
               </image>
             </ImageView>
           </graphic>
@@ -322,7 +330,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -331,7 +339,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -340,7 +348,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -349,7 +357,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -358,7 +366,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -367,26 +375,34 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
         </Button>
         <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="8" GridPane.rowIndex="0">
           <graphic>
-            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@plain.png" />
+              </image>
+            </ImageView>
           </graphic>
         </Button>
         <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="8" GridPane.rowIndex="1">
           <graphic>
-            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@mountain3.png" />
+              </image>
+            </ImageView>
           </graphic>
         </Button>
         <Button contentDisplay="TOP" font="$x1" minHeight="63.0" minWidth="63.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="63.0" text="" textAlignment="RIGHT" textOverrun="CLIP" underline="false" GridPane.columnIndex="8" GridPane.rowIndex="2">
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain1.PNG" />
+                <Image url="@mountain1.PNG" />
               </image>
             </ImageView>
           </graphic>
@@ -395,7 +411,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/plain.png" />
+                <Image url="@plain.png" />
               </image>
             </ImageView>
           </graphic>
@@ -404,7 +420,7 @@
           <graphic>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../../../src/mountain2.PNG" />
+                <Image url="@mountain2.PNG" />
               </image>
             </ImageView>
           </graphic>
