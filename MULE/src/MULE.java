@@ -21,12 +21,8 @@ public class MULE extends Application {
     
         @Override
         public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(
-                getClass().getResource("homepage.fxml"));
-
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+            MuleModel muleModel = new MuleModel();
+            muleModel.begin();
         }
         
         public static void main(String[] args) {

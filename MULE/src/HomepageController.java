@@ -31,7 +31,8 @@ import javafx.stage.Stage;
  *
  * @author Julianna
  */
-public class HomepageController implements Initializable {
+public class HomepageController implements Initializable, Controller {
+    private MuleModel muleModel;
     @FXML
     final private ToggleGroup group = new ToggleGroup();
     final private ToggleGroup group2 = new ToggleGroup();
@@ -124,19 +125,13 @@ public class HomepageController implements Initializable {
     
     @FXML
     private void next(ActionEvent event) throws IOException {
+        muleModel.initializeConfigData(players);
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Players.fxml"));
-        Scene scene = new Scene(loader.load());
-        stage.setScene(scene);
-        
-       //STATIC  Parent root = FXMLLoader.load(getClass().getResource("Players.fxml"));
-        
-        PlayersController controller = loader.<PlayersController>getController();
-        controller.initData(players, ++playerPageCount, new HashMap<Integer, Player>());
+        muleModel.continuePlayerConfig(stage);
+    }
 
-        
-        stage.show();
+    public void loadModel(MuleModel model) {
+        muleModel = model;
     }
 }

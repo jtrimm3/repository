@@ -34,12 +34,11 @@ import javafx.stage.Stage;
  *
  * @author Julianna
  */
-public class PlayersController implements Initializable {
+public class PlayersController implements Initializable, Controller {
+    private MuleModel muleModel;
     private List<String> races;
     private String selectedRace;
     private Color selectedColor;
-    private int players, pageCount;
-    private HashMap<Integer, Player> playerHashMap;
     
     @FXML
     private TextField name = new TextField();
@@ -75,6 +74,7 @@ public class PlayersController implements Initializable {
         selectedColor = null;
         raceBox.setValue("Choose a race!");
         raceBox.setItems(FXCollections.observableArrayList(races));
+        playerNum.setText("Create Player " + (muleModel.getPlayerHashMap().size() + 1));
         name.addEventHandler(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
@@ -82,112 +82,36 @@ public class PlayersController implements Initializable {
             }
         });
     } 
-    
-    public void initData(int noOfPlayers, int count, HashMap<Integer, Player> map) {
-        players = noOfPlayers;
-        pageCount = count;
-        playerHashMap = map;
-        playerNum.setText("Create Player " + pageCount);
-    }
-    
-    @FXML
-    private void namePlayer(ActionEvent event) {
-        String nameIn = name.getText();
-    }
-    
-    @FXML
-    private void selectRace(){
-        raceBox.getSelectionModel().selectedIndexProperty().addListener(
-            new ChangeListener<Number>() {
-                public void changed(ObservableValue v, Number val, Number newVal) {
-                    String sel = races.get(newVal.intValue());
-                    selectedRace = sel;
-                }
-            });
-    }
-    
-    
-    @FXML
-    private void selectColor() {
-        colorBox.setOnAction(new EventHandler() {
-            public void handle(Event t) {
-                selectedColor = colorBox.getValue();
-            }
-        });        
-    }
+
     
     @FXML
     private void complete(ActionEvent event) throws IOException {
-        Stage stage;
-        Parent root;
-        if (pageCount < players) {
-            Node node = (Node) event.getSource();
-            stage = (Stage) node.getScene().getWindow();
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Players.fxml"));
-            Scene scene = new Scene(loader.load());
-            stage.setScene(scene);
-
-           //STATIC  Parent root = FXMLLoader.load(getClass().getResource("Players.fxml"));
-            String playerName = (String) name.getCharacters().toString();
-            String playerRace = (String) raceBox.getValue();
-            Color playerColor = (Color) colorBox.getValue();
-            Player player = new Player(playerName, pageCount, playerRace, playerColor);
-            playerHashMap.put(player.getPlayerNumber(), player);
-            System.out.println(players);
-            System.out.println(pageCount);
-            PlayersController controller = loader.<PlayersController>getController();
-            controller.initData(players, ++pageCount, playerHashMap);
-
-
-            stage.show();
-        } else {
-            Node node = (Node) event.getSource();
-            stage = (Stage) node.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("Map.fxml"));
-            //Println test for players
-
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            String playerName = (String) name.getCharacters().toString();
-            String playerRace = (String) raceBox.getValue();
-            Color playerColor = (Color) colorBox.getValue();
-            Player player = new Player(playerName, pageCount, playerRace, playerColor);
-            playerHashMap.put(player.getPlayerNumber(), player);
-
-            stage.show();
-            for (Integer key : playerHashMap.keySet()) {
-                System.out.println(playerHashMap.get(key));
-            }
+        String playerName = (String) name.getCharacters().toString();
+        String playerRace = (String) raceBox.getValue();
+        Color playerColor = (Color) colorBox.getValue();
+        Integer playerCount = muleModel.getPlayerHashMap().size();
+        muleModel.addPlayer(new Player(playerName, playerCount + 1, playerRace, playerColor));
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        muleModel.continuePlayerConfig(stage);
+        //Testing
+        for (Integer key : muleModel.getPlayerHashMap().keySet()) {
+            System.out.println(muleModel.getPlayerHashMap().get(key));
         }
-        
     }
 
     private void validateName() {
         String currentEntry = name.getCharacters().toString();
-        System.out.println("huh");
-        boolean nameTaken = false;
-        boolean nameEmpty = false;
-        if (currentEntry.isEmpty()) {
-            nameEmpty = true;
-        } else {
-            for (Integer key : playerHashMap.keySet()) {
-                Player playerChecking = playerHashMap.get(key);
-                if (currentEntry.equalsIgnoreCase(playerChecking.getName())) {
-                    nameTaken = true;
-                    break;
-                }
-            }
-        }
-        if (nameTaken) {
-            done.setDisable(true);
-            errorTextArea.setText(currentEntry + " is taken already");
-        } else if (nameEmpty){
-            done.setDisable(true);
-            errorTextArea.setText("Please choose a name");
-        } else {
+        String validationMessage = muleModel.validateName(currentEntry);
+        if (validationMessage.isEmpty()) {
             done.setDisable(false);
-            errorTextArea.setText(null);
+        } else {
+            done.setDisable(true);
         }
+        errorTextArea.setText(validationMessage);
+    }
+
+    public void loadModel(MuleModel model) {
+        muleModel = model;
     }
 }

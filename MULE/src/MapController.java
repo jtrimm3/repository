@@ -2,6 +2,7 @@ import javafx.collections.ObservableList;
 import javafx.event.*;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -10,9 +11,12 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.control.Button;
 import javafx.scene.Parent;
+import javafx.stage.Stage;
+
 import javax.print.DocFlavor;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -20,7 +24,8 @@ import java.util.ResourceBundle;
 /**
  * Created by Peter on 9/17/2015.
  */
-public class MapController implements Initializable {
+public class MapController implements Initializable, Controller {
+    private MuleModel muleModel;
     private ArrayList<Point> riverCoordinates = new ArrayList<>();
     private ArrayList<Point> townCoordinates = new ArrayList<>();
     private ArrayList<Point> plainCoordinates = new ArrayList<>();
@@ -39,18 +44,6 @@ public class MapController implements Initializable {
     @FXML
     private GridPane mapGridPane = new GridPane();
 
-    @FXML
-    private AnchorPane anchor = new AnchorPane();
-
-    @FXML
-    private void highlight() {
-
-    }
-
-    @FXML
-    private void unhighlight() {
-
-    }
 
 
     @Override
@@ -110,11 +103,6 @@ public class MapController implements Initializable {
 
         ObservableList<Node> paneChildren = mapGridPane.getChildren();
         BackgroundImage townImageView, m1ImageView, m2ImageView, m3ImageView,riverImageView,plainImageView;
-//        ImageView m1ImageView = new ImageView(M1_IMAGE);
-//        ImageView m2ImageView = new ImageView(M2_IMAGE);
-//        ImageView m3ImageView = new ImageView(M3_IMAGE);
-//        ImageView riverImageView = new ImageView(RIVER_IMAGE);
-//        ImageView plainImageView = new ImageView(PLAIN_IMAGE);
         for (Node node : paneChildren) {
             Integer xInd = mapGridPane.getColumnIndex(node);
             Integer yInd = mapGridPane.getRowIndex(node);
@@ -123,48 +111,42 @@ public class MapController implements Initializable {
                 BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
                         false,false,false,false);
                 townImageView = new BackgroundImage(new Image(TOWN_IMAGE),null,null,null,size);
-//                townImageView.setFitHeight(button.getMinHeight());
-//                townImageView.setFitWidth(button.getMinWidth());
                 button.setBackground(new Background(townImageView));
+                button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED, new EventHandler<javafx.scene.input.MouseEvent>() {
+                    @Override
+                    public void handle(javafx.scene.input.MouseEvent event) {
+                        muleModel.enterTown((Stage) node.getScene().getWindow());
+                    }
+                });
             } else if (mountain1Coordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
                 BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
                         false,false,false,false);
                 m1ImageView = new BackgroundImage(new Image(M1_IMAGE),null,null,null,size);
-//                m1ImageView.setFitHeight(button.getMinHeight());
-//                m1ImageView.setFitWidth(button.getMinWidth());
                 button.setBackground(new Background(m1ImageView));
             } else if (mountain2Coordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
                 BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
                         false,false,false,false);
                 m2ImageView = new BackgroundImage(new Image(M2_IMAGE),null,null,null,size);
-//                townImageView.setFitHeight(button.getMinHeight());
-//                townImageView.setFitWidth(button.getMinWidth());
                 button.setBackground(new Background(m2ImageView));
             } else if (mountain3Coordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
                 BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
                         false,false,false,false);
                 m3ImageView = new BackgroundImage(new Image(M3_IMAGE),null,null,null,size);
-//                townImageView.setFitHeight(button.getMinHeight());
-//                townImageView.setFitWidth(button.getMinWidth());
                 button.setBackground(new Background(m3ImageView));
             } else if (riverCoordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
                 BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
                         false,false,false,false);
                 riverImageView = new BackgroundImage(new Image(RIVER_IMAGE),null,null,null,size);
-//                townImageView.setFitHeight(button.getMinHeight());
-//                townImageView.setFitWidth(button.getMinWidth());
                 button.setBackground(new Background(riverImageView));
             } else if (plainCoordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
                 BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
                         false,false,false,false);
                 plainImageView = new BackgroundImage(new Image(PLAIN_IMAGE),null,null,null,size);
-//                townImageView.setFitHeight(button.getMinHeight());
-//                townImageView.setFitWidth(button.getMinWidth());
                 button.setBackground(new Background(plainImageView));
             }
         }
@@ -187,9 +169,12 @@ public class MapController implements Initializable {
                 }
             });
         }
+    }
 
 
 
 
+    public void loadModel(MuleModel model) {
+        muleModel = model;
     }
 }
