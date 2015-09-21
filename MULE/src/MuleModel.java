@@ -120,10 +120,14 @@ public class MuleModel {
     }
 
     public String validateName(String name) {
+        boolean allSpaces = false;
         boolean nameTaken = false;
         boolean nameEmpty = false;
         if (name.isEmpty()) {
             nameEmpty = true;
+        }
+        if (name.trim().length() == 0) {
+            allSpaces = true;
         }
         for (Integer key : playerHashMap.keySet()) {
             Player playerChecking = playerHashMap.get(key);
@@ -134,8 +138,10 @@ public class MuleModel {
         }
         if (nameTaken) {
             return name + " is taken already";
-        } else if (nameEmpty){
+        } else if (nameEmpty) {
             return "Please choose a name";
+        } else if (allSpaces) {
+            return "Name can't be all spaces!";
         } else {
             return "";
         }
