@@ -15,9 +15,9 @@
       <Label layoutX="197.0" layoutY="266.0" text="Color:" />
       <TextField fx:id="name" layoutX="275.0" layoutY="118.0" />
       <ComboBox fx:id="raceBox" layoutX="275.0" layoutY="188.0" prefWidth="150.0" />
-      <ColorPicker fx:id="colorBox" layoutX="275.0" layoutY="262.0" />
       <Button fx:id="done" layoutX="274.0" layoutY="332.0" mnemonicParsing="false" onAction="#complete" text="Done" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text fx:id="errorTextArea" layoutX="356.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <ComboBox fx:id="colorBox" layoutX="275.0" layoutY="262.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

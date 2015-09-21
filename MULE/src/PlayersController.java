@@ -14,6 +14,7 @@ import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -50,7 +51,7 @@ public class PlayersController implements Initializable, Controller {
     private ComboBox raceBox = new ComboBox();
     
     @FXML
-    private ColorPicker colorBox = new ColorPicker();
+    private ComboBox<String> colorBox = new ComboBox<>();
     
     @FXML
     private Button done = new Button();
@@ -63,6 +64,8 @@ public class PlayersController implements Initializable, Controller {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         errorTextArea.setFill(Color.RED);
+        colorBox.setItems(FXCollections.observableArrayList(muleModel.getAvailableColors()));
+        colorBox.setValue(muleModel.getAvailableColors().get(0));
         validateName();
         races = new ArrayList<>();
         races.add("Human");
@@ -72,7 +75,7 @@ public class PlayersController implements Initializable, Controller {
         races.add("Buzzite");
         selectedRace = null;
         selectedColor = null;
-        raceBox.setValue("Choose a race!");
+        raceBox.setValue(races.get(0));
         raceBox.setItems(FXCollections.observableArrayList(races));
         playerNum.setText("Create Player " + (muleModel.getPlayerHashMap().size() + 1));
         name.addEventHandler(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
@@ -88,7 +91,8 @@ public class PlayersController implements Initializable, Controller {
     private void complete(ActionEvent event) throws IOException {
         String playerName = (String) name.getCharacters().toString();
         String playerRace = (String) raceBox.getValue();
-        Color playerColor = (Color) colorBox.getValue();
+        String playerColorString = (String) colorBox.getValue();
+        Color playerColor = muleModel.removeColor(playerColorString);
         Integer playerCount = muleModel.getPlayerHashMap().size();
         muleModel.addPlayer(new Player(playerName, playerCount + 1, playerRace, playerColor));
         Node node = (Node) event.getSource();

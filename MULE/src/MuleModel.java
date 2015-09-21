@@ -1,3 +1,4 @@
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -22,6 +23,7 @@ import javafx.scene.control.Button;
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -30,6 +32,7 @@ import java.util.HashMap;
 public class MuleModel {
     private int round;
     private boolean hasBegun = false;
+    private ArrayList<String> availableColors;
     private int lastRoundNum;
     private int passedThisRoundCount;
     private int turnCount;
@@ -58,6 +61,7 @@ public class MuleModel {
 
     public MuleModel(Stage stage) {
         this.stage = stage;
+        availableColors = new ArrayList<String>(Arrays.asList("Red","Green","Blue","Yellow"));
         riverCoordinates.add(new Point(4,0));
         riverCoordinates.add(new Point(4,1));
         riverCoordinates.add(new Point(4,3));
@@ -384,6 +388,25 @@ public class MuleModel {
     public void updatePlayerInfoText(Text textZone) {
         Player turningPlayer = getTurningPlayer();
         textZone.setText(turningPlayer.getName() + "'s turn!   $" + turningPlayer.getMoney());
+    }
+
+    public ArrayList<String> getAvailableColors() {
+        return availableColors;
+    }
+
+    public Color removeColor(String color) {
+        availableColors.remove(color);
+        switch (color) {
+            case "Red":
+                return Color.RED;
+            case "Blue":
+                return Color.BLUE;
+            case "Green":
+                return Color.GREEN;
+            case "Yellow":
+                return Color.YELLOW;
+        }
+        return null;
     }
 
 
