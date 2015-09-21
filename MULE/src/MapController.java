@@ -6,11 +6,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.effect.Blend;
+import javafx.scene.effect.BlendMode;
+import javafx.scene.effect.ColorInput;
+import javafx.scene.effect.ImageInput;
 import javafx.scene.image.*;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.scene.control.Button;
 import javafx.scene.Parent;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import javax.print.DocFlavor;
@@ -44,10 +51,23 @@ public class MapController implements Initializable, Controller {
     @FXML
     private GridPane mapGridPane = new GridPane();
 
+    @FXML
+    private Text playerInfoText = new Text();
+
+    @FXML
+    private Text roundText = new Text();
+
+    @FXML
+    private Text errorText = new Text();
+
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+
+
+
 
 
         riverCoordinates.add(new Point(4,0));
@@ -102,73 +122,147 @@ public class MapController implements Initializable, Controller {
         mountain3Coordinates.add(new Point(0, 2));
 
         ObservableList<Node> paneChildren = mapGridPane.getChildren();
-        BackgroundImage townImageView, m1ImageView, m2ImageView, m3ImageView,riverImageView,plainImageView;
+        muleModel.updatePropertyImages(mapGridPane);
+        muleModel.updatePlayerInfoText(playerInfoText);
         for (Node node : paneChildren) {
             Integer xInd = mapGridPane.getColumnIndex(node);
             Integer yInd = mapGridPane.getRowIndex(node);
             if (townCoordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
-                BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
-                        false,false,false,false);
-                townImageView = new BackgroundImage(new Image(TOWN_IMAGE),null,null,null,size);
-                button.setBackground(new Background(townImageView));
                 button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED, new EventHandler<javafx.scene.input.MouseEvent>() {
                     @Override
                     public void handle(javafx.scene.input.MouseEvent event) {
-                        muleModel.enterTown((Stage) node.getScene().getWindow());
+                        muleModel.enterTown();
                     }
                 });
             } else if (mountain1Coordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
-                BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
-                        false,false,false,false);
-                m1ImageView = new BackgroundImage(new Image(M1_IMAGE),null,null,null,size);
-                button.setBackground(new Background(m1ImageView));
+                button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED, new EventHandler<javafx.scene.input.MouseEvent>() {
+                    @Override
+                    public void handle(javafx.scene.input.MouseEvent event) {
+                        String claimMessage = muleModel.claimProperty(new Property(new Point(xInd,yInd)));
+                        errorText.setText(claimMessage);
+                        muleModel.updatePlayerInfoText(playerInfoText);
+                        muleModel.updateSinglePropertyImage(button);
+                        muleModel.squarifyNode(button);
+                    }
+                });
+                button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_ENTERED, new EventHandler<Event>() {
+                    @Override
+                    public void handle(Event event) {
+                        muleModel.squarifyNode(button);
+                    }
+                });
+
+                button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_EXITED, new EventHandler<javafx.scene.input.MouseEvent>() {
+                    @Override
+                    public void handle(javafx.scene.input.MouseEvent event) {
+                        muleModel.updateSinglePropertyImage(button);
+                    }
+                });
             } else if (mountain2Coordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
-                BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
-                        false,false,false,false);
-                m2ImageView = new BackgroundImage(new Image(M2_IMAGE),null,null,null,size);
-                button.setBackground(new Background(m2ImageView));
+                button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED, new EventHandler<javafx.scene.input.MouseEvent>() {
+                    @Override
+                    public void handle(javafx.scene.input.MouseEvent event) {
+                        String claimMessage = muleModel.claimProperty(new Property(new Point(xInd, yInd)));
+                        errorText.setText(claimMessage);
+                        muleModel.updatePlayerInfoText(playerInfoText);
+                        muleModel.updateSinglePropertyImage(button);
+                        muleModel.squarifyNode(button);
+                    }
+                });
+                button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_ENTERED, new EventHandler<Event>() {
+                    @Override
+                    public void handle(Event event) {
+                        muleModel.squarifyNode(button);
+                    }
+                });
+
+                button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_EXITED, new EventHandler<javafx.scene.input.MouseEvent>() {
+                    @Override
+                    public void handle(javafx.scene.input.MouseEvent event) {
+                        muleModel.updateSinglePropertyImage(button);
+                    }
+                });
             } else if (mountain3Coordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
-                BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
-                        false,false,false,false);
-                m3ImageView = new BackgroundImage(new Image(M3_IMAGE),null,null,null,size);
-                button.setBackground(new Background(m3ImageView));
+                button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED, new EventHandler<javafx.scene.input.MouseEvent>() {
+                    @Override
+                    public void handle(javafx.scene.input.MouseEvent event) {
+                        String claimMessage = muleModel.claimProperty(new Property(new Point(xInd, yInd)));
+                        errorText.setText(claimMessage);
+                        muleModel.updatePlayerInfoText(playerInfoText);
+                        muleModel.updateSinglePropertyImage(button);
+                        muleModel.squarifyNode(button);
+                    }
+                });
+                button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_ENTERED, new EventHandler<Event>() {
+                    @Override
+                    public void handle(Event event) {
+                        muleModel.squarifyNode(button);
+                    }
+                });
+
+                button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_EXITED, new EventHandler<javafx.scene.input.MouseEvent>() {
+                    @Override
+                    public void handle(javafx.scene.input.MouseEvent event) {
+                        muleModel.updateSinglePropertyImage(button);
+                    }
+                });
             } else if (riverCoordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
-                BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
-                        false,false,false,false);
-                riverImageView = new BackgroundImage(new Image(RIVER_IMAGE),null,null,null,size);
-                button.setBackground(new Background(riverImageView));
+                button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED, new EventHandler<javafx.scene.input.MouseEvent>() {
+                    @Override
+                    public void handle(javafx.scene.input.MouseEvent event) {
+                        String claimMessage = muleModel.claimProperty(new Property(new Point(xInd, yInd)));
+                        errorText.setText(claimMessage);
+                        muleModel.updatePlayerInfoText(playerInfoText);
+                        muleModel.updateSinglePropertyImage(button);
+                        muleModel.squarifyNode(button);
+                    }
+                });
+                button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_ENTERED, new EventHandler<Event>() {
+                    @Override
+                    public void handle(Event event) {
+                        muleModel.squarifyNode(button);
+                    }
+                });
+
+                button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_EXITED, new EventHandler<javafx.scene.input.MouseEvent>() {
+                    @Override
+                    public void handle(javafx.scene.input.MouseEvent event) {
+                        muleModel.updateSinglePropertyImage(button);
+                    }
+                });
             } else if (plainCoordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
-                BackgroundSize size = new BackgroundSize(button.getMinWidth(), button.getMinHeight(),
-                        false,false,false,false);
-                plainImageView = new BackgroundImage(new Image(PLAIN_IMAGE),null,null,null,size);
-                button.setBackground(new Background(plainImageView));
+                button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED, new EventHandler<javafx.scene.input.MouseEvent>() {
+                    @Override
+                    public void handle(javafx.scene.input.MouseEvent event) {
+                        String claimMessage = muleModel.claimProperty(new Property(new Point(xInd, yInd)));
+                        errorText.setText(claimMessage);
+                        muleModel.updatePlayerInfoText(playerInfoText);
+                        muleModel.updateSinglePropertyImage(button);
+                        muleModel.squarifyNode(button);
+                    }
+                });
+                button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_ENTERED, new EventHandler<Event>() {
+                    @Override
+                    public void handle(Event event) {
+                        muleModel.squarifyNode(button);
+                    }
+                });
+
+                button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_EXITED, new EventHandler<javafx.scene.input.MouseEvent>() {
+                    @Override
+                    public void handle(javafx.scene.input.MouseEvent event) {
+                        muleModel.updateSinglePropertyImage(button);
+                    }
+                });
             }
         }
-        for (Node node : paneChildren) {
-            Button button = (Button) node;
-            button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_ENTERED, new EventHandler<Event>() {
-                @Override
-                public void handle(Event event) {
-                    ImageView square = new ImageView(SQUARE_IMAGE);
-                    square.setFitHeight(button.getMinHeight());
-                    square.setFitWidth(button.getMinWidth());
-                    button.setGraphic(square);
-                }
-            });
-
-            button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_EXITED, new EventHandler<javafx.scene.input.MouseEvent>() {
-                @Override
-                public void handle(javafx.scene.input.MouseEvent event) {
-                    button.setGraphic(null);
-                }
-            });
-        }
+        roundText.setText("Round " + muleModel.getRound());
     }
 
 

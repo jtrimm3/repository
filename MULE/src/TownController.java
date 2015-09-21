@@ -65,9 +65,7 @@ public class TownController implements Initializable, Controller {
 
     @FXML
     private void returnToMap(ActionEvent event) {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        muleModel.enterMap(stage);
+        muleModel.enterMap();
 
     }
 

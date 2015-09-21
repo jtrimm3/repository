@@ -21,7 +21,7 @@ public class MULE extends Application {
     
         @Override
         public void start(Stage stage) throws IOException {
-            MuleModel muleModel = new MuleModel();
+            MuleModel muleModel = new MuleModel(stage);
             muleModel.begin();
         }
         

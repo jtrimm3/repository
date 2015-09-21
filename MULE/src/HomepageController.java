@@ -128,7 +128,7 @@ public class HomepageController implements Initializable, Controller {
         muleModel.initializeConfigData(players);
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        muleModel.continuePlayerConfig(stage);
+        muleModel.continuePlayerConfig();
     }
 
     public void loadModel(MuleModel model) {

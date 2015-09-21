@@ -93,7 +93,7 @@ public class PlayersController implements Initializable, Controller {
         muleModel.addPlayer(new Player(playerName, playerCount + 1, playerRace, playerColor));
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        muleModel.continuePlayerConfig(stage);
+        muleModel.continuePlayerConfig();
         //Testing
         for (Integer key : muleModel.getPlayerHashMap().keySet()) {
             System.out.println(muleModel.getPlayerHashMap().get(key));
