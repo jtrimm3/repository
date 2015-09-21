@@ -40,13 +40,7 @@ public class MapController implements Initializable, Controller {
     private ArrayList<Point> mountain2Coordinates = new ArrayList<>();
     private ArrayList<Point> mountain3Coordinates = new ArrayList<>();
 
-    private final String TOWN_IMAGE = "town.png";
-    private final String RIVER_IMAGE = "river.png";
-    private final String PLAIN_IMAGE = "plain.png";
-    private final String M1_IMAGE = "mountain1.png";
-    private final String M2_IMAGE = "mountain2.png";
-    private final String M3_IMAGE = "mountain3.png";
-    private final String SQUARE_IMAGE = "TransparentSquare.png";
+
 
     @FXML
     private GridPane mapGridPane = new GridPane();
@@ -64,8 +58,9 @@ public class MapController implements Initializable, Controller {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-
+        errorText.setFill(Color.RED);
+        roundText.setFill(Color.DARKOLIVEGREEN);
+        playerInfoText.setFill(muleModel.getTurningPlayer().getColor());
 
 
 
