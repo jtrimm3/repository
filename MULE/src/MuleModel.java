@@ -24,6 +24,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 
 /**
@@ -40,7 +41,8 @@ public class MuleModel {
     private int numberOfPlayers;
     private int boughtOnThisTurnCount;
     private String map;
-    private HashMap<Integer, Player> playerHashMap;
+    private ArrayList<Player> playerList;
+    //private HashMap<Integer, Player> playerHashMap;
     private Stage stage;
 
     private ArrayList<Point> riverCoordinates = new ArrayList<>();
@@ -116,7 +118,8 @@ public class MuleModel {
 
     public void initializeConfigData(int numberOfPlayers) {
         this.numberOfPlayers = numberOfPlayers;
-        this.playerHashMap = new HashMap<Integer,Player>();
+        this.playerList = new ArrayList<>();
+        //this.playerHashMap = new HashMap<Integer,Player>();
     }
 
     public String validateName(String name) {
@@ -129,8 +132,7 @@ public class MuleModel {
         if (name.trim().length() == 0) {
             allSpaces = true;
         }
-        for (Integer key : playerHashMap.keySet()) {
-            Player playerChecking = playerHashMap.get(key);
+        for (Player playerChecking : playerList) {
             if (name.equalsIgnoreCase(playerChecking.getName())) {
                 nameTaken = true;
                 break;
@@ -148,7 +150,7 @@ public class MuleModel {
     }
 
     public void continuePlayerConfig() {
-        if (playerHashMap.size() < numberOfPlayers) { //Return to playerconfig
+        if (playerList.size() < numberOfPlayers) { //Return to playerconfig
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Players.fxml"));
                 Controller controller = new PlayersController();
@@ -157,7 +159,7 @@ public class MuleModel {
                 Scene scene = new Scene(loader.load());
                 stage.setScene(scene);
                 System.out.println(numberOfPlayers);
-                System.out.println(playerHashMap.size());
+                System.out.println(playerList.size());
                 //stage.show();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -174,16 +176,20 @@ public class MuleModel {
     }
 
     public void addPlayer(Player player) {
-        playerHashMap.put(player.getPlayerNumber(), player);
+        playerList.add(player);
     }
 
-    public HashMap<Integer,Player> getPlayerHashMap() {
-        return playerHashMap;
+//    public HashMap<Integer,Player> getPlayerHashMap() {
+//        return playerHashMap;
+//    }
+
+    public ArrayList<Player> getPlayerList() {
+        return playerList;
     }
 
-    public Player getPlayerByPlayerNumber(int num) {
-        return playerHashMap.get(num);
-    }
+//    public Player getPlayerByPlayerNumber(int num) {
+//        return playerHashMap.get(num);
+//    }
 
     public void setMap(String map) {
         this.map = map;
@@ -251,15 +257,29 @@ public class MuleModel {
 
     }
 
+    public void endGame() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("endgame.fxml"));
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void startNextTurn() {
         boughtOnThisTurnCount = 0;
         round = (turnCount / numberOfPlayers) + 1;
-        turningPlayer = playerHashMap.get(turnCount % numberOfPlayers + 1);
+        turningPlayer = playerList.get(turnCount % numberOfPlayers);
         turnCount++;
     }
 
     public void endTurn() {
         System.out.println("ENDED TURN FOR PLAYER" + getTurningPlayer() + " ROUND " + getRound());
+
+        if (turnCount % numberOfPlayers == 0) {
+            Collections.sort(playerList);
+        }
         if (getRound() - 1 > lastRoundNum) {
             lastRoundNum++;
             passedThisRoundCount = 0;
@@ -271,7 +291,11 @@ public class MuleModel {
             postselectionphase();
         } else {
             startNextTurn();
-            enterMap();
+            if (getRound() > 12) {
+                endGame();
+            } else {
+                enterMap();
+            }
         }
 
     }
@@ -298,8 +322,7 @@ public class MuleModel {
     }
 
     public Color getPropertyColor(Point point) {
-        for (Integer ind : playerHashMap.keySet()) {
-            Player p = playerHashMap.get(ind);
+        for (Player p : playerList) {
             for (Property property : p.getProperties()) {
                 Point location = property.getPoint();
                 if (point.equals(location)) {
@@ -372,8 +395,7 @@ public class MuleModel {
     }
 
     public boolean isOwned(Property property) {
-        for (Integer ind : playerHashMap.keySet()) {
-            Player p = playerHashMap.get(ind);
+        for (Player p : playerList) {
             for (Property ownedProperty : p.getProperties()) {
                 if (ownedProperty.equals(property)) {
                     return true;
@@ -393,7 +415,8 @@ public class MuleModel {
 
     public void updatePlayerInfoText(Text textZone) {
         Player turningPlayer = getTurningPlayer();
-        textZone.setText(turningPlayer.getName() + "'s turn!   $" + turningPlayer.getMoney());
+        textZone.setText(turningPlayer.getName() + "'s turn!   $" +
+                turningPlayer.getMoney() + "\n    Score:     " + turningPlayer.getScore());
     }
 
     public ArrayList<String> getAvailableColors() {

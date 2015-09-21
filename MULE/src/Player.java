@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 /**
  * Created by Peter on 9/15/2015.
  */
-public class Player {
+public class Player implements Comparable<Player> {
     private double money;
     private Color color;
     private String name;
@@ -90,5 +90,19 @@ public class Player {
 
     public ArrayList<Property> getProperties(){
         return properties;
+    }
+
+    public double getScore() {
+        return getMoney() + 500 * getProperties().size(); // + getNumberOfGoods() implemented later
+    }
+
+    public int compareTo(Player otherPlayer) {
+        if (this.getScore() > otherPlayer.getScore()) {
+            return 1;
+        } else if (this.getScore() < otherPlayer.getScore()) {
+            return -1;
+        } else {
+            return 1; //MAINTAINS IN PLACE ORDERING I THINK, SOMEONE CHECK THIS FOR ME...
+        }
     }
 }

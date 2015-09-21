@@ -77,7 +77,7 @@ public class PlayersController implements Initializable, Controller {
         selectedColor = null;
         raceBox.setValue(races.get(0));
         raceBox.setItems(FXCollections.observableArrayList(races));
-        playerNum.setText("Create Player " + (muleModel.getPlayerHashMap().size() + 1));
+        playerNum.setText("Create Player " + (muleModel.getPlayerList().size() + 1));
         name.addEventHandler(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
@@ -93,14 +93,14 @@ public class PlayersController implements Initializable, Controller {
         String playerRace = (String) raceBox.getValue();
         String playerColorString = (String) colorBox.getValue();
         Color playerColor = muleModel.removeColor(playerColorString);
-        Integer playerCount = muleModel.getPlayerHashMap().size();
+        Integer playerCount = muleModel.getPlayerList().size();
         muleModel.addPlayer(new Player(playerName, playerCount + 1, playerRace, playerColor));
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         muleModel.continuePlayerConfig();
         //Testing
-        for (Integer key : muleModel.getPlayerHashMap().keySet()) {
-            System.out.println(muleModel.getPlayerHashMap().get(key));
+        for (Player p: muleModel.getPlayerList()) {
+            System.out.println(p);
         }
     }
 
