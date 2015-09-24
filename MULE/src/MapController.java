@@ -39,7 +39,7 @@ public class MapController implements Initializable, Controller {
     private ArrayList<Point> mountain1Coordinates = new ArrayList<>();
     private ArrayList<Point> mountain2Coordinates = new ArrayList<>();
     private ArrayList<Point> mountain3Coordinates = new ArrayList<>();
-
+    private long time = 50;
 
 
     @FXML
@@ -120,6 +120,8 @@ public class MapController implements Initializable, Controller {
         muleModel.updatePropertyImages(mapGridPane);
         muleModel.updatePlayerInfoText(playerInfoText);
         for (Node node : paneChildren) {
+            muleModel.initializeCounter();
+            muleModel.startTimer();
             Integer xInd = mapGridPane.getColumnIndex(node);
             Integer yInd = mapGridPane.getRowIndex(node);
             if (townCoordinates.contains(new Point(xInd, yInd))) {

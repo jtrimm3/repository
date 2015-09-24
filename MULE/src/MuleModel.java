@@ -20,12 +20,25 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import java.awt.*;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import javax.swing.Timer;
+import javafx.animation.AnimationTimer;
+
+import javafx.animation.Timeline;
+import javafx.animation.KeyFrame;
+import java.util.TimerTask;
+
+import java.lang.Object;
+
 
 /**
  * Created by Peter on 9/19/2015.
@@ -44,6 +57,8 @@ public class MuleModel {
     private ArrayList<Player> playerList;
     //private HashMap<Integer, Player> playerHashMap;
     private Stage stage;
+    protected Timer timer;
+    protected int secondsLeft;
 
     private ArrayList<Point> riverCoordinates = new ArrayList<>();
     private ArrayList<Point> townCoordinates = new ArrayList<>();
@@ -115,6 +130,37 @@ public class MuleModel {
         mountain3Coordinates.add(new Point(8,1));
         mountain3Coordinates.add(new Point(0, 2));
     }
+
+    public void initializeCounter() {
+        secondsLeft = getTime();
+        timer = new Timer(1000, new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                if(secondsLeft < 1) {
+                    endTurn();
+                } else {
+                    System.out.println(secondsLeft);
+                    secondsLeft--;
+                }
+            }
+        });
+
+
+    }
+
+    public int getTime() {
+        return 50;
+    }
+
+    public int getSecondsLeft() {
+        return secondsLeft;
+    }
+
+    public void startTimer() {
+        timer.start();
+    }
+
+
 
     public void initializeConfigData(int numberOfPlayers) {
         this.numberOfPlayers = numberOfPlayers;
@@ -423,6 +469,7 @@ public class MuleModel {
         return availableColors;
     }
 
+
     public Color removeColor(String color) {
         availableColors.remove(color);
         switch (color) {
@@ -437,7 +484,6 @@ public class MuleModel {
         }
         return null;
     }
-
 
 
 
