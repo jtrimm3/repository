@@ -14,6 +14,7 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.awt.Point;
 import java.io.IOException;
 import java.net.URL;
@@ -67,6 +68,11 @@ public class TownController implements Initializable, Controller {
     private void returnToMap(ActionEvent event) {
         muleModel.enterMap();
 
+    }
+
+    @FXML
+    private void enterPub(ActionEvent event){
+        muleModel.enterPub();
     }
 
     public void loadModel(MuleModel model) {

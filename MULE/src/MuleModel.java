@@ -257,6 +257,20 @@ public class MuleModel {
 
     }
 
+    public void enterPub() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Pub.fxml"));
+            Controller controller = new PubController();
+            controller.loadModel(this);
+            loader.setController(controller);
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public void endGame() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("endgame.fxml"));
