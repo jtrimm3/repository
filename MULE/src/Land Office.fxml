@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <Text layoutX="222.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Land Office">
+      <font>
+        <Font size="26.0" />
+      </font>
+    </Text>
+    <ComboBox layoutX="261.0" layoutY="147.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Item 1" />
+          <String fx:value="Item 2" />
+          <String fx:value="Item 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <ComboBox layoutX="261.0" layoutY="235.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Item 1" />
+          <String fx:value="Item 2" />
+          <String fx:value="Item 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <Text layoutX="175.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buy:" />
+    <Text layoutX="175.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sell:" />
+    <Button layoutX="427.0" layoutY="148.0" mnemonicParsing="false" text="Confirm Buy" />
+    <Button layoutX="427.0" layoutY="237.0" mnemonicParsing="false" text="Confirm Sell" />
+    <Button layoutX="247.0" layoutY="342.0" mnemonicParsing="false" text="Back to Town" />
+  </children>
+</AnchorPane>
