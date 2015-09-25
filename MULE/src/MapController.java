@@ -54,6 +54,9 @@ public class MapController implements Initializable, Controller {
     @FXML
     private Text errorText = new Text();
 
+    @FXML
+    private Text timerText = new Text();
+
 
 
     @Override
@@ -119,9 +122,8 @@ public class MapController implements Initializable, Controller {
         ObservableList<Node> paneChildren = mapGridPane.getChildren();
         muleModel.updatePropertyImages(mapGridPane);
         muleModel.updatePlayerInfoText(playerInfoText);
+        muleModel.setTimerTextReference(timerText);
         for (Node node : paneChildren) {
-            muleModel.initializeCounter();
-            muleModel.startTimer();
             Integer xInd = mapGridPane.getColumnIndex(node);
             Integer yInd = mapGridPane.getRowIndex(node);
             if (townCoordinates.contains(new Point(xInd, yInd))) {
@@ -259,7 +261,9 @@ public class MapController implements Initializable, Controller {
                 });
             }
         }
+
         roundText.setText("Round " + muleModel.getRound());
+
     }
 
 

@@ -89,5 +89,6 @@
       <Text fx:id="playerInfoText" layoutX="381.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="168.0" />
       <Text fx:id="roundText" layoutX="116.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Text fx:id="errorText" layoutX="36.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="timerText" layoutX="454.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" />
   </children>
 </AnchorPane>

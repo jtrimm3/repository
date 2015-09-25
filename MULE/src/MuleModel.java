@@ -1,3 +1,6 @@
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -22,12 +25,9 @@ import javafx.scene.control.Button;
 
 import java.awt.*;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
+import java.time.Duration;
+import java.util.*;
 
-import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -49,8 +49,9 @@ public class MuleModel {
     //private HashMap<Integer, Player> playerHashMap;
 
     private Stage stage;
-    protected Timer timer;
+    private Timer timer;
     protected int secondsLeft;
+    private Text timerText;
 
     private ArrayList<Point> riverCoordinates = new ArrayList<>();
     private ArrayList<Point> townCoordinates = new ArrayList<>();
@@ -70,6 +71,7 @@ public class MuleModel {
 
     public MuleModel(Stage stage) {
         this.stage = stage;
+        timer = new java.util.Timer();
         availableColors = new ArrayList<String>(Arrays.asList("Red","Green","Blue","Yellow"));
         riverCoordinates.add(new Point(4,0));
         riverCoordinates.add(new Point(4,1));
@@ -123,24 +125,30 @@ public class MuleModel {
         mountain3Coordinates.add(new Point(0, 2));
     }
 
-    public void initializeCounter() {
-        secondsLeft = getTime();
-        timer = new Timer(1000, new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-                if(secondsLeft < 1) {
-                    endTurn();
-                } else {
-                    System.out.println(secondsLeft);
-                    secondsLeft--;
-                }
+    public void initializeTimer() {
+        secondsLeft = calculateTimeForTurn(getTurningPlayer());
+        timer.cancel();
+        timer.purge();
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Platform.runLater(() -> {
+                    if(secondsLeft < 1) {
+                        endTurn();
+                    } else {
+                        secondsLeft--;
+                        timerText.setText("" + secondsLeft);
+                    }
+                });
             }
-        });
-
+        },0,1000);//delay,period (millis)
 
     }
 
-    public int getTime() {
+
+
+    public int calculateTimeForTurn(Player p) {
         return 50;
     }
 
@@ -148,9 +156,9 @@ public class MuleModel {
         return secondsLeft;
     }
 
-    public void startTimer() {
-        timer.start();
-    }
+//    public void startTimer() {
+//        timer.start();
+//    }
 
     public void initializeConfigData(int numberOfPlayers) {
         this.numberOfPlayers = numberOfPlayers;
@@ -321,6 +329,7 @@ public class MuleModel {
         boughtOnThisTurnCount = 0;
         round = (turnCount / numberOfPlayers) + 1;
         turningPlayer = playerList.get(turnCount % numberOfPlayers);
+        initializeTimer(); //TIMER MUST BE STARTED AFTER TURNINGPLAYER IS UPDATED !!!
         turnCount++;
     }
 
@@ -489,6 +498,7 @@ public class MuleModel {
     }
 
 
-
-
+    public void setTimerTextReference(Text timerTextReference) {
+        timerText = timerTextReference;
+    }
 }
