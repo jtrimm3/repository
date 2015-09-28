@@ -75,6 +75,16 @@ public class TownController implements Initializable, Controller {
         muleModel.enterPub();
     }
 
+    @FXML
+    private void enterStore(ActionEvent event) {
+        muleModel.enterStore();
+    }
+
+    @FXML
+    private void enterLandOffice(ActionEvent event) {
+        muleModel.enterLandOffice();
+    }
+
     public void loadModel(MuleModel model) {
         muleModel = model;
     }

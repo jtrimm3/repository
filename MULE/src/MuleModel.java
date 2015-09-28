@@ -315,6 +315,34 @@ public class MuleModel {
 
     }
 
+    public void enterStore() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Store.fxml"));
+            Controller controller = new TownController();
+            controller.loadModel(this);
+            loader.setController(controller);
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void enterLandOffice() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Land Office.fxml"));
+            Controller controller = new TownController();
+            controller.loadModel(this);
+            loader.setController(controller);
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public void endGame() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("endgame.fxml"));
