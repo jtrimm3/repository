@@ -50,7 +50,7 @@ public class MuleModel {
 
     private Stage stage;
     private Timer timer;
-    protected int secondsLeft;
+    private int secondsLeft;
     private Text timerText;
 
     private ArrayList<Point> riverCoordinates = new ArrayList<>();
@@ -68,10 +68,13 @@ public class MuleModel {
     private final String M3_IMAGE = "mountain3.png";
     private final String SQUARE_IMAGE = "TransparentSquare.png";
 
+    private int[] roundBonus;
+
 
     public MuleModel(Stage stage) {
         this.stage = stage;
         timer = new java.util.Timer();
+        roundBonus = new int[] {0, 50, 50, 50, 100, 100, 100, 100, 150, 150, 150, 150, 200};
         availableColors = new ArrayList<String>(Arrays.asList("Red","Green","Blue","Yellow"));
         riverCoordinates.add(new Point(4,0));
         riverCoordinates.add(new Point(4,1));
@@ -135,7 +138,7 @@ public class MuleModel {
             public void run() {
                 Platform.runLater(() -> {
                     if(secondsLeft < 1) {
-                        endTurn();
+                        enterEndTurnScreen("Out of Time!");
                     } else {
                         secondsLeft--;
                         timerText.setText("" + secondsLeft);
@@ -270,6 +273,28 @@ public class MuleModel {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Map.fxml"));
             Controller controller = new MapController();
             controller.loadModel(this);
+            loader.setController(controller);
+            Scene scene = new Scene(loader.load());
+            scene.setOnKeyPressed(new EventHandler<KeyEvent>() {  //ENTER ENDS TURN
+                @Override
+                public void handle(KeyEvent event) {
+                    switch (event.getCode()) {
+                        case ENTER:
+                            enterEndTurnScreen("Turn ended without gambling!");
+                    }
+                }
+            });
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void enterEndTurnScreen(String messageToDisplay) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("endturn.fxml"));
+            EndturnController controller = new EndturnController();
+            controller.setMessageText(messageToDisplay);
             loader.setController(controller);
             Scene scene = new Scene(loader.load());
             scene.setOnKeyPressed(new EventHandler<KeyEvent>() {  //ENTER ENDS TURN
@@ -528,5 +553,25 @@ public class MuleModel {
 
     public void setTimerTextReference(Text timerTextReference) {
         timerText = timerTextReference;
+    }
+
+    public void gamble() {
+        int time = secondsLeft;
+        Random num = new Random();
+        int moneyBonus = 0;
+        if (time >= 37) {
+            moneyBonus = roundBonus[getRound()] + num.nextInt(201);
+        } else if (time >= 25 && time <= 36) {
+            moneyBonus = roundBonus[getRound()] + num.nextInt(151);
+        } else if (time >= 12 && time <= 24) {
+            moneyBonus = roundBonus[getRound()] + num.nextInt(101);
+        } else {
+            moneyBonus = roundBonus[getRound()] + num.nextInt(51);
+        }
+        Player turningPlayer = getTurningPlayer();
+        turningPlayer.setMoney(turningPlayer.getMoney() + Math.min(moneyBonus, 250));
+        //status.setText("Congratulations! You just earned " + Math.min(moneyBonus, 250) + " dollars!");
+        enterEndTurnScreen("Congratulations! You just earned " + Math.min(moneyBonus, 250) + " dollars!");
+        //return
     }
 }
