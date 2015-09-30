@@ -152,7 +152,7 @@ public class MuleModel {
 
 
     public int calculateTimeForTurn(Player p) {
-        return 10;
+        return 25;
     }
 
     public int getSecondsLeft() {
@@ -295,40 +295,37 @@ public class MuleModel {
         timer.cancel();
         timer.purge();
         try {
+            Player oldPlayer = getTurningPlayer();
+            String roundMessage = endTurn();
+            startNextTurn();
             if (passedThisRoundCount == numberOfPlayers) {
                 postselectionphase();
-            } else {
-                Player oldPlayer = getTurningPlayer();
-                startNextTurn();
-                if (getRound() > 12) {
+            } else if (getRound() > 12) {
                     endGame();
-                } else {
-                    String newPlayerMessage = null;
-                    String roundMessage = endTurn();
-                    String topMessageToDisplay = "Press enter to start next turn! " + roundMessage;
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("endturn.fxml"));
-                    EndturnController controller = new EndturnController();
-                    controller.setTopMessageText(topMessageToDisplay);
-                    controller.setOldPlayer(oldPlayer, oldPlayerMessage);
-                    controller.setNewPlayer(getTurningPlayer(), newPlayerMessage);
+            } else {
+                String newPlayerMessage = null;
+                String topMessageToDisplay = "Press enter to start next turn! " + roundMessage;
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("endturn.fxml"));
+                EndturnController controller = new EndturnController();
+                controller.setTopMessageText(topMessageToDisplay);
+                controller.setOldPlayer(oldPlayer, oldPlayerMessage);
+                controller.setNewPlayer(getTurningPlayer(), newPlayerMessage);
 
 
-                    loader.setController(controller);
-                    Scene scene = new Scene(loader.load());
-                    scene.setOnKeyPressed(new EventHandler<KeyEvent>() {  //ENTER ENDS TURN
-                        @Override
-                        public void handle(KeyEvent event) {
-                            switch (event.getCode()) {
-                                case ENTER:
-                                    enterMap();
-                                    initializeTimer();
-                            }
+                loader.setController(controller);
+                Scene scene = new Scene(loader.load());
+                scene.setOnKeyPressed(new EventHandler<KeyEvent>() {  //ENTER ENDS TURN
+                    @Override
+                    public void handle(KeyEvent event) {
+                        switch (event.getCode()) {
+                            case ENTER:
+                                enterMap();
+                                initializeTimer();
                         }
-                    });
-                    stage.setScene(scene);
-                }
+                    }
+                });
+                stage.setScene(scene);
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -583,11 +580,9 @@ public class MuleModel {
         } else {
             moneyBonus = roundBonus[getRound()] + num.nextInt(51);
         }
-        int moneyGained = Math.max(moneyBonus, 250);
+        int moneyGained = Math.min(moneyBonus, 250);
         Player turningPlayer = getTurningPlayer();
         turningPlayer.setMoney(turningPlayer.getMoney() + moneyGained);
-        //status.setText("Congratulations! You just earned " + Math.min(moneyBonus, 250) + " dollars!");
         enterEndTurnScreen("Congratulations! You just earned " + moneyGained + " dollars!");
-        //return
     }
 }
