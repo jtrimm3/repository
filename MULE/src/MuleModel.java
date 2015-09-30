@@ -69,7 +69,7 @@ public class MuleModel {
     private final String SQUARE_IMAGE = "TransparentSquare.png";
 
     private int[] roundBonus;
-
+    private Player lastPlayer;
 
     public MuleModel(Stage stage) {
         this.stage = stage;
@@ -152,7 +152,7 @@ public class MuleModel {
 
 
     public int calculateTimeForTurn(Player p) {
-        return 50;
+        return 10;
     }
 
     public int getSecondsLeft() {
@@ -266,6 +266,7 @@ public class MuleModel {
 
     public void enterMap() {
         if (!hasBegun) {
+            initializeTimer();
             startNextTurn();
             hasBegun = true;
         }
@@ -290,23 +291,44 @@ public class MuleModel {
         }
     }
 
-    public void enterEndTurnScreen(String messageToDisplay) {
+    public void enterEndTurnScreen(String oldPlayerMessage) {
+        timer.cancel();
+        timer.purge();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("endturn.fxml"));
-            EndturnController controller = new EndturnController();
-            controller.setMessageText(messageToDisplay);
-            loader.setController(controller);
-            Scene scene = new Scene(loader.load());
-            scene.setOnKeyPressed(new EventHandler<KeyEvent>() {  //ENTER ENDS TURN
-                @Override
-                public void handle(KeyEvent event) {
-                    switch (event.getCode()) {
-                        case ENTER:
-                            endTurn();
-                    }
+            if (passedThisRoundCount == numberOfPlayers) {
+                postselectionphase();
+            } else {
+                Player oldPlayer = getTurningPlayer();
+                startNextTurn();
+                if (getRound() > 12) {
+                    endGame();
+                } else {
+                    String newPlayerMessage = null;
+                    String roundMessage = endTurn();
+                    String topMessageToDisplay = "Press enter to start next turn! " + roundMessage;
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("endturn.fxml"));
+                    EndturnController controller = new EndturnController();
+                    controller.setTopMessageText(topMessageToDisplay);
+                    controller.setOldPlayer(oldPlayer, oldPlayerMessage);
+                    controller.setNewPlayer(getTurningPlayer(), newPlayerMessage);
+
+
+                    loader.setController(controller);
+                    Scene scene = new Scene(loader.load());
+                    scene.setOnKeyPressed(new EventHandler<KeyEvent>() {  //ENTER ENDS TURN
+                        @Override
+                        public void handle(KeyEvent event) {
+                            switch (event.getCode()) {
+                                case ENTER:
+                                    enterMap();
+                                    initializeTimer();
+                            }
+                        }
+                    });
+                    stage.setScene(scene);
                 }
-            });
-            stage.setScene(scene);
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -382,34 +404,27 @@ public class MuleModel {
         boughtOnThisTurnCount = 0;
         round = (turnCount / numberOfPlayers) + 1;
         turningPlayer = playerList.get(turnCount % numberOfPlayers);
-        initializeTimer(); //TIMER MUST BE STARTED AFTER TURNINGPLAYER IS UPDATED !!!
         turnCount++;
     }
 
-    public void endTurn() {
+    public String endTurn() {
+        String roundMessage = "";
+        String turnOrderMessage = "";
         System.out.println("ENDED TURN FOR PLAYER" + getTurningPlayer() + " ROUND " + getRound());
 
         if (turnCount % numberOfPlayers == 0) {
             Collections.sort(playerList);
+
         }
         if (getRound() - 1 > lastRoundNum) {
+            roundMessage = "Start of round " + getRound() +"!";
             lastRoundNum++;
             passedThisRoundCount = 0;
         }
         if (boughtOnThisTurnCount == 0) {
             passedThisRoundCount++;
         }
-        if (passedThisRoundCount == numberOfPlayers) {
-            postselectionphase();
-        } else {
-            startNextTurn();
-            if (getRound() > 12) {
-                endGame();
-            } else {
-                enterMap();
-            }
-        }
-
+        return roundMessage;
     }
 
     public void postselectionphase() {
@@ -568,10 +583,11 @@ public class MuleModel {
         } else {
             moneyBonus = roundBonus[getRound()] + num.nextInt(51);
         }
+        int moneyGained = Math.max(moneyBonus, 250);
         Player turningPlayer = getTurningPlayer();
-        turningPlayer.setMoney(turningPlayer.getMoney() + Math.min(moneyBonus, 250));
+        turningPlayer.setMoney(turningPlayer.getMoney() + moneyGained);
         //status.setText("Congratulations! You just earned " + Math.min(moneyBonus, 250) + " dollars!");
-        enterEndTurnScreen("Congratulations! You just earned " + Math.min(moneyBonus, 250) + " dollars!");
+        enterEndTurnScreen("Congratulations! You just earned " + moneyGained + " dollars!");
         //return
     }
 }

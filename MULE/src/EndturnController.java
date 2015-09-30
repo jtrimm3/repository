@@ -11,28 +11,70 @@ import java.util.ResourceBundle;
  */
 public class EndturnController implements Controller, Initializable {
     private MuleModel muleModel;
-    private String message;
+    private String topMessage, oldMessage, newMessgae;
+    private Player oldPlayer,newPlayer;
 
     @FXML
     private Text text = new Text();
 
+    @FXML
+    private Text pOverText = new Text();
+
+    @FXML
+    private Text pNextText = new Text();
+
+    @FXML
+    private Text overNameText = new Text();
+
+    @FXML
+    private Text nextNameText = new Text();
+
+    @FXML
+    private Text overMoneyText = new Text();
+
+    @FXML
+    private Text nextMoneyText = new Text();
+
+    @FXML
+    private Text overMessageText = new Text();
+
+    @FXML
+    private Text nextMessageText = new Text();
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        text.setText(message);
+        text.setText(topMessage);
+        pOverText.setText("Last Player");
+        pNextText.setText("Next Player");
+        overNameText.setText(oldPlayer.getName());
+        nextNameText.setText(newPlayer.getName());
+        overMoneyText.setText("$" + oldPlayer.getMoney());
+        nextMoneyText.setText("$" + newPlayer.getMoney());
+        overMessageText.setText(oldMessage);
+        nextMessageText.setText(newMessgae);
     }
 
-    public void setMessageText(String str) {
-        message = str;
+    public void setTopMessageText(String str) {
+        topMessage = str;
     }
 
-    public void setPlayerList(ArrayList<Player> list) {
+    public void setNewPlayer(Player turningPlayer, String message) {
+        newMessgae = message;
+        newPlayer = turningPlayer;
+    }
 
+    public void setOldPlayer(Player oldPlayer, String message) {
+        oldMessage = message;
+        this.oldPlayer = oldPlayer;
     }
 
 
     public void loadModel(MuleModel model) {
         muleModel = model;
     }
+
 
 
 }
