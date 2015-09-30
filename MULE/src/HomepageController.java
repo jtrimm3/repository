@@ -39,6 +39,7 @@ public class HomepageController implements Initializable, Controller {
     
     public int players;
     public int playerPageCount;
+    private String level = "Beginner";
     
     public HomepageController() {
         this.players = players;
@@ -122,10 +123,23 @@ public class HomepageController implements Initializable, Controller {
         });
 
     }
+
+    @FXML
+    private void selectLevel() {
+        group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+            @Override
+            public void changed(ObservableValue<? extends Toggle> ov, Toggle t, Toggle t1) {
+                RadioButton check = (RadioButton)t1.getToggleGroup().getSelectedToggle();
+                level = check.getText();
+                System.out.println(level);
+            }
+        });
+    }
+
     
     @FXML
     private void next(ActionEvent event) throws IOException {
-        muleModel.initializeConfigData(players);
+        muleModel.initializeConfigData(players, level);
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         muleModel.continuePlayerConfig();

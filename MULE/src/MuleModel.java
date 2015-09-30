@@ -44,6 +44,7 @@ public class MuleModel {
     private Player turningPlayer;
     private int numberOfPlayers;
     private int boughtOnThisTurnCount;
+    private String level;
     private String map;
     private ArrayList<Player> playerList;
     //private HashMap<Integer, Player> playerHashMap;
@@ -163,9 +164,10 @@ public class MuleModel {
 //        timer.start();
 //    }
 
-    public void initializeConfigData(int numberOfPlayers) {
+    public void initializeConfigData(int numberOfPlayers, String level) {
         this.numberOfPlayers = numberOfPlayers;
         this.playerList = new ArrayList<>();
+        this.level = level;
         //this.playerHashMap = new HashMap<Integer,Player>();
     }
 
@@ -220,6 +222,10 @@ public class MuleModel {
 
     public int getNumberOfPlayers() {
         return numberOfPlayers;
+    }
+
+    public String getLevel() {
+        return level;
     }
 
     public void addPlayer(Player player) {
@@ -584,5 +590,9 @@ public class MuleModel {
         Player turningPlayer = getTurningPlayer();
         turningPlayer.setMoney(turningPlayer.getMoney() + moneyGained);
         enterEndTurnScreen("Congratulations! You just earned " + moneyGained + " dollars!");
+    }
+
+    public void buy() {
+
     }
 }

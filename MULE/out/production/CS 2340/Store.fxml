@@ -8,19 +8,19 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="269.0" layoutY="54.0" text="Store">
+      <Button layoutX="477.0" layoutY="133.0" mnemonicParsing="false" text="Confirm Buy" />
+      <Button layoutX="477.0" layoutY="239.0" mnemonicParsing="false" text="Confirm Sell" />
+      <Label layoutX="262.0" layoutY="49.0" text="Store">
          <font>
-            <Font size="26.0" />
+            <Font size="32.0" />
          </font>
       </Label>
-      <Label layoutX="70.0" layoutY="136.0" text="Buy:" />
-      <Label layoutX="70.0" layoutY="218.0" text="Sell:" />
-      <Button fx:id="buyButton" layoutX="462.0" layoutY="132.0" mnemonicParsing="false" text="Confirm Buy" />
-      <Button fx:id="sellButton" layoutX="462.0" layoutY="214.0" mnemonicParsing="false" text="Confirm Sell" />
-      <Button layoutX="257.0" layoutY="322.0" mnemonicParsing="false" text="Back to Town" />
-      <ComboBox layoutX="130.0" layoutY="132.0" prefWidth="150.0" />
-      <ComboBox layoutX="130.0" layoutY="214.0" prefWidth="150.0" />
-      <TextField layoutX="300.0" layoutY="132.0" promptText="Enter Amount" />
-      <TextField layoutX="300.0" layoutY="214.0" promptText="Enter Amount" />
+      <Label layoutX="46.0" layoutY="137.0" text="Buy:" />
+      <Label layoutX="46.0" layoutY="243.0" text="Sell:" />
+      <ComboBox fx:id="buyCombo" layoutX="112.0" layoutY="133.0" prefWidth="150.0" />
+      <ComboBox layoutX="112.0" layoutY="239.0" prefWidth="150.0" />
+      <TextField layoutX="299.0" layoutY="133.0" promptText="Amount to Buy" />
+      <TextField layoutX="299.0" layoutY="239.0" promptText="Amount to Sell" />
+      <Button layoutX="256.0" layoutY="317.0" mnemonicParsing="false" onAction="#returnToTown" text="Back to Town" />
    </children>
 </Pane>

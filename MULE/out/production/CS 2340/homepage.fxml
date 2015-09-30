@@ -10,9 +10,9 @@
    <children>
       <Label layoutX="247.0" layoutY="54.0" text="Welcome to M.U.L.E" textAlignment="CENTER" />
       <Label layoutX="84.0" layoutY="101.0" text="Difficulty:" />
-      <RadioButton fx:id="beginner" layoutX="204.0" layoutY="101.0" mnemonicParsing="false" text="Beginner" />
-      <RadioButton fx:id="standard" layoutX="310.0" layoutY="101.0" mnemonicParsing="false" text="Standard" />
-      <RadioButton fx:id="tournament" layoutX="414.0" layoutY="101.0" mnemonicParsing="false" text="Tournament" />
+      <RadioButton fx:id="beginner" layoutX="204.0" layoutY="101.0" mnemonicParsing="false" onAction="#selectLevel" text="Beginner" />
+      <RadioButton fx:id="standard" layoutX="310.0" layoutY="101.0" mnemonicParsing="false" onAction="#selectLevel" text="Standard" />
+      <RadioButton fx:id="tournament" layoutX="414.0" layoutY="101.0" mnemonicParsing="false" onAction="#selectLevel" text="Tournament" />
       <Label layoutX="191.0" layoutY="183.0" text="Map:" />
       <Label layoutX="154.0" layoutY="266.0" text="Number of players:" />
       <ComboBox fx:id="map" layoutX="259.0" layoutY="179.0" onAction="#selectMap" prefWidth="150.0" />
