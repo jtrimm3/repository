@@ -368,7 +368,7 @@ public class MuleModel {
     public void enterStore() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Store.fxml"));
-            Controller controller = new TownController();
+            Controller controller = new StoreController();
             controller.loadModel(this);
             loader.setController(controller);
             Scene scene = new Scene(loader.load());
@@ -382,7 +382,7 @@ public class MuleModel {
     public void enterLandOffice() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Land Office.fxml"));
-            Controller controller = new TownController();
+            Controller controller = new TownController(); //Change to loController
             controller.loadModel(this);
             loader.setController(controller);
             Scene scene = new Scene(loader.load());
