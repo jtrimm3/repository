@@ -46,8 +46,13 @@ public class MuleModel {
     private int boughtOnThisTurnCount;
     private String level;
     private String map;
+    private String boughtResource;
+    private int boughtAmount;
+    private Map<String, Integer> itemsForSaleBeginner;
+    private Map<String, Integer> itemsForSaleOther;
+
     private ArrayList<Player> playerList;
-    //private HashMap<Integer, Player> playerHashMap;
+
 
     private Stage stage;
     private Timer timer;
@@ -169,6 +174,18 @@ public class MuleModel {
         this.playerList = new ArrayList<>();
         this.level = level;
         //this.playerHashMap = new HashMap<Integer,Player>();
+    }
+
+    public void initializeBuyDataBeginner(String boughtResource, int boughtAmount, Map itemsForSaleBeginner) {
+        this.boughtResource = boughtResource;
+        this.boughtAmount = boughtAmount;
+        this.itemsForSaleBeginner = itemsForSaleBeginner;
+    }
+
+    public void initializeBuyDataOther(String boughtResource, int boughtAmount, Map itemsForSaleOther) {
+        this.boughtResource = boughtResource;
+        this.boughtAmount = boughtAmount;
+        this.itemsForSaleOther = itemsForSaleOther;
     }
 
     public String validateName(String name) {
@@ -382,7 +399,7 @@ public class MuleModel {
     public void enterLandOffice() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Land Office.fxml"));
-            Controller controller = new TownController(); //Change to loController
+            Controller controller = new LandOfficeController();
             controller.loadModel(this);
             loader.setController(controller);
             Scene scene = new Scene(loader.load());
@@ -592,7 +609,25 @@ public class MuleModel {
         enterEndTurnScreen("Congratulations! You just earned " + moneyGained + " dollars!");
     }
 
-    public void buy() {
-
+    public void buyResource() {
+        int prevAmount;
+        int newAmount;
+        if (!level.equals("Beginner")) {
+            prevAmount = itemsForSaleOther.get(boughtResource);
+            System.out.println(prevAmount);
+            newAmount = prevAmount - boughtAmount;
+            itemsForSaleOther.put(boughtResource, newAmount);
+            System.out.println(itemsForSaleOther);
+        } else {
+            prevAmount = itemsForSaleBeginner.get(boughtResource);
+            System.out.println(prevAmount);
+            newAmount = prevAmount - boughtAmount;
+            itemsForSaleBeginner.put(boughtResource, newAmount);
+            System.out.println(itemsForSaleBeginner);
+        }
     }
+
+//            public int resourcesAvail(String boughtResource) {
+//                return (Integer) itemsForSale.get(boughtResource);
+//            }
 }
