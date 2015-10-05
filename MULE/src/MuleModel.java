@@ -58,6 +58,12 @@ public class MuleModel {
     private static int crystiteOther = 0;
     private static int muleBeg = 25;
     private static int muleOther = 14;
+    private static int foodPrice = 30;
+    private static int energyPrice = 25;
+    private static int smithorePrice = 50;
+    private static int crystitePrice = 100;
+    private static int mulePrice = 100;
+    private Map<String, Integer> resourcePrices = new HashMap<>();
 
     private ArrayList<Player> playerList;
 
@@ -89,6 +95,11 @@ public class MuleModel {
         this.stage = stage;
         timer = new java.util.Timer();
         roundBonus = new int[] {0, 50, 50, 50, 100, 100, 100, 100, 150, 150, 150, 150, 200};
+        resourcePrices.put("Food", foodPrice);
+        resourcePrices.put("Energy", energyPrice);
+        resourcePrices.put("Smithore", smithorePrice);
+        resourcePrices.put("Crystite", crystitePrice);
+        resourcePrices.put("Mule", mulePrice);
         availableColors = new ArrayList<String>(Arrays.asList("Red","Green","Blue","Yellow"));
         riverCoordinates.add(new Point(4,0));
         riverCoordinates.add(new Point(4,1));
@@ -640,6 +651,7 @@ public class MuleModel {
             newAmount = Math.max(prevAmount - boughtAmount, 0);
             itemsForSaleOther.put(boughtResource, newAmount);
             System.out.println(itemsForSaleOther);
+            getTurningPlayer().buyResource(boughtResource, boughtAmount);
             if (boughtResource.equals("Food")) {
                 foodOther = newAmount;
             } else if (boughtResource.equals("Energy")) {
@@ -657,6 +669,7 @@ public class MuleModel {
             newAmount = prevAmount - boughtAmount;
             itemsForSaleBeginner.put(boughtResource, Math.max(0, newAmount));
             System.out.println(itemsForSaleBeginner);
+            getTurningPlayer().buyResource(boughtResource, boughtAmount);
             if (boughtResource.equals("Food")) {
                 foodBeg = newAmount;
             } else if (boughtResource.equals("Energy")) {

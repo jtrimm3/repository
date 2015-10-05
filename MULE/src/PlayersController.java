@@ -7,10 +7,8 @@
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -94,7 +92,15 @@ public class PlayersController implements Initializable, Controller {
         String playerColorString = (String) colorBox.getValue();
         Color playerColor = muleModel.removeColor(playerColorString);
         Integer playerCount = muleModel.getPlayerList().size();
-        muleModel.addPlayer(new Player(playerName, playerCount + 1, playerRace, playerColor));
+        Map<String, Integer> resources = new HashMap<>();
+        if (!muleModel.getLevel().equals("Beginner")) {
+            resources.put("Food", 4);
+            resources.put("Energy", 2);
+        } else {
+            resources.put("Food", 8);
+            resources.put("Energy", 4);
+        }
+        muleModel.addPlayer(new Player(playerName, playerCount + 1, playerRace, playerColor, resources));
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         muleModel.continuePlayerConfig();

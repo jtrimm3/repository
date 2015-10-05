@@ -1,5 +1,7 @@
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javafx.scene.paint.Color;
 
@@ -7,23 +9,26 @@ import javafx.scene.paint.Color;
  * Created by Peter on 9/15/2015.
  */
 public class Player implements Comparable<Player> {
+    private MuleModel muleModel;
     private double money;
     private Color color;
     private String name;
     private String race;
     private ArrayList<Property> properties;
     private int playerNumber;
+    private Map<String, Integer> resources = new HashMap<>();
 
     //ENUM FOR RACES AND THEIR INFO
 
 
 
-    public Player(String name, int playerNumber, String race, Color color) {
+    public Player(String name, int playerNumber, String race, Color color, Map<String, Integer> resources) {
         this.properties = new ArrayList<Property>();
         this.name = name;
         this.playerNumber = playerNumber;
         this.race = race;
         this.color = color;
+        this.resources = resources;
         switch (race) {
             case("Human"):
                 money = 600;
@@ -35,6 +40,7 @@ public class Player implements Comparable<Player> {
                 money = 1000;
                 break;
         }
+
     }
 
     public String getRace() {
@@ -86,6 +92,12 @@ public class Player implements Comparable<Player> {
             money = money - 300;
         }
         properties.add(property);
+    }
+
+    public void buyResource(String resource, int amount) {
+        int prevAmount = resources.get(resource);
+        resources.put(resource, prevAmount + amount);
+        System.out.println(resources);
     }
 
     public ArrayList<Property> getProperties(){
