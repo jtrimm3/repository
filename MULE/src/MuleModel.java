@@ -46,10 +46,18 @@ public class MuleModel {
     private int boughtOnThisTurnCount;
     private String level;
     private String map;
-    private String boughtResource;
-    private int boughtAmount;
     private Map<String, Integer> itemsForSaleBeginner;
     private Map<String, Integer> itemsForSaleOther;
+    private static int foodBeg = 16;
+    private static int foodOther = 8;
+    private static int energyBeg = 16;
+    private static int energyOther = 8;
+    private static int smithoreBeg =0;
+    private static int smithoreOther = 8;
+    private static int crystiteBeg = 0;
+    private static int crystiteOther = 0;
+    private static int muleBeg = 25;
+    private static int muleOther = 14;
 
     private ArrayList<Player> playerList;
 
@@ -176,16 +184,30 @@ public class MuleModel {
         //this.playerHashMap = new HashMap<Integer,Player>();
     }
 
-    public void initializeBuyDataBeginner(String boughtResource, int boughtAmount, Map itemsForSaleBeginner) {
-        this.boughtResource = boughtResource;
-        this.boughtAmount = boughtAmount;
+    public void initializeBuyDataBeginner(Map itemsForSaleBeginner) {
         this.itemsForSaleBeginner = itemsForSaleBeginner;
+        itemsForSaleBeginner.put("Food",foodBeg);
+        itemsForSaleBeginner.put("Energy",energyBeg);
+        itemsForSaleBeginner.put("Smithore",smithoreBeg);
+        itemsForSaleBeginner.put("Crystite",crystiteBeg);
+        itemsForSaleBeginner.put("Mule", muleBeg);
     }
 
-    public void initializeBuyDataOther(String boughtResource, int boughtAmount, Map itemsForSaleOther) {
-        this.boughtResource = boughtResource;
-        this.boughtAmount = boughtAmount;
+    public Map<String, Integer> getItemsForSaleBeginner() {
+        return itemsForSaleBeginner;
+    }
+
+    public void initializeBuyDataOther(Map itemsForSaleOther) {
         this.itemsForSaleOther = itemsForSaleOther;
+        itemsForSaleOther.put("Food", foodOther);
+        itemsForSaleOther.put("Energy",energyOther);
+        itemsForSaleOther.put("Smithore",smithoreOther);
+        itemsForSaleOther.put("Crystite",crystiteOther);
+        itemsForSaleOther.put("Mule",muleOther);
+    }
+
+    public Map<String, Integer> getItemsForSaleOther() {
+        return itemsForSaleOther;
     }
 
     public String validateName(String name) {
@@ -609,25 +631,44 @@ public class MuleModel {
         enterEndTurnScreen("Congratulations! You just earned " + moneyGained + " dollars!");
     }
 
-    public void buyResource() {
+    public void buyResource(String boughtResource, int boughtAmount) {
         int prevAmount;
         int newAmount;
         if (!level.equals("Beginner")) {
             prevAmount = itemsForSaleOther.get(boughtResource);
             System.out.println(prevAmount);
-            newAmount = prevAmount - boughtAmount;
+            newAmount = Math.max(prevAmount - boughtAmount, 0);
             itemsForSaleOther.put(boughtResource, newAmount);
             System.out.println(itemsForSaleOther);
+            if (boughtResource.equals("Food")) {
+                foodOther = newAmount;
+            } else if (boughtResource.equals("Energy")) {
+                energyOther = newAmount;
+            } else if (boughtResource.equals("Smithore")) {
+                smithoreOther = newAmount;
+            } else if (boughtResource.equals("Crystite")) {
+                crystiteOther = newAmount;
+            } else {
+                muleOther = newAmount;
+            }
         } else {
             prevAmount = itemsForSaleBeginner.get(boughtResource);
             System.out.println(prevAmount);
             newAmount = prevAmount - boughtAmount;
-            itemsForSaleBeginner.put(boughtResource, newAmount);
+            itemsForSaleBeginner.put(boughtResource, Math.max(0, newAmount));
             System.out.println(itemsForSaleBeginner);
+            if (boughtResource.equals("Food")) {
+                foodBeg = newAmount;
+            } else if (boughtResource.equals("Energy")) {
+                energyBeg = newAmount;
+            } else if (boughtResource.equals("Smithore")) {
+                smithoreBeg = newAmount;
+            } else if (boughtResource.equals("Crystite")) {
+                crystiteBeg = newAmount;
+            } else {
+                muleBeg = newAmount;
+            }
         }
     }
 
-//            public int resourcesAvail(String boughtResource) {
-//                return (Integer) itemsForSale.get(boughtResource);
-//            }
 }
