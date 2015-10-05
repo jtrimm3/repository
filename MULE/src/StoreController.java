@@ -108,6 +108,7 @@ public class StoreController implements Initializable, Controller{
                 crystiteOther = Math.max(crystiteOther - amountEntered, 0);
             } else {
                 muleOther = Math.max(muleOther - amountEntered, 0);
+                muleModel.enterMuleConfig();
             }
         } else {
             muleModel.initializeBuyDataBeginner(boughtItem, amountEntered, buyItems);
@@ -121,6 +122,7 @@ public class StoreController implements Initializable, Controller{
                 crystiteBeg = Math.max(crystiteBeg - amountEntered, 0);
             } else {
                 muleBeg = Math.max(muleBeg - amountEntered, 0);
+                muleModel.enterMuleConfig();
             }
         }
         muleModel.buyResource();
