@@ -76,8 +76,11 @@ public class StoreController implements Initializable, Controller{
 
     @FXML
     private void confirmBuy(ActionEvent event) throws IOException {
+
+
         int amountBought = Integer.valueOf(buyAmount.getText());
         muleModel.buyResource(boughtItem,amountBought);
+
     }
 
     @FXML

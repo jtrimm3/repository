@@ -401,6 +401,23 @@ public class MuleModel {
 
     }
 
+    public void enterMuleConfig() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MuleConfig.fxml"));
+            Controller controller = new MuleConfigController();
+            controller.loadModel(this);
+            loader.setController(controller);
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+
+
     public void enterPub() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Pub.fxml"));

@@ -22,29 +22,69 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="StoreController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/StoreController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-4.3103447">
               <caret line="52" column="34" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="34" />
               <folding />
+=======
+      <file leaf-file-name="MuleModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MuleModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="251" column="44" selection-start-line="251" selection-start-column="37" selection-end-line="251" selection-end-column="44" />
+              <folding>
+                <element signature="e#5717#5718#0" expanded="false" />
+                <element signature="e#5742#5743#0" expanded="false" />
+                <element signature="e#5777#5778#0" expanded="false" />
+                <element signature="e#5811#5812#0" expanded="false" />
+                <element signature="e#8263#8264#0" expanded="false" />
+                <element signature="e#8301#8302#0" expanded="false" />
+                <element signature="e#8333#8334#0" expanded="false" />
+                <element signature="e#8361#8362#0" expanded="false" />
+                <element signature="e#8405#8406#0" expanded="false" />
+                <element signature="e#8443#8444#0" expanded="false" />
+                <element signature="e#8590#8591#0" expanded="false" />
+                <element signature="e#8623#8624#0" expanded="false" />
+                <element signature="e#8766#8767#0" expanded="false" />
+                <element signature="e#8796#8797#0" expanded="false" />
+                <element signature="e#8827#8828#0" expanded="false" />
+                <element signature="e#8855#8856#0" expanded="false" />
+                <element signature="e#15365#15366#0" expanded="false" />
+                <element signature="e#15401#15402#0" expanded="false" />
+                <element signature="e#15430#15431#0" expanded="false" />
+                <element signature="e#15458#15459#0" expanded="false" />
+                <element signature="method#updatePropertyImages#0;class#MuleModel#0" expanded="false" />
+                <element signature="method#claimProperty#0;class#MuleModel#0" expanded="false" />
+                <element signature="method#isOwned#0;class#MuleModel#0" expanded="false" />
+                <element signature="method#squarifyNode#0;class#MuleModel#0" expanded="false" />
+                <element signature="method#updatePlayerInfoText#0;class#MuleModel#0" expanded="false" />
+                <element signature="e#20096#20097#0" expanded="false" />
+                <element signature="e#20134#20135#0" expanded="false" />
+                <element signature="e#20592#20593#0" expanded="false" />
+                <element signature="e#20638#20639#0" expanded="false" />
+              </folding>
+>>>>>>> cb7d0ac8952df452057c104d2c5d44f2d2639422
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MULE.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MULE.java">
+      <file leaf-file-name="StoreController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/StoreController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state vertical-scroll-proportion="-1.8049383">
+              <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MuleModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MuleModel.java">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Player.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="43.172413">
               <caret line="36" column="20" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="20" />
               <folding>
@@ -54,31 +94,15 @@
                 <element signature="method#updatePropertyImages#0;class#MuleModel#0" expanded="false" />
                 <element signature="method#isOwned#0;class#MuleModel#0" expanded="false" />
                 <element signature="method#updatePlayerInfoText#0;class#MuleModel#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.6896553">
-              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+=======
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="24" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1159#1160#0" expanded="true" />
-                <element signature="e#1186#1187#0" expanded="true" />
+                <element signature="e#1482#1483#0" expanded="true" />
+                <element signature="e#1517#1518#0" expanded="true" />
+>>>>>>> cb7d0ac8952df452057c104d2c5d44f2d2639422
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayersController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/PlayersController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8320988">
-              <caret line="101" column="9" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -86,6 +110,14 @@
       <file leaf-file-name="HomepageController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HomepageController.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state vertical-scroll-proportion="-7.6896553">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1159#1160#0" expanded="true" />
+                <element signature="e#1186#1187#0" expanded="true" />
+=======
             <state vertical-scroll-proportion="0.0">
               <caret line="99" column="35" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="35" />
               <folding>
@@ -96,7 +128,58 @@
                 <element signature="e#1392#1393#0" expanded="false" />
                 <element signature="e#4350#4351#0" expanded="false" />
                 <element signature="e#4383#4384#0" expanded="false" />
+>>>>>>> cb7d0ac8952df452057c104d2c5d44f2d2639422
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file leaf-file-name="PlayersController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/PlayersController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8320988">
+              <caret line="101" column="9" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+              <folding />
+=======
+      <file leaf-file-name="PubController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PubController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1444#1445#0" expanded="false" />
+                <element signature="e#1480#1481#0" expanded="false" />
+                <element signature="e#1541#1542#0" expanded="false" />
+                <element signature="e#1578#1579#0" expanded="false" />
+                <element signature="e#1626#1627#0" expanded="false" />
+                <element signature="e#1659#1660#0" expanded="false" />
+              </folding>
+>>>>>>> cb7d0ac8952df452057c104d2c5d44f2d2639422
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EndturnController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/EndturnController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
+              <caret line="99" column="35" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#4386#0" expanded="false" />
+                <element signature="e#1289#1290#0" expanded="false" />
+                <element signature="e#1327#1328#0" expanded="false" />
+                <element signature="e#1362#1363#0" expanded="false" />
+                <element signature="e#1392#1393#0" expanded="false" />
+                <element signature="e#4350#4351#0" expanded="false" />
+                <element signature="e#4383#4384#0" expanded="false" />
+              </folding>
+=======
+              <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
+              <folding />
+>>>>>>> cb7d0ac8952df452057c104d2c5d44f2d2639422
             </state>
           </provider>
         </entry>
@@ -105,13 +188,13 @@
         <entry file="file://$PROJECT_DIR$/src/TownController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+              <caret line="83" column="19" selection-start-line="83" selection-start-column="17" selection-end-line="83" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="false" />
                 <element signature="e#2614#2615#0" expanded="false" />
                 <element signature="e#2650#2651#0" expanded="false" />
-                <element signature="e#2813#2814#0" expanded="false" />
-                <element signature="e#2856#2857#0" expanded="false" />
+                <element signature="e#2710#2711#0" expanded="false" />
+                <element signature="e#2748#2749#0" expanded="false" />
                 <element signature="e#2902#2903#0" expanded="false" />
                 <element signature="e#2935#2936#0" expanded="false" />
               </folding>
@@ -125,7 +208,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
               <folding>
-                <element signature="imports" expanded="false" />
                 <element signature="e#4800#4801#0" expanded="false" />
                 <element signature="e#4869#4870#0" expanded="false" />
                 <element signature="e#5858#5859#0" expanded="false" />
@@ -182,8 +264,11 @@
         <option value="$PROJECT_DIR$/src/HomepageController.java" />
         <option value="$PROJECT_DIR$/src/StoreController.java" />
         <option value="$PROJECT_DIR$/src/MuleModel.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/Player.java" />
         <option value="$PROJECT_DIR$/src/PlayersController.java" />
+=======
+>>>>>>> cb7d0ac8952df452057c104d2c5d44f2d2639422
       </list>
     </option>
   </component>
@@ -219,8 +304,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -269,7 +353,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -483,7 +568,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -549,13 +634,21 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MuleModel.java</url>
+<<<<<<< HEAD
           <line>339</line>
+=======
+          <line>306</line>
+>>>>>>> cb7d0ac8952df452057c104d2c5d44f2d2639422
           <properties />
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MuleModel.java</url>
+<<<<<<< HEAD
           <line>340</line>
+=======
+          <line>307</line>
+>>>>>>> cb7d0ac8952df452057c104d2c5d44f2d2639422
           <properties />
           <option name="timeStamp" value="126" />
         </line-breakpoint>
@@ -586,30 +679,104 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/MapController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <folding>
+            <element signature="e#4800#4801#0" expanded="false" />
+            <element signature="e#4869#4870#0" expanded="false" />
+            <element signature="e#5858#5859#0" expanded="false" />
+            <element signature="e#5936#5937#0" expanded="false" />
+            <element signature="e#7281#7282#0" expanded="false" />
+            <element signature="e#7359#7360#0" expanded="false" />
+            <element signature="e#8704#8705#0" expanded="false" />
+            <element signature="e#8782#8783#0" expanded="false" />
+            <element signature="e#10123#10124#0" expanded="false" />
+            <element signature="e#10201#10202#0" expanded="false" />
+            <element signature="e#11542#11543#0" expanded="false" />
+            <element signature="e#11620#11621#0" expanded="false" />
+            <element signature="e#12136#12137#0" expanded="false" />
+            <element signature="e#12169#12170#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MapController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="30" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="30" />
+          <folding>
+            <element signature="e#4800#4801#0" expanded="false" />
+            <element signature="e#4869#4870#0" expanded="false" />
+            <element signature="e#5858#5859#0" expanded="false" />
+            <element signature="e#5936#5937#0" expanded="false" />
+            <element signature="e#7281#7282#0" expanded="false" />
+            <element signature="e#7359#7360#0" expanded="false" />
+            <element signature="e#8704#8705#0" expanded="false" />
+            <element signature="e#8782#8783#0" expanded="false" />
+            <element signature="e#10123#10124#0" expanded="false" />
+            <element signature="e#10201#10202#0" expanded="false" />
+            <element signature="e#11542#11543#0" expanded="false" />
+            <element signature="e#11620#11621#0" expanded="false" />
+            <element signature="e#12136#12137#0" expanded="false" />
+            <element signature="e#12169#12170#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MuleModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <element signature="imports" expanded="true" />
             <element signature="e#9743#9744#0" expanded="true" />
             <element signature="e#9781#9782#0" expanded="true" />
+=======
+            <element signature="e#5717#5718#0" expanded="false" />
+            <element signature="e#5742#5743#0" expanded="false" />
+            <element signature="e#5777#5778#0" expanded="false" />
+            <element signature="e#5811#5812#0" expanded="false" />
+            <element signature="e#8263#8264#0" expanded="false" />
+            <element signature="e#8301#8302#0" expanded="false" />
+            <element signature="e#8333#8334#0" expanded="false" />
+            <element signature="e#8361#8362#0" expanded="false" />
+            <element signature="e#8405#8406#0" expanded="false" />
+            <element signature="e#8443#8444#0" expanded="false" />
+            <element signature="e#8590#8591#0" expanded="false" />
+            <element signature="e#8623#8624#0" expanded="false" />
+            <element signature="e#8766#8767#0" expanded="false" />
+            <element signature="e#8796#8797#0" expanded="false" />
+            <element signature="e#8827#8828#0" expanded="false" />
+            <element signature="e#8855#8856#0" expanded="false" />
+            <element signature="e#15365#15366#0" expanded="false" />
+            <element signature="e#15401#15402#0" expanded="false" />
+            <element signature="e#15430#15431#0" expanded="false" />
+            <element signature="e#15458#15459#0" expanded="false" />
+>>>>>>> cb7d0ac8952df452057c104d2c5d44f2d2639422
             <element signature="method#updatePropertyImages#0;class#MuleModel#0" expanded="false" />
+            <element signature="method#claimProperty#0;class#MuleModel#0" expanded="false" />
             <element signature="method#isOwned#0;class#MuleModel#0" expanded="false" />
             <element signature="method#updatePlayerInfoText#0;class#MuleModel#0" expanded="false" />
+            <element signature="e#20096#20097#0" expanded="false" />
+            <element signature="e#20134#20135#0" expanded="false" />
+            <element signature="e#20592#20593#0" expanded="false" />
+            <element signature="e#20638#20639#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/homepage.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MULE.java">
@@ -627,14 +794,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/homepage.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MULE.java">
@@ -652,14 +819,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/homepage.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MULE.java">
@@ -677,14 +844,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/homepage.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mountain2.PNG">
@@ -723,23 +890,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Players.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/CS 2340/Map.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/CS 2340/Map.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.533101">
           <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pub.PNG">
@@ -788,14 +955,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/homepage.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Property.java">
@@ -806,46 +973,53 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Map.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.019101124">
           <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/postselectionphase.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/postselectionphase.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/endgame.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Town.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Town.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.5862069">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PlayersController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5032895">
+          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -856,14 +1030,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/endturn.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/MULE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25164473">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/endturn.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HomepageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="99" column="35" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#4386#0" expanded="false" />
+            <element signature="e#1289#1290#0" expanded="false" />
+            <element signature="e#1327#1328#0" expanded="false" />
+            <element signature="e#1362#1363#0" expanded="false" />
+            <element signature="e#1392#1393#0" expanded="false" />
+            <element signature="e#4350#4351#0" expanded="false" />
+            <element signature="e#4383#4384#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -872,7 +1069,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="e#4800#4801#0" expanded="false" />
             <element signature="e#4869#4870#0" expanded="false" />
             <element signature="e#5858#5859#0" expanded="false" />
@@ -892,14 +1088,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pub.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PubController.java">
@@ -919,15 +1115,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Store.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+<<<<<<< HEAD
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EndturnController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -938,21 +1132,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/classes/cs/pkg2340/homepage.fxml">
+=======
+>>>>>>> cb7d0ac8952df452057c104d2c5d44f2d2639422
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3324468">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HomepageController.java">
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="99" column="35" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="35" />
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="24" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#0#4386#0" expanded="false" />
             <element signature="e#1289#1290#0" expanded="false" />
             <element signature="e#1327#1328#0" expanded="false" />
@@ -960,6 +1151,49 @@
             <element signature="e#1392#1393#0" expanded="false" />
             <element signature="e#4350#4351#0" expanded="false" />
             <element signature="e#4383#4384#0" expanded="false" />
+=======
+            <element signature="imports" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1517#1518#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuleModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="251" column="44" selection-start-line="251" selection-start-column="37" selection-end-line="251" selection-end-column="44" />
+          <folding>
+            <element signature="e#5717#5718#0" expanded="false" />
+            <element signature="e#5742#5743#0" expanded="false" />
+            <element signature="e#5777#5778#0" expanded="false" />
+            <element signature="e#5811#5812#0" expanded="false" />
+            <element signature="e#8263#8264#0" expanded="false" />
+            <element signature="e#8301#8302#0" expanded="false" />
+            <element signature="e#8333#8334#0" expanded="false" />
+            <element signature="e#8361#8362#0" expanded="false" />
+            <element signature="e#8405#8406#0" expanded="false" />
+            <element signature="e#8443#8444#0" expanded="false" />
+            <element signature="e#8590#8591#0" expanded="false" />
+            <element signature="e#8623#8624#0" expanded="false" />
+            <element signature="e#8766#8767#0" expanded="false" />
+            <element signature="e#8796#8797#0" expanded="false" />
+            <element signature="e#8827#8828#0" expanded="false" />
+            <element signature="e#8855#8856#0" expanded="false" />
+            <element signature="e#15365#15366#0" expanded="false" />
+            <element signature="e#15401#15402#0" expanded="false" />
+            <element signature="e#15430#15431#0" expanded="false" />
+            <element signature="e#15458#15459#0" expanded="false" />
+            <element signature="method#updatePropertyImages#0;class#MuleModel#0" expanded="false" />
+            <element signature="method#claimProperty#0;class#MuleModel#0" expanded="false" />
+            <element signature="method#isOwned#0;class#MuleModel#0" expanded="false" />
+            <element signature="method#squarifyNode#0;class#MuleModel#0" expanded="false" />
+            <element signature="method#updatePlayerInfoText#0;class#MuleModel#0" expanded="false" />
+            <element signature="e#20096#20097#0" expanded="false" />
+            <element signature="e#20134#20135#0" expanded="false" />
+            <element signature="e#20592#20593#0" expanded="false" />
+            <element signature="e#20638#20639#0" expanded="false" />
+>>>>>>> cb7d0ac8952df452057c104d2c5d44f2d2639422
           </folding>
         </state>
       </provider>
@@ -967,19 +1201,20 @@
     <entry file="file://$PROJECT_DIR$/src/TownController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <caret line="83" column="19" selection-start-line="83" selection-start-column="17" selection-end-line="83" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="false" />
             <element signature="e#2614#2615#0" expanded="false" />
             <element signature="e#2650#2651#0" expanded="false" />
-            <element signature="e#2813#2814#0" expanded="false" />
-            <element signature="e#2856#2857#0" expanded="false" />
+            <element signature="e#2710#2711#0" expanded="false" />
+            <element signature="e#2748#2749#0" expanded="false" />
             <element signature="e#2902#2903#0" expanded="false" />
             <element signature="e#2935#2936#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
@@ -988,14 +1223,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MULE.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/EndturnController.java">
+>>>>>>> cb7d0ac8952df452057c104d2c5d44f2d2639422
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StoreController.java">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.3103447">
           <caret line="52" column="34" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="34" />
@@ -1034,6 +1273,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8320988">
           <caret line="101" column="9" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.8049383">
+          <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+>>>>>>> cb7d0ac8952df452057c104d2c5d44f2d2639422
           <folding />
         </state>
       </provider>
