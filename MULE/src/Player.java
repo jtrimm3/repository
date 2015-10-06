@@ -97,15 +97,25 @@ public class Player implements Comparable<Player> {
     }
 
     public void buyResource(String resource, int amount) {
-        int prevAmount = resources.get(resource);
-        resources.put(resource, prevAmount + amount);
-        System.out.println(resources);
+        if (resources.get(resource) != null ) {
+            int prevAmount = resources.get(resource);
+            resources.put(resource, prevAmount + amount);
+            System.out.println(resources);
+        } else {
+            resources.put(resource, amount);
+        }
     }
 
+
     public void sellResource(String resource, int amount) {
+
         int prevAmount = resources.get(resource);
-        resources.put(resource, prevAmount - amount);
-        System.out.println(resources);
+        if (prevAmount - amount >= 0) {
+            resources.put(resource, prevAmount - amount);
+            System.out.println(resources);
+        } else {
+            System.out.println("Not enough resources");
+        }
     }
 
     public ArrayList<Property> getProperties(){

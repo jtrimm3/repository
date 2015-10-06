@@ -680,18 +680,23 @@ public class MuleModel {
                 newAmount = Math.max(prevAmount - boughtAmount, 0);
                 itemsForSaleOther.put(boughtResource, newAmount);
                 System.out.println(itemsForSaleOther);
-                getTurningPlayer().buyResource(boughtResource, boughtAmount);
-                getTurningPlayer().setMoney(getTurningPlayer().getMoney() - paymentPrice);
-                if (boughtResource.equals("Food")) {
-                    foodOther = newAmount;
-                } else if (boughtResource.equals("Energy")) {
-                    energyOther = newAmount;
-                } else if (boughtResource.equals("Smithore")) {
-                    smithoreOther = newAmount;
-                } else if (boughtResource.equals("Crystite")) {
-                    crystiteOther = newAmount;
+                if (prevAmount - boughtAmount >= 0) {
+                    getTurningPlayer().buyResource(boughtResource, boughtAmount);
+                    getTurningPlayer().setMoney(getTurningPlayer().getMoney() - paymentPrice);
+                    if (boughtResource.equals("Food")) {
+                        foodOther = newAmount;
+                    } else if (boughtResource.equals("Energy")) {
+                        energyOther = newAmount;
+                    } else if (boughtResource.equals("Smithore")) {
+                        smithoreOther = newAmount;
+                    } else if (boughtResource.equals("Crystite")) {
+                        crystiteOther = newAmount;
+                    } else {
+                        muleOther = newAmount;
+                    }
                 } else {
-                    muleOther = newAmount;
+                    System.out.println("Not enough goods");
+                    return;
                 }
             } else {
                 System.out.println("Not enough money");
@@ -703,18 +708,22 @@ public class MuleModel {
                 newAmount = prevAmount - boughtAmount;
                 itemsForSaleBeginner.put(boughtResource, Math.max(0, newAmount));
                 System.out.println(itemsForSaleBeginner);
-                getTurningPlayer().buyResource(boughtResource, boughtAmount);
-                getTurningPlayer().setMoney(getTurningPlayer().getMoney() - paymentPrice);
-                if (boughtResource.equals("Food")) {
-                    foodBeg = newAmount;
-                } else if (boughtResource.equals("Energy")) {
-                    energyBeg = newAmount;
-                } else if (boughtResource.equals("Smithore")) {
-                    smithoreBeg = newAmount;
-                } else if (boughtResource.equals("Crystite")) {
-                    crystiteBeg = newAmount;
+                if (prevAmount - boughtAmount >= 0) {
+                    getTurningPlayer().buyResource(boughtResource, boughtAmount);
+                    getTurningPlayer().setMoney(getTurningPlayer().getMoney() - paymentPrice);
+                    if (boughtResource.equals("Food")) {
+                        foodBeg = newAmount;
+                    } else if (boughtResource.equals("Energy")) {
+                        energyBeg = newAmount;
+                    } else if (boughtResource.equals("Smithore")) {
+                        smithoreBeg = newAmount;
+                    } else if (boughtResource.equals("Crystite")) {
+                        crystiteBeg = newAmount;
+                    } else {
+                        muleBeg = newAmount;
+                    }
                 } else {
-                    muleBeg = newAmount;
+                    System.out.println("Not enough goods");
                 }
             } else {
                 System.out.println("Not enough money!");
