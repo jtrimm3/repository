@@ -63,7 +63,13 @@ public class MuleModel {
     private static int smithorePrice = 50;
     private static int crystitePrice = 100;
     private static int mulePrice = 100;
+    private int foodSellPrice = 15;
+    private int energySellPrice = 18;
+    private int smithoreSellPrice = 25;
+    private int crystiteSellPrice = 50;
+    private int muleSellPrice = 50;
     private Map<String, Integer> resourcePrices = new HashMap<>();
+    private Map<String, Integer> resources = new HashMap<>();
 
     private ArrayList<Player> playerList;
 
@@ -219,6 +225,10 @@ public class MuleModel {
 
     public Map<String, Integer> getItemsForSaleOther() {
         return itemsForSaleOther;
+    }
+
+    public void initializeSellData(Map resources) {
+        this.resources = resources;
     }
 
     public String validateName(String name) {
@@ -662,42 +672,62 @@ public class MuleModel {
     public void buyResource(String boughtResource, int boughtAmount) {
         int prevAmount;
         int newAmount;
+        int paymentPrice = resourcePrices.get(boughtResource) * boughtAmount;
         if (!level.equals("Beginner")) {
             prevAmount = itemsForSaleOther.get(boughtResource);
             System.out.println(prevAmount);
-            newAmount = Math.max(prevAmount - boughtAmount, 0);
-            itemsForSaleOther.put(boughtResource, newAmount);
-            System.out.println(itemsForSaleOther);
-            getTurningPlayer().buyResource(boughtResource, boughtAmount);
-            if (boughtResource.equals("Food")) {
-                foodOther = newAmount;
-            } else if (boughtResource.equals("Energy")) {
-                energyOther = newAmount;
-            } else if (boughtResource.equals("Smithore")) {
-                smithoreOther = newAmount;
-            } else if (boughtResource.equals("Crystite")) {
-                crystiteOther = newAmount;
+            if (getTurningPlayer().getMoney() >= paymentPrice) {
+                newAmount = Math.max(prevAmount - boughtAmount, 0);
+                itemsForSaleOther.put(boughtResource, newAmount);
+                System.out.println(itemsForSaleOther);
+                getTurningPlayer().buyResource(boughtResource, boughtAmount);
+                getTurningPlayer().setMoney(getTurningPlayer().getMoney() - paymentPrice);
+                if (boughtResource.equals("Food")) {
+                    foodOther = newAmount;
+                } else if (boughtResource.equals("Energy")) {
+                    energyOther = newAmount;
+                } else if (boughtResource.equals("Smithore")) {
+                    smithoreOther = newAmount;
+                } else if (boughtResource.equals("Crystite")) {
+                    crystiteOther = newAmount;
+                } else {
+                    muleOther = newAmount;
+                }
             } else {
-                muleOther = newAmount;
+                System.out.println("Why can't Peter finish this?");
             }
         } else {
             prevAmount = itemsForSaleBeginner.get(boughtResource);
             System.out.println(prevAmount);
-            newAmount = prevAmount - boughtAmount;
-            itemsForSaleBeginner.put(boughtResource, Math.max(0, newAmount));
-            System.out.println(itemsForSaleBeginner);
-            getTurningPlayer().buyResource(boughtResource, boughtAmount);
-            if (boughtResource.equals("Food")) {
-                foodBeg = newAmount;
-            } else if (boughtResource.equals("Energy")) {
-                energyBeg = newAmount;
-            } else if (boughtResource.equals("Smithore")) {
-                smithoreBeg = newAmount;
-            } else if (boughtResource.equals("Crystite")) {
-                crystiteBeg = newAmount;
+            if (getTurningPlayer().getMoney() >= paymentPrice) {
+                newAmount = prevAmount - boughtAmount;
+                itemsForSaleBeginner.put(boughtResource, Math.max(0, newAmount));
+                System.out.println(itemsForSaleBeginner);
+                getTurningPlayer().buyResource(boughtResource, boughtAmount);
+                getTurningPlayer().setMoney(getTurningPlayer().getMoney() - paymentPrice);
+                if (boughtResource.equals("Food")) {
+                    foodBeg = newAmount;
+                } else if (boughtResource.equals("Energy")) {
+                    energyBeg = newAmount;
+                } else if (boughtResource.equals("Smithore")) {
+                    smithoreBeg = newAmount;
+                } else if (boughtResource.equals("Crystite")) {
+                    crystiteBeg = newAmount;
+                } else {
+                    muleBeg = newAmount;
+                }
             } else {
-                muleBeg = newAmount;
+                System.out.println("Why can't' peter do all of this shit?");
             }
+        }
+    }
+
+    public void sellResource(String soldResource, int soldAmount) {
+        if ((Integer) getTurningPlayer().getResources().get(soldResource) >= soldAmount) {
+            getTurningPlayer().sellResource(soldResource, soldAmount);
+            getTurningPlayer().setMoney(getTurningPlayer().getMoney() + resources.get(soldResource) * soldAmount);
+        } else {
+            System.out.println("You don't have enough to sell");
         }
     }
 

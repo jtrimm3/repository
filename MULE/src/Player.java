@@ -59,6 +59,8 @@ public class Player implements Comparable<Player> {
         this.money = money;
     }
 
+    public Map getResources() { return resources; }
+
     public String getName() {
         return name;
     }
@@ -97,6 +99,12 @@ public class Player implements Comparable<Player> {
     public void buyResource(String resource, int amount) {
         int prevAmount = resources.get(resource);
         resources.put(resource, prevAmount + amount);
+        System.out.println(resources);
+    }
+
+    public void sellResource(String resource, int amount) {
+        int prevAmount = resources.get(resource);
+        resources.put(resource, prevAmount - amount);
         System.out.println(resources);
     }
 

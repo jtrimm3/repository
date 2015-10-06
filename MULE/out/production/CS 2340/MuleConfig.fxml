@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <Text layoutX="179.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mule Configuration">
+      <font>
+        <Font size="26.0" />
+      </font>
+    </Text>
+    <RadioButton fx:id="food" layoutX="126.0" layoutY="177.0" mnemonicParsing="false" onAction="#selectType" text="Food" />
+    <RadioButton fx:id="energy" layoutX="268.0" layoutY="177.0" mnemonicParsing="false" onAction="#selectType" text="Energy" />
+    <RadioButton fx:id="ore" layoutX="422.0" layoutY="177.0" minHeight="14.0" mnemonicParsing="false" onAction="#selectType" prefHeight="14.000099999997474" text="Ore" />
+    <Button fx:id="muleConfig" layoutX="280.0" layoutY="290.0" mnemonicParsing="false" onAction="#toPlaceMule" text="Ok" />
+  </children>
+</AnchorPane>

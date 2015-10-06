@@ -26,6 +26,7 @@ import java.util.List;
 public class StoreController implements Initializable, Controller{
     private MuleModel muleModel;
     private String boughtItem;
+    private String soldItem;
     private Map<String, Integer> buyItems = new HashMap<>();
     private ArrayList<Point> sellCoordinates = new ArrayList<>();
     private ArrayList<Point> townCoordinates = new ArrayList<>();
@@ -36,6 +37,9 @@ public class StoreController implements Initializable, Controller{
 
     @FXML
     private TextField buyAmount = new TextField();
+
+    @FXML
+    private TextField soldAmount = new TextField();
 
     @FXML
     private Button sellButton = new Button();
@@ -57,7 +61,9 @@ public class StoreController implements Initializable, Controller{
             muleModel.initializeBuyDataBeginner(buyItems);
         }
         ObservableList<Map.Entry<String, Integer>> items = FXCollections.observableArrayList(buyItems.entrySet());
+        ObservableList<Map.Entry<String, Integer>> itemsToSell = FXCollections.observableArrayList(muleModel.getTurningPlayer().getResources().entrySet());
         buyCombo.setItems(items);
+        sellCombo.setItems(itemsToSell);
     }
 
     @FXML
@@ -75,12 +81,30 @@ public class StoreController implements Initializable, Controller{
     }
 
     @FXML
+    private void selectSellItem() {
+        sellCombo.getSelectionModel().selectedIndexProperty().addListener(
+                new ChangeListener<Number>() {
+                    @Override
+                    public void changed(ObservableValue v, Number val, Number newVal) {
+                        ObservableList<Map.Entry<String, Integer>> items = FXCollections.observableArrayList(buyItems.entrySet());
+                        soldItem = items.get(newVal.intValue()).getKey();
+                        System.out.println(soldItem);
+                    }
+                });
+
+    }
+
+
+    @FXML
     private void confirmBuy(ActionEvent event) throws IOException {
-
-
         int amountBought = Integer.valueOf(buyAmount.getText());
-        muleModel.buyResource(boughtItem,amountBought);
+        muleModel.buyResource(boughtItem, amountBought);
+    }
 
+    @FXML
+    private void confirmSell(ActionEvent event) throws IOException {
+        int amountSold = Integer.valueOf(soldAmount.getText());
+        muleModel.sellResource(soldItem, amountSold);
     }
 
     @FXML
