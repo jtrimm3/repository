@@ -694,7 +694,7 @@ public class MuleModel {
                     muleOther = newAmount;
                 }
             } else {
-                System.out.println("Why can't Peter finish this?");
+                System.out.println("Not enough money");
             }
         } else {
             prevAmount = itemsForSaleBeginner.get(boughtResource);
@@ -717,7 +717,7 @@ public class MuleModel {
                     muleBeg = newAmount;
                 }
             } else {
-                System.out.println("Why can't' peter do all of this shit?");
+                System.out.println("Not enough money!");
             }
         }
     }
