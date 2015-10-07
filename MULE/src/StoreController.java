@@ -122,12 +122,18 @@ public class StoreController implements Initializable, Controller{
 
 
     private void validateBuy() {
-        String currentEntry = buyAmount.getCharacters().toString();
+        String currentEntry = "";
+        currentEntry = buyAmount.getCharacters().toString();
+        int num = muleModel.toInteger(currentEntry);
+        System.out.println("Num " + num);
+        System.out.println("Bought Item: " + boughtItem);
 
-        if (muleModel.validateBuy(currentEntry).isEmpty()) {
-            buyButton.setDisable(true);
-        } else {
+
+
+        if (muleModel.validateBuy(currentEntry).isEmpty() && muleModel.enoughMoney(boughtItem, num)) {
             buyButton.setDisable(false);
+        } else {
+            buyButton.setDisable(true);
         }
     }
 

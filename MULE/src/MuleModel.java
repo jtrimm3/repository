@@ -188,7 +188,7 @@ public class MuleModel {
 
 
     public int calculateTimeForTurn(Player p) {
-        return 25;
+        return 500;
     }
 
     public int getSecondsLeft() {
@@ -275,15 +275,23 @@ public class MuleModel {
             return "";
         }
     }
+    public boolean enoughMoney(String boughtResource, int boughtAmount) {
+        System.out.println("Player MOney: " + getTurningPlayer().getMoney());
+        System.out.println("resource price: " + resourcePrices.get(boughtResource) * boughtAmount);
+        return getTurningPlayer().getMoney() > (resourcePrices.get(boughtResource) * boughtAmount);
+    }
+    public int toInteger(String str) {
+        if(isNumeric(str)) {
+            return Integer.parseInt(str);
+        }
+        return 0;
+    }
 
-    public static boolean isNumeric(String str)
-    {
-        try
-        {
+    public static boolean isNumeric(String str) {
+        try {
             int d = Integer.parseInt(str);
         }
-        catch(NumberFormatException nfe)
-        {
+        catch(NumberFormatException nfe) {
             return false;
         }
         return true;
