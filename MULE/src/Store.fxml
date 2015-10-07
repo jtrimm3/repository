@@ -17,7 +17,7 @@
     <Label layoutX="46.0" layoutY="137.0" text="Buy:" />
     <Label layoutX="46.0" layoutY="243.0" text="Sell:" />
     <ComboBox fx:id="buyCombo" layoutX="86.0" layoutY="133.0" onAction="#selectBuyItem" prefHeight="25.0" prefWidth="203.0" />
-    <ComboBox fx:id="sellCombo" layoutX="86.0" layoutY="239.0" prefHeight="25.0" prefWidth="203.0" />
+    <ComboBox fx:id="sellCombo" layoutX="86.0" layoutY="239.0" onAction="#selectSellItem" prefHeight="25.0" prefWidth="203.0" />
     <TextField fx:id="buyAmount" layoutX="310.0" layoutY="133.0" promptText="Amount to Buy" />
     <TextField fx:id="soldAmount" layoutX="310.0" layoutY="239.0" promptText="Amount to Sell" />
     <Button layoutX="256.0" layoutY="317.0" mnemonicParsing="false" onAction="#returnToTown" text="Back to Town" />

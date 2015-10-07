@@ -106,6 +106,11 @@ public class MuleModel {
         resourcePrices.put("Smithore", smithorePrice);
         resourcePrices.put("Crystite", crystitePrice);
         resourcePrices.put("Mule", mulePrice);
+        resources.put("Food", foodSellPrice);
+        resources.put("Energy", energySellPrice);
+        resources.put("Smithore", smithoreSellPrice);
+        resources.put("Crystite", crystiteSellPrice);
+        resources.put("Mule", muleSellPrice);
         availableColors = new ArrayList<String>(Arrays.asList("Red","Green","Blue","Yellow"));
         riverCoordinates.add(new Point(4,0));
         riverCoordinates.add(new Point(4,1));
