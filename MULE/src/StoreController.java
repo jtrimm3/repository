@@ -9,6 +9,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BackgroundSize;
+import javafx.scene.text.Text;
+import javafx.scene.paint.Color;
 
 import java.awt.*;
 import javafx.scene.control.Button;
@@ -32,6 +34,11 @@ public class StoreController implements Initializable, Controller{
     private ArrayList<Point> sellCoordinates = new ArrayList<>();
     private ArrayList<Point> townCoordinates = new ArrayList<>();
 
+    @FXML
+    private Text errorBuy = new Text();
+
+    @FXML
+    private Text errorSell = new Text();
 
     @FXML
     private Button buyButton = new Button();
@@ -54,6 +61,8 @@ public class StoreController implements Initializable, Controller{
     @FXML
     @Override  //PRESUMES ALL BUTTONS BE SQUARE! AND SAME SIZE!
     public void initialize(URL url, ResourceBundle rb) {
+        errorBuy.setFill(Color.RED);
+        errorSell.setFill(Color.RED);
         buyCombo.setValue("Available Store Resources");
         sellCombo.setValue("Player's Available Resources");
         if (!muleModel.getLevel().equals("Beginner")) {
@@ -154,6 +163,7 @@ public class StoreController implements Initializable, Controller{
         } else {
             sellButton.setDisable(true);
         }
+        errorSell.setText(currentEntry);
     }
 
 
