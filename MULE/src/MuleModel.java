@@ -263,20 +263,25 @@ public class MuleModel {
         }
     }
 
-    public String validateBuy(String quantity){
-        boolean notEnoughMoney;
-        boolean noResources;
-        boolean notANumber;
+    public String validateBuySellName(String quantity){
 
         if(!isNumeric(quantity)) {
             return "Not a valid number";
+        } else if (quantity.isEmpty()){
+            return "Please select a value!";
         } else {
-            int num = Integer.parseInt(quantity);
             return "";
         }
     }
     public boolean enoughMoney(String boughtResource, int boughtAmount) {
         if((double) getTurningPlayer().getMoney()  >= (resourcePrices.get(boughtResource) * boughtAmount) && (double) itemsForSaleBeginner.get(boughtResource) >= boughtAmount) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean enoughResources(String soldResource, int soldAmount) {
+        if( (int) getTurningPlayer().getResources().get(soldResource) >= soldAmount) {
             return true;
         }
         return false;

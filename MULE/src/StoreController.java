@@ -65,10 +65,18 @@ public class StoreController implements Initializable, Controller{
         ObservableList<Map.Entry<String, Integer>> itemsToSell = FXCollections.observableArrayList(muleModel.getTurningPlayer().getResources().entrySet());
         buyCombo.setItems(items);
         sellCombo.setItems(itemsToSell);
+        validateBuy();
+        validateSell();
         buyAmount.addEventHandler(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
                 validateBuy();
+            }
+        });
+        soldAmount.addEventHandler(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                validateSell();
             }
         });
     }
@@ -93,7 +101,8 @@ public class StoreController implements Initializable, Controller{
                 new ChangeListener<Number>() {
                     @Override
                     public void changed(ObservableValue v, Number val, Number newVal) {
-                        ObservableList<Map.Entry<String, Integer>> items = FXCollections.observableArrayList(buyItems.entrySet());
+                        ObservableList<Map.Entry<String, Integer>> items = FXCollections.observableArrayList(muleModel.getTurningPlayer().getResources().entrySet());
+                        System.out.println(items);
                         soldItem = items.get(newVal.intValue()).getKey();
                         System.out.println(soldItem);
                     }
@@ -111,6 +120,7 @@ public class StoreController implements Initializable, Controller{
     @FXML
     private void confirmSell(ActionEvent event) throws IOException {
         int amountSold = Integer.valueOf(soldAmount.getText());
+        System.out.println("Sold Item: " + soldItem);
         muleModel.sellResource(soldItem, amountSold);
     }
 
@@ -125,12 +135,8 @@ public class StoreController implements Initializable, Controller{
         String currentEntry = "";
         currentEntry = buyAmount.getCharacters().toString();
         int num = muleModel.toInteger(currentEntry);
-        System.out.println("Num " + num);
-        System.out.println("Bought Item: " + boughtItem);
-
-
-
-        if (muleModel.validateBuy(currentEntry).isEmpty() && muleModel.enoughMoney(boughtItem, num)) {
+        if (muleModel.validateBuySellName(currentEntry).isEmpty() && muleModel.enoughMoney(boughtItem, num) && boughtItem != null) {
+            System.out.println("Selected: " + boughtItem);
             buyButton.setDisable(false);
         } else {
             buyButton.setDisable(true);
@@ -138,12 +144,15 @@ public class StoreController implements Initializable, Controller{
     }
 
 
+
     private void validateSell() {
-        String currentEntry = soldAmount.getCharacters().toString();
-        if (currentEntry.isEmpty()) {
-            sellButton.setDisable(true);
-        } else {
+        String currentEntry = "";
+        currentEntry = soldAmount.getCharacters().toString();
+        int num = muleModel.toInteger(currentEntry);
+        if (muleModel.validateBuySellName(currentEntry).isEmpty() && muleModel.enoughResources(soldItem, num) && soldItem != null) {
             sellButton.setDisable(false);
+        } else {
+            sellButton.setDisable(true);
         }
     }
 
