@@ -276,9 +276,10 @@ public class MuleModel {
         }
     }
     public boolean enoughMoney(String boughtResource, int boughtAmount) {
-        System.out.println("Player MOney: " + getTurningPlayer().getMoney());
-        System.out.println("resource price: " + resourcePrices.get(boughtResource) * boughtAmount);
-        return getTurningPlayer().getMoney() > (resourcePrices.get(boughtResource) * boughtAmount);
+        if((double) getTurningPlayer().getMoney()  >= (resourcePrices.get(boughtResource) * boughtAmount) && (double) itemsForSaleBeginner.get(boughtResource) >= boughtAmount) {
+            return true;
+        }
+        return false;
     }
     public int toInteger(String str) {
         if(isNumeric(str)) {
