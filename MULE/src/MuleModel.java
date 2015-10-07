@@ -263,6 +263,32 @@ public class MuleModel {
         }
     }
 
+    public String validateBuy(String quantity){
+        boolean notEnoughMoney;
+        boolean noResources;
+        boolean notANumber;
+
+        if(!isNumeric(quantity)) {
+            return "Not a valid number";
+        } else {
+            int num = Integer.parseInt(quantity);
+            return "";
+        }
+    }
+
+    public static boolean isNumeric(String str)
+    {
+        try
+        {
+            int d = Integer.parseInt(str);
+        }
+        catch(NumberFormatException nfe)
+        {
+            return false;
+        }
+        return true;
+    }
+
     public void continuePlayerConfig() {
         if (playerList.size() < numberOfPlayers) { //Return to playerconfig
             try {

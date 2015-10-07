@@ -7,6 +7,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BackgroundSize;
 
 import java.awt.*;
@@ -64,6 +65,12 @@ public class StoreController implements Initializable, Controller{
         ObservableList<Map.Entry<String, Integer>> itemsToSell = FXCollections.observableArrayList(muleModel.getTurningPlayer().getResources().entrySet());
         buyCombo.setItems(items);
         sellCombo.setItems(itemsToSell);
+        buyAmount.addEventHandler(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                validateBuy();
+            }
+        });
     }
 
     @FXML
@@ -111,6 +118,31 @@ public class StoreController implements Initializable, Controller{
     private void returnToTown(ActionEvent event) {
         muleModel.enterTown();
     }
+
+
+
+    private void validateBuy() {
+        String currentEntry = buyAmount.getCharacters().toString();
+
+        if (muleModel.validateBuy(currentEntry).isEmpty()) {
+            buyButton.setDisable(true);
+        } else {
+            buyButton.setDisable(false);
+        }
+    }
+
+
+    private void validateSell() {
+        String currentEntry = soldAmount.getCharacters().toString();
+        if (currentEntry.isEmpty()) {
+            sellButton.setDisable(true);
+        } else {
+            sellButton.setDisable(false);
+        }
+    }
+
+
+
 
     public void loadModel(MuleModel model) {
         muleModel = model;
