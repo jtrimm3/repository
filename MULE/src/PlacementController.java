@@ -148,9 +148,11 @@ public class PlacementController implements Initializable, Controller {
                         muleModel.updatePlayerInfoText(playerInfoText);
                         muleModel.updateSinglePropertyImage(button);
                         muleModel.squarifyNode(button);
-                        if (placementMessage == null) {
-                            muleModel.enterMap();
-                        }
+                        //if (placementMessage == null) {
+                        System.out.println("gotomap");
+                        muleModel.enterMap();
+
+                        //}
                     }
                 });
                 button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_ENTERED, new EventHandler<Event>() {
@@ -176,9 +178,9 @@ public class PlacementController implements Initializable, Controller {
                         muleModel.updatePlayerInfoText(playerInfoText);
                         muleModel.updateSinglePropertyImage(button);
                         muleModel.squarifyNode(button);
-                        if (placementMessage == null) {
+                        //if (placementMessage == null) {
                             muleModel.enterMap();
-                        }
+                        //}
                     }
                 });
                 button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_ENTERED, new EventHandler<Event>() {
@@ -204,9 +206,9 @@ public class PlacementController implements Initializable, Controller {
                         muleModel.updatePlayerInfoText(playerInfoText);
                         muleModel.updateSinglePropertyImage(button);
                         muleModel.squarifyNode(button);
-                        if (placementMessage == null) {
+                        //if (placementMessage == null) {
                             muleModel.enterMap();
-                        }
+                        //}
                     }
                 });
                 button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_ENTERED, new EventHandler<Event>() {
@@ -232,9 +234,9 @@ public class PlacementController implements Initializable, Controller {
                         muleModel.updatePlayerInfoText(playerInfoText);
                         muleModel.updateSinglePropertyImage(button);
                         muleModel.squarifyNode(button);
-                        if (placementMessage == null) {
+                        //if (placementMessage == null) {
                             muleModel.enterMap();
-                        }
+                        //}
                     }
                 });
                 button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_ENTERED, new EventHandler<Event>() {
@@ -260,9 +262,9 @@ public class PlacementController implements Initializable, Controller {
                         muleModel.updatePlayerInfoText(playerInfoText);
                         muleModel.updateSinglePropertyImage(button);
                         muleModel.squarifyNode(button);
-                        if (placementMessage == null) {
+                        //if (placementMessage == null) {
                             muleModel.enterMap();
-                        }
+                        //}
                     }
                 });
                 button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_ENTERED, new EventHandler<Event>() {

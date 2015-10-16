@@ -871,7 +871,28 @@ public class MuleModel {
 
     }
 
+
+
     public String placeMule(String type, Property location) {
+        if(type.equals("Food")){
+            getTurningPlayer().setMoney(getTurningPlayer().getMoney() - 25);
+            if(getTurningPlayer().getMoney() < 0) getTurningPlayer().setMoney(0);
+
+        }
+        if(type.equals("Energy")){
+            getTurningPlayer().setMoney(getTurningPlayer().getMoney() - 50);
+            if(getTurningPlayer().getMoney() < 0) getTurningPlayer().setMoney(0);
+        }
+        if(type.equals("Ore")){
+            getTurningPlayer().setMoney(getTurningPlayer().getMoney() - 75);
+            if(getTurningPlayer().getMoney() < 0) getTurningPlayer().setMoney(0);
+        }
+        System.out.println(getTurningPlayer().getResources());
+        getTurningPlayer().removeMule();
+        System.out.println(getTurningPlayer().getResources());
+
+
+
         String message = "You don't own that property!";
         if (getTurningPlayer().getProperties().contains(location)) {
             if (getTurningPlayer().getColor().equals(Color.RED)) {

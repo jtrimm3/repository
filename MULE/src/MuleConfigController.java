@@ -58,6 +58,15 @@ public class MuleConfigController implements Initializable, Controller{
         energy.setToggleGroup(group);
         ore.setToggleGroup(group);
         food.fire();
+        if(muleModel.getTurningPlayer().getMoney()<25){
+            food.setDisable(true);
+            muleModel.enterMap();
+        }if(muleModel.getTurningPlayer().getMoney()<50){
+            energy.setDisable(true);
+        }if(muleModel.getTurningPlayer().getMoney()<75){
+            ore.setDisable(true);
+        }
+
 
     }
 
@@ -69,6 +78,7 @@ public class MuleConfigController implements Initializable, Controller{
     @FXML
     private void selectType() {
         group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+
             @Override
             public void changed(ObservableValue<? extends Toggle> ov, Toggle t, Toggle t1) {
                 RadioButton check = (RadioButton)t1.getToggleGroup().getSelectedToggle();

@@ -120,6 +120,7 @@ public class Player implements Comparable<Player> {
         if (prevAmount - amount >= 0) {
             resources.put(resource, prevAmount - amount);
             System.out.println(resources);
+            System.out.println("selling");
         } else {
             System.out.println("Not enough resources");
         }
@@ -166,4 +167,9 @@ public class Player implements Comparable<Player> {
     public void setFood(int food) {
         this.food = food;
     }
+
+    public void removeMule(){
+        resources.put("Mule",0);
+    }
+
 }
