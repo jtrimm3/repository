@@ -887,9 +887,7 @@ public class MuleModel {
             getTurningPlayer().setMoney(getTurningPlayer().getMoney() - 75);
             if(getTurningPlayer().getMoney() < 0) getTurningPlayer().setMoney(0);
         }
-        System.out.println(getTurningPlayer().getResources());
-        //getTurningPlayer().removeMule();
-        System.out.println(getTurningPlayer().getResources());
+
 
 
 
@@ -916,6 +914,7 @@ public class MuleModel {
             } else if (getTurningPlayer().getColor().equals(Color.YELLOW)) {
                 CoolMule mule = new CoolMule(type, location);
                 if (yellowMules.contains(mule)) {
+                    //getTurningPlayer().removeMule();
                     return "Already a mule here!";
                 }
                 yellowMules.add(new CoolMule(type, location));
