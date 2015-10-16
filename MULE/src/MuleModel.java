@@ -888,7 +888,7 @@ public class MuleModel {
             if(getTurningPlayer().getMoney() < 0) getTurningPlayer().setMoney(0);
         }
         System.out.println(getTurningPlayer().getResources());
-        getTurningPlayer().removeMule();
+        //getTurningPlayer().removeMule();
         System.out.println(getTurningPlayer().getResources());
 
 
