@@ -30,7 +30,7 @@ public class StoreController implements Initializable, Controller{
     private MuleModel muleModel;
     private String boughtItem;
     private String soldItem;
-    private Map<String, Integer> buyItems = new HashMap<>();
+    private HashMap<String, Integer> buyItems = new HashMap<>();
     private ArrayList<Point> sellCoordinates = new ArrayList<>();
     private ArrayList<Point> townCoordinates = new ArrayList<>();
 
@@ -65,47 +65,23 @@ public class StoreController implements Initializable, Controller{
         errorSell.setFill(Color.RED);
         buyCombo.setValue("Available Store Resources");
         sellCombo.setValue("Player's Available Resources");
-        if (!muleModel.getLevel().equals("Beginner")) {
-            muleModel.initializeBuyDataOther(buyItems);
-        } else {
-            muleModel.initializeBuyDataBeginner(buyItems);
-        }
+        muleModel.initializeBuyData(buyItems);
+
         ObservableList<Map.Entry<String, Integer>> items = FXCollections.observableArrayList(buyItems.entrySet());
         ObservableList<Map.Entry<String, Integer>> itemsToSell = FXCollections.observableArrayList(muleModel.getTurningPlayer().getResources().entrySet());
         buyCombo.setItems(items);
-        sellCombo.setItems(itemsToSell);
-        validateBuy();
-        validateSell();
-        buyAmount.addEventHandler(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                validateBuy();
-            }
-        });
-        soldAmount.addEventHandler(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                validateSell();
-            }
-        });
-    }
-
-    @FXML
-    private void selectBuyItem() {
         buyCombo.getSelectionModel().selectedIndexProperty().addListener(
                 new ChangeListener<Number>() {
                     @Override
                     public void changed(ObservableValue v, Number val, Number newVal) {
                         ObservableList<Map.Entry<String, Integer>> items = FXCollections.observableArrayList(buyItems.entrySet());
                         boughtItem = items.get(newVal.intValue()).getKey();
+                        buyCombo.setItems(items);
+                        muleModel.validateBuy(buyButton, buyAmount.getCharacters().toString(), boughtItem, errorBuy);
                         System.out.println(boughtItem);
                     }
                 });
-
-    }
-
-    @FXML
-    private void selectSellItem() {
+        sellCombo.setItems(itemsToSell);
         sellCombo.getSelectionModel().selectedIndexProperty().addListener(
                 new ChangeListener<Number>() {
                     @Override
@@ -113,17 +89,40 @@ public class StoreController implements Initializable, Controller{
                         ObservableList<Map.Entry<String, Integer>> items = FXCollections.observableArrayList(muleModel.getTurningPlayer().getResources().entrySet());
                         System.out.println(items);
                         soldItem = items.get(newVal.intValue()).getKey();
+                        sellCombo.setItems(items);
+                        muleModel.validateSell(sellButton, soldAmount.getCharacters().toString(), soldItem, errorSell);
                         System.out.println(soldItem);
                     }
                 });
-
+//        muleModel.validateBuy(buyButton, buyAmount.getCharacters().toString(), boughtItem, errorBuy);
+//        muleModel.validateSell(sellButton, soldAmount.getCharacters().toString(), soldItem, errorSell);
+        buyAmount.addEventHandler(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                muleModel.validateBuy(buyButton, buyAmount.getCharacters().toString(), boughtItem, errorBuy);
+            }
+        });
+        soldAmount.addEventHandler(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                muleModel.validateSell(sellButton, soldAmount.getCharacters().toString(), soldItem, errorSell);
+            }
+        });
     }
+
+
 
 
     @FXML
     private void confirmBuy(ActionEvent event) throws IOException {
         int amountBought = Integer.valueOf(buyAmount.getText());
         muleModel.buyResource(boughtItem, amountBought);
+//        ObservableList<Map.Entry<String, Integer>> items = FXCollections.observableArrayList(buyItems.entrySet());
+//        buyCombo.setItems(items);
+        if (boughtItem.equals("Mule")) {
+            muleModel.enterMuleConfig();
+        }
+
     }
 
     @FXML
@@ -131,6 +130,8 @@ public class StoreController implements Initializable, Controller{
         int amountSold = Integer.valueOf(soldAmount.getText());
         System.out.println("Sold Item: " + soldItem);
         muleModel.sellResource(soldItem, amountSold);
+//        ObservableList<Map.Entry<String, Integer>> itemsToSell = FXCollections.observableArrayList(muleModel.getTurningPlayer().getResources().entrySet());
+//        sellCombo.setItems(itemsToSell);
     }
 
     @FXML
@@ -140,31 +141,10 @@ public class StoreController implements Initializable, Controller{
 
 
 
-    private void validateBuy() {
-        String currentEntry = "";
-        currentEntry = buyAmount.getCharacters().toString();
-        int num = muleModel.toInteger(currentEntry);
-        if (muleModel.validateBuySellName(currentEntry).isEmpty() && muleModel.enoughMoney(boughtItem, num) && boughtItem != null) {
-            System.out.println("Selected: " + boughtItem);
-            buyButton.setDisable(false);
-        } else {
-            buyButton.setDisable(true);
-        }
-    }
 
 
 
-    private void validateSell() {
-        String currentEntry = "";
-        currentEntry = soldAmount.getCharacters().toString();
-        int num = muleModel.toInteger(currentEntry);
-        if (muleModel.validateBuySellName(currentEntry).isEmpty() && muleModel.enoughResources(soldItem, num) && soldItem != null) {
-            sellButton.setDisable(false);
-        } else {
-            sellButton.setDisable(true);
-        }
-        errorSell.setText(currentEntry);
-    }
+
 
 
 

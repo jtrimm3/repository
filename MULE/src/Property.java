@@ -15,7 +15,11 @@ public class Property {
         return location;
     }
 
-    public boolean equals(Property p) {
-        return p.getPoint().equals(this.getPoint());
+    public boolean equals(Object p) {
+        if (p != null && p instanceof Property) {
+            Property property = (Property) p;
+            return property.getPoint().equals(this.getPoint());
+        }
+        return false;
     }
 }

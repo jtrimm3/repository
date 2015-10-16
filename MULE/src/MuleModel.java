@@ -1,5 +1,6 @@
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.scene.control.Label;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -7,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.control.Button;
 import javafx.scene.effect.Blend;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.effect.ColorInput;
@@ -21,7 +24,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.scene.control.Button;
 
 import java.awt.*;
 import java.io.IOException;
@@ -58,20 +60,26 @@ public class MuleModel {
     private static int crystiteOther = 0;
     private static int muleBeg = 25;
     private static int muleOther = 14;
-    private static int foodPrice = 30;
-    private static int energyPrice = 25;
-    private static int smithorePrice = 50;
-    private static int crystitePrice = 100;
-    private static int mulePrice = 100;
-    private int foodSellPrice = 15;
-    private int energySellPrice = 18;
-    private int smithoreSellPrice = 25;
-    private int crystiteSellPrice = 50;
-    private int muleSellPrice = 50;
-    private Map<String, Integer> resourcePrices = new HashMap<>();
+    private static double foodPrice = 30;
+    private static double energyPrice = 25;
+    private static double smithorePrice = 50;
+    private static double crystitePrice = 100;
+    private static double mulePrice = 100;
+    private double foodSellPrice = 15;
+    private double energySellPrice = 18;
+    private double smithoreSellPrice = 25;
+    private double crystiteSellPrice = 50;
+    private double muleSellPrice = 50;
+    private Map<String, Double> resourceSellPrices = new HashMap<>();
+    private Map<String, Double> resourceBuyPrices = new HashMap<>();
     private Map<String, Integer> resources = new HashMap<>();
 
     private ArrayList<Player> playerList;
+
+    private ArrayList<CoolMule> redMules = new ArrayList<>();
+    private ArrayList<CoolMule> greenMules = new ArrayList<>();
+    private ArrayList<CoolMule> blueMules= new ArrayList<>();
+    private ArrayList<CoolMule> yellowMules = new ArrayList<>();
 
 
     private Stage stage;
@@ -101,16 +109,16 @@ public class MuleModel {
         this.stage = stage;
         timer = new java.util.Timer();
         roundBonus = new int[] {0, 50, 50, 50, 100, 100, 100, 100, 150, 150, 150, 150, 200};
-        resourcePrices.put("Food", foodPrice);
-        resourcePrices.put("Energy", energyPrice);
-        resourcePrices.put("Smithore", smithorePrice);
-        resourcePrices.put("Crystite", crystitePrice);
-        resourcePrices.put("Mule", mulePrice);
-        resources.put("Food", foodSellPrice);
-        resources.put("Energy", energySellPrice);
-        resources.put("Smithore", smithoreSellPrice);
-        resources.put("Crystite", crystiteSellPrice);
-        resources.put("Mule", muleSellPrice);
+        resourceBuyPrices.put("Food", foodPrice);
+        resourceBuyPrices.put("Energy", energyPrice);
+        resourceBuyPrices.put("Smithore", smithorePrice);
+        resourceBuyPrices.put("Crystite", crystitePrice);
+        resourceBuyPrices.put("Mule", mulePrice);
+        resourceSellPrices.put("Food", foodSellPrice);
+        resourceSellPrices.put("Energy", energySellPrice);
+        resourceSellPrices.put("Smithore", smithoreSellPrice);
+        resourceSellPrices.put("Crystite", crystiteSellPrice);
+        resourceSellPrices.put("Mule", muleSellPrice);
         availableColors = new ArrayList<String>(Arrays.asList("Red","Green","Blue","Yellow"));
         riverCoordinates.add(new Point(4,0));
         riverCoordinates.add(new Point(4,1));
@@ -183,6 +191,14 @@ public class MuleModel {
             }
         },0,1000);//delay,period (millis)
 
+    }
+
+    public void initializeBuyData(HashMap<String, Integer> buyItems) {
+        if (!getLevel().equals("Beginner")) {
+            initializeBuyDataOther(buyItems);
+        } else {
+            initializeBuyDataBeginner(buyItems);
+        }
     }
 
 
@@ -274,10 +290,10 @@ public class MuleModel {
         }
     }
     public boolean enoughMoney(String boughtResource, int boughtAmount) {
-        if((double) getTurningPlayer().getMoney()  >= (resourcePrices.get(boughtResource) * boughtAmount) && (double) itemsForSaleBeginner.get(boughtResource) >= boughtAmount) {
-            return true;
-        }
-        return false;
+        double price = resourceBuyPrices.get(boughtResource);
+        double totalPrice = price * boughtAmount;
+        double playerMoney = getTurningPlayer().getMoney();
+        return playerMoney >= totalPrice;
     }
 
     public boolean enoughResources(String soldResource, int soldAmount) {
@@ -286,7 +302,7 @@ public class MuleModel {
         }
         return false;
     }
-    public int toInteger(String str) {
+    private int toInteger(String str) {
         if(isNumeric(str)) {
             return Integer.parseInt(str);
         }
@@ -470,6 +486,33 @@ public class MuleModel {
 
     }
 
+    public void validateBuy(Button button, String currentEntry, String boughtItem, Text error) {
+        int num = toInteger(currentEntry);
+        if (boughtItem != null && boughtItem.equals("Mule") && num > 1) {
+            button.setDisable(true);
+            error.setText("Can't buy more than one mule at a time");
+        } else if (boughtItem != null && validateBuySellName(currentEntry).isEmpty() && enoughMoney(boughtItem, num)) {
+            System.out.println("Selected: " + boughtItem);
+            button.setDisable(false);
+            error.setText(null);
+        } else if (boughtItem != null && !enoughMoney(boughtItem, num)) {
+            error.setText("Not enough money!");
+        }  else {
+            button.setDisable(true);
+            error.setText("Enter a valid quantity");
+        }
+    }
+
+    public void validateSell(Button button, String currentEntry, String soldItem, Text error) {
+        int num = toInteger(currentEntry);
+        if (validateBuySellName(currentEntry).isEmpty() && enoughResources(soldItem, num) && soldItem != null) {
+            button.setDisable(false);
+            error.setText(null);
+        } else {
+            button.setDisable(true);
+            error.setText("Enter a valid quantity");
+        }
+    }
 
 
 
@@ -631,6 +674,25 @@ public class MuleModel {
             Blend blended = new Blend(BlendMode.SRC_OVER, new ImageInput(image), colorEffect);
             button.setEffect(blended);
         }
+        ArrayList<CoolMule> allMules = new ArrayList<>();
+        allMules.addAll(redMules); allMules.addAll(greenMules); allMules.addAll(blueMules); allMules.addAll(yellowMules);
+        for (CoolMule mule : allMules) {
+            if (mule.equals(new CoolMule("RandomAssType", new Property(new Point(xInd,yInd))))) {
+                if (redMules.contains(mule)) {
+                    button.setEffect(null);
+                    button.setGraphic(new ImageView(new Image("RedMule.PNG")));
+                } else if (greenMules.contains(mule)) {
+                    button.setEffect(null);
+                    button.setGraphic(new ImageView(new Image("GreenMule.PNG")));
+                } else if (blueMules.contains(mule)) {
+                    button.setEffect(null);
+                    button.setGraphic(new ImageView(new Image("BlueMule.png")));
+                } else if (yellowMules.contains(mule)) {
+                    button.setEffect(null);
+                    button.setGraphic(new ImageView(new Image("YellowMule.PNG")));
+                }
+            }
+        }
 
     }
 
@@ -717,7 +779,7 @@ public class MuleModel {
     public void buyResource(String boughtResource, int boughtAmount) {
         int prevAmount;
         int newAmount;
-        int paymentPrice = resourcePrices.get(boughtResource) * boughtAmount;
+        double paymentPrice = resourceBuyPrices.get(boughtResource) * boughtAmount;
         if (!level.equals("Beginner")) {
             prevAmount = itemsForSaleOther.get(boughtResource);
             System.out.println(prevAmount);
@@ -785,4 +847,60 @@ public class MuleModel {
         }
     }
 
+    public void enterMulePlacement(String type) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Map.fxml"));
+            PlacementController controller = new PlacementController();
+            controller.loadModel(this);
+            controller.setMuleType(type);
+            loader.setController(controller);
+            Scene scene = new Scene(loader.load());
+            scene.setOnKeyPressed(new EventHandler<KeyEvent>() {  //ENTER ENDS TURN
+                @Override
+                public void handle(KeyEvent event) {
+                    switch (event.getCode()) {
+                        case ENTER:
+                            enterEndTurnScreen("Turn ended without gambling!");
+                    }
+                }
+            });
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public String placeMule(String type, Property location) {
+        String message = "You don't own that property!";
+        if (getTurningPlayer().getProperties().contains(location)) {
+            if (getTurningPlayer().getColor().equals(Color.RED)) {
+                CoolMule mule = new CoolMule(type, location);
+                if (redMules.contains(mule)) {
+                    return "Already a mule here!";
+                }
+                redMules.add(new CoolMule(type, location));
+            } else if (getTurningPlayer().getColor().equals(Color.GREEN)) {
+                CoolMule mule = new CoolMule(type, location);
+                if (greenMules.contains(mule)) {
+                    return "Already a mule here!";
+                }
+                greenMules.add(new CoolMule(type, location));
+            } else if (getTurningPlayer().getColor().equals(Color.BLUE)) {
+                CoolMule mule = new CoolMule(type, location);
+                if (blueMules.contains(mule)) {
+                    return "Already a mule here!";
+                }
+                blueMules.add(new CoolMule(type, location));
+            } else if (getTurningPlayer().getColor().equals(Color.YELLOW)) {
+                CoolMule mule = new CoolMule(type, location);
+                if (yellowMules.contains(mule)) {
+                    return "Already a mule here!";
+                }
+                yellowMules.add(new CoolMule(type, location));
+            }
+            message = null;
+        }
+        return message;
+    }
 }

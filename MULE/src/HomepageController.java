@@ -90,6 +90,7 @@ public class HomepageController implements Initializable, Controller {
         numPlay4.setToggleGroup(group2);
         numPlay2.fire();
         players = 2;
+        beginner.fire();
         mapChoices = new ArrayList<>();
         mapChoices.add("Forrest");
         mapChoices.add("Space");

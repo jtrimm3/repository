@@ -12,17 +12,24 @@ public class Player implements Comparable<Player> {
     private MuleModel muleModel;
     private double money;
     private Color color;
+    private int food, energy, smithore;
     private String name;
     private String race;
     private ArrayList<Property> properties;
     private int playerNumber;
     private Map<String, Integer> resources = new HashMap<>();
+    private ArrayList<Property> foodMules;
+    private ArrayList<Property> energyMules;
+    private ArrayList<Property> oreMules;
 
     //ENUM FOR RACES AND THEIR INFO
 
 
 
     public Player(String name, int playerNumber, String race, Color color, Map<String, Integer> resources) {
+        foodMules = new ArrayList<>();
+        energyMules = new ArrayList<>();
+        oreMules = new ArrayList<>();
         this.properties = new ArrayList<Property>();
         this.name = name;
         this.playerNumber = playerNumber;
@@ -134,5 +141,29 @@ public class Player implements Comparable<Player> {
         } else {
             return 1; //MAINTAINS IN PLACE ORDERING I THINK, SOMEONE CHECK THIS FOR ME...
         }
+    }
+
+    public int getSmithore() {
+        return smithore;
+    }
+
+    public void setSmithore(int smithore) {
+        this.smithore = smithore;
+    }
+
+    public int getEnergy() {
+        return energy;
+    }
+
+    public void setEnergy(int energy) {
+        this.energy = energy;
+    }
+
+    public int getFood() {
+        return food;
+    }
+
+    public void setFood(int food) {
+        this.food = food;
     }
 }

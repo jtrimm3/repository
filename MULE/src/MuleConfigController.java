@@ -63,7 +63,7 @@ public class MuleConfigController implements Initializable, Controller{
 
     @FXML
     private void toPlaceMule(ActionEvent event) {
-        muleModel.enterMap();
+        muleModel.enterMulePlacement(type);
     }
 
     @FXML
