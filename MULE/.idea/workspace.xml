@@ -25,9 +25,15 @@
       <file leaf-file-name="StoreController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/StoreController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.344828">
+            <state vertical-scroll-proportion="0.0">
               <caret line="123" column="9" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#5565#5566#0" expanded="false" />
+                <element signature="e#5602#5603#0" expanded="false" />
+                <element signature="e#5658#5659#0" expanded="false" />
+                <element signature="e#5691#5692#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -36,10 +42,13 @@
         <entry file="file://$PROJECT_DIR$/src/MuleConfigController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+              <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
               <folding>
-                <element signature="e#1565#1566#0" expanded="true" />
-                <element signature="e#1615#1616#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#1909#1910#0" expanded="false" />
+                <element signature="e#1959#1960#0" expanded="false" />
+                <element signature="e#2454#2455#0" expanded="false" />
+                <element signature="e#2487#2488#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -48,12 +57,10 @@
       <file leaf-file-name="MuleModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MuleModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5083714">
-              <caret line="690" column="43" selection-start-line="690" selection-start-column="43" selection-end-line="690" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.12652068">
+              <caret line="416" column="52" selection-start-line="416" selection-start-column="52" selection-end-line="416" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#initializeTimer#0;class#MuleModel#0" expanded="false" />
-                <element signature="class#7063:7469" expanded="false" />
                 <element signature="method#initializeBuyData#0;class#MuleModel#0" expanded="false" />
                 <element signature="method#initializeConfigData#0;class#MuleModel#0" expanded="false" />
                 <element signature="method#initializeBuyDataBeginner#0;class#MuleModel#0" expanded="false" />
@@ -64,12 +71,7 @@
                 <element signature="method#enoughResources#0;class#MuleModel#0" expanded="false" />
                 <element signature="method#toInteger#0;class#MuleModel#0" expanded="false" />
                 <element signature="method#isNumeric#0;class#MuleModel#0" expanded="false" />
-                <element signature="e#12593#12594#0" expanded="true" />
-                <element signature="e#12623#12624#0" expanded="true" />
-                <element signature="e#12654#12655#0" expanded="true" />
-                <element signature="e#12682#12683#0" expanded="true" />
                 <element signature="method#begin#0;class#MuleModel#0" expanded="false" />
-                <element signature="method#enterMap#0;class#MuleModel#0" expanded="false" />
                 <element signature="method#enterEndTurnScreen#0;class#MuleModel#0" expanded="false" />
                 <element signature="method#enterTown#0;class#MuleModel#0" expanded="false" />
                 <element signature="method#enterMuleConfig#0;class#MuleModel#0" expanded="false" />
@@ -79,15 +81,9 @@
                 <element signature="method#enterStore#0;class#MuleModel#0" expanded="false" />
                 <element signature="method#enterLandOffice#0;class#MuleModel#0" expanded="false" />
                 <element signature="method#endGame#0;class#MuleModel#0" expanded="false" />
-                <element signature="e#20921#20922#0" expanded="true" />
-                <element signature="e#20957#20958#0" expanded="true" />
-                <element signature="e#20986#20987#0" expanded="true" />
-                <element signature="e#21014#21015#0" expanded="true" />
-                <element signature="method#claimProperty#0;class#MuleModel#0" expanded="false" />
                 <element signature="method#isOwned#0;class#MuleModel#0" expanded="false" />
                 <element signature="method#squarifyNode#0;class#MuleModel#0" expanded="false" />
                 <element signature="method#updatePlayerInfoText#0;class#MuleModel#0" expanded="false" />
-                <element signature="method#removeColor#0;class#MuleModel#0" expanded="false" />
                 <element signature="method#gamble#0;class#MuleModel#0" expanded="false" />
                 <element signature="method#buyResource#0;class#MuleModel#0" expanded="false" />
                 <element signature="method#sellResource#0;class#MuleModel#0" expanded="false" />
@@ -102,13 +98,7 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
-                <element signature="e#279#280#0" expanded="true" />
-                <element signature="e#310#311#0" expanded="true" />
-                <element signature="e#360#361#0" expanded="true" />
-                <element signature="e#400#401#0" expanded="true" />
                 <element signature="e#458#459#0" expanded="true" />
-                <element signature="e#498#499#0" expanded="true" />
-                <element signature="e#530#531#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,37 +114,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MapController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="44" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlacementController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PlacementController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="264" column="25" selection-start-line="264" selection-start-column="25" selection-end-line="264" selection-end-column="25" />
-              <folding>
-                <element signature="e#6181#6182#0" expanded="true" />
-                <element signature="e#6259#6260#0" expanded="true" />
-                <element signature="e#13023#13024#0" expanded="true" />
-                <element signature="e#13055#13056#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
-              <folding />
+            <state vertical-scroll-proportion="-13.0">
+              <caret line="167" column="5" selection-start-line="167" selection-start-column="5" selection-end-line="167" selection-end-column="5" />
+              <folding>
+                <element signature="e#3920#3921#0" expanded="true" />
+                <element signature="e#3966#3967#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -180,11 +148,11 @@
         <option value="$PROJECT_DIR$/src/HomepageController.java" />
         <option value="$PROJECT_DIR$/src/StoreController.java" />
         <option value="$PROJECT_DIR$/src/MuleConfigController.java" />
-        <option value="$PROJECT_DIR$/src/Player.java" />
         <option value="$PROJECT_DIR$/src/CoolMule.java" />
         <option value="$PROJECT_DIR$/src/Property.java" />
         <option value="$PROJECT_DIR$/src/MapController.java" />
         <option value="$PROJECT_DIR$/src/PlacementController.java" />
+        <option value="$PROJECT_DIR$/src/Player.java" />
         <option value="$PROJECT_DIR$/src/MuleModel.java" />
       </list>
     </option>
@@ -193,10 +161,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1366" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -453,21 +419,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="0" y="0" width="1366" height="728" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284055" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32741934" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33443344" sideWeight="0.50210303" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24604012" sideWeight="0.49789694" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2451613" sideWeight="0.49789694" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -504,13 +470,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MuleModel.java</url>
-          <line>680</line>
+          <line>856</line>
           <properties />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MuleModel.java</url>
-          <line>682</line>
+          <line>858</line>
           <properties />
           <option name="timeStamp" value="22" />
         </line-breakpoint>
@@ -524,14 +490,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/EndturnController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Property.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -561,7 +519,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="98" column="58" selection-start-line="98" selection-start-column="58" selection-end-line="98" selection-end-column="58" />
-          <folding />
+          <folding>
+            <element signature="e#3920#3921#0" expanded="true" />
+            <element signature="e#3966#3967#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -585,7 +546,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#5565#5566#0" expanded="false" />
+            <element signature="e#5602#5603#0" expanded="false" />
+            <element signature="e#5658#5659#0" expanded="false" />
+            <element signature="e#5691#5692#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -595,8 +562,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#initializeTimer#0;class#MuleModel#0" expanded="false" />
-            <element signature="class#7063:7469" expanded="false" />
             <element signature="method#initializeBuyData#0;class#MuleModel#0" expanded="false" />
             <element signature="method#initializeConfigData#0;class#MuleModel#0" expanded="false" />
             <element signature="method#initializeBuyDataBeginner#0;class#MuleModel#0" expanded="false" />
@@ -607,12 +572,7 @@
             <element signature="method#enoughResources#0;class#MuleModel#0" expanded="false" />
             <element signature="method#toInteger#0;class#MuleModel#0" expanded="false" />
             <element signature="method#isNumeric#0;class#MuleModel#0" expanded="false" />
-            <element signature="e#12593#12594#0" expanded="true" />
-            <element signature="e#12623#12624#0" expanded="true" />
-            <element signature="e#12654#12655#0" expanded="true" />
-            <element signature="e#12682#12683#0" expanded="true" />
             <element signature="method#begin#0;class#MuleModel#0" expanded="false" />
-            <element signature="method#enterMap#0;class#MuleModel#0" expanded="false" />
             <element signature="method#enterEndTurnScreen#0;class#MuleModel#0" expanded="false" />
             <element signature="method#enterTown#0;class#MuleModel#0" expanded="false" />
             <element signature="method#enterMuleConfig#0;class#MuleModel#0" expanded="false" />
@@ -622,15 +582,9 @@
             <element signature="method#enterStore#0;class#MuleModel#0" expanded="false" />
             <element signature="method#enterLandOffice#0;class#MuleModel#0" expanded="false" />
             <element signature="method#endGame#0;class#MuleModel#0" expanded="false" />
-            <element signature="e#20921#20922#0" expanded="true" />
-            <element signature="e#20957#20958#0" expanded="true" />
-            <element signature="e#20986#20987#0" expanded="true" />
-            <element signature="e#21014#21015#0" expanded="true" />
-            <element signature="method#claimProperty#0;class#MuleModel#0" expanded="false" />
             <element signature="method#isOwned#0;class#MuleModel#0" expanded="false" />
             <element signature="method#squarifyNode#0;class#MuleModel#0" expanded="false" />
             <element signature="method#updatePlayerInfoText#0;class#MuleModel#0" expanded="false" />
-            <element signature="method#removeColor#0;class#MuleModel#0" expanded="false" />
             <element signature="method#gamble#0;class#MuleModel#0" expanded="false" />
             <element signature="method#buyResource#0;class#MuleModel#0" expanded="false" />
             <element signature="method#sellResource#0;class#MuleModel#0" expanded="false" />
@@ -683,7 +637,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="98" column="58" selection-start-line="98" selection-start-column="58" selection-end-line="98" selection-end-column="58" />
-          <folding />
+          <folding>
+            <element signature="e#3920#3921#0" expanded="true" />
+            <element signature="e#3966#3967#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -707,7 +664,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#5565#5566#0" expanded="false" />
+            <element signature="e#5602#5603#0" expanded="false" />
+            <element signature="e#5658#5659#0" expanded="false" />
+            <element signature="e#5691#5692#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -717,8 +680,6 @@
           <caret line="698" column="27" selection-start-line="698" selection-start-column="27" selection-end-line="698" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#initializeTimer#0;class#MuleModel#0" expanded="false" />
-            <element signature="class#7063:7469" expanded="false" />
             <element signature="method#initializeBuyData#0;class#MuleModel#0" expanded="false" />
             <element signature="method#initializeConfigData#0;class#MuleModel#0" expanded="false" />
             <element signature="method#initializeBuyDataBeginner#0;class#MuleModel#0" expanded="false" />
@@ -729,12 +690,7 @@
             <element signature="method#enoughResources#0;class#MuleModel#0" expanded="false" />
             <element signature="method#toInteger#0;class#MuleModel#0" expanded="false" />
             <element signature="method#isNumeric#0;class#MuleModel#0" expanded="false" />
-            <element signature="e#12593#12594#0" expanded="true" />
-            <element signature="e#12623#12624#0" expanded="true" />
-            <element signature="e#12654#12655#0" expanded="true" />
-            <element signature="e#12682#12683#0" expanded="true" />
             <element signature="method#begin#0;class#MuleModel#0" expanded="false" />
-            <element signature="method#enterMap#0;class#MuleModel#0" expanded="false" />
             <element signature="method#enterEndTurnScreen#0;class#MuleModel#0" expanded="false" />
             <element signature="method#enterTown#0;class#MuleModel#0" expanded="false" />
             <element signature="method#enterMuleConfig#0;class#MuleModel#0" expanded="false" />
@@ -744,15 +700,9 @@
             <element signature="method#enterStore#0;class#MuleModel#0" expanded="false" />
             <element signature="method#enterLandOffice#0;class#MuleModel#0" expanded="false" />
             <element signature="method#endGame#0;class#MuleModel#0" expanded="false" />
-            <element signature="e#20921#20922#0" expanded="true" />
-            <element signature="e#20957#20958#0" expanded="true" />
-            <element signature="e#20986#20987#0" expanded="true" />
-            <element signature="e#21014#21015#0" expanded="true" />
-            <element signature="method#claimProperty#0;class#MuleModel#0" expanded="false" />
             <element signature="method#isOwned#0;class#MuleModel#0" expanded="false" />
             <element signature="method#squarifyNode#0;class#MuleModel#0" expanded="false" />
             <element signature="method#updatePlayerInfoText#0;class#MuleModel#0" expanded="false" />
-            <element signature="method#removeColor#0;class#MuleModel#0" expanded="false" />
             <element signature="method#gamble#0;class#MuleModel#0" expanded="false" />
             <element signature="method#buyResource#0;class#MuleModel#0" expanded="false" />
             <element signature="method#sellResource#0;class#MuleModel#0" expanded="false" />
@@ -764,7 +714,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3920#3921#0" expanded="true" />
+            <element signature="e#3966#3967#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -790,8 +743,6 @@
           <caret line="729" column="64" selection-start-line="729" selection-start-column="64" selection-end-line="729" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#initializeTimer#0;class#MuleModel#0" expanded="false" />
-            <element signature="class#7063:7469" expanded="false" />
             <element signature="method#initializeBuyData#0;class#MuleModel#0" expanded="false" />
             <element signature="method#initializeConfigData#0;class#MuleModel#0" expanded="false" />
             <element signature="method#initializeBuyDataBeginner#0;class#MuleModel#0" expanded="false" />
@@ -802,12 +753,7 @@
             <element signature="method#enoughResources#0;class#MuleModel#0" expanded="false" />
             <element signature="method#toInteger#0;class#MuleModel#0" expanded="false" />
             <element signature="method#isNumeric#0;class#MuleModel#0" expanded="false" />
-            <element signature="e#12593#12594#0" expanded="true" />
-            <element signature="e#12623#12624#0" expanded="true" />
-            <element signature="e#12654#12655#0" expanded="true" />
-            <element signature="e#12682#12683#0" expanded="true" />
             <element signature="method#begin#0;class#MuleModel#0" expanded="false" />
-            <element signature="method#enterMap#0;class#MuleModel#0" expanded="false" />
             <element signature="method#enterEndTurnScreen#0;class#MuleModel#0" expanded="false" />
             <element signature="method#enterTown#0;class#MuleModel#0" expanded="false" />
             <element signature="method#enterMuleConfig#0;class#MuleModel#0" expanded="false" />
@@ -817,15 +763,9 @@
             <element signature="method#enterStore#0;class#MuleModel#0" expanded="false" />
             <element signature="method#enterLandOffice#0;class#MuleModel#0" expanded="false" />
             <element signature="method#endGame#0;class#MuleModel#0" expanded="false" />
-            <element signature="e#20921#20922#0" expanded="true" />
-            <element signature="e#20957#20958#0" expanded="true" />
-            <element signature="e#20986#20987#0" expanded="true" />
-            <element signature="e#21014#21015#0" expanded="true" />
-            <element signature="method#claimProperty#0;class#MuleModel#0" expanded="false" />
             <element signature="method#isOwned#0;class#MuleModel#0" expanded="false" />
             <element signature="method#squarifyNode#0;class#MuleModel#0" expanded="false" />
             <element signature="method#updatePlayerInfoText#0;class#MuleModel#0" expanded="false" />
-            <element signature="method#removeColor#0;class#MuleModel#0" expanded="false" />
             <element signature="method#gamble#0;class#MuleModel#0" expanded="false" />
             <element signature="method#buyResource#0;class#MuleModel#0" expanded="false" />
             <element signature="method#sellResource#0;class#MuleModel#0" expanded="false" />
@@ -837,7 +777,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#5565#5566#0" expanded="false" />
+            <element signature="e#5602#5603#0" expanded="false" />
+            <element signature="e#5658#5659#0" expanded="false" />
+            <element signature="e#5691#5692#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -845,15 +791,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MULE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#3920#3921#0" expanded="true" />
+            <element signature="e#3966#3967#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -882,14 +823,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pub.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EndturnController.java">
@@ -904,7 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -916,14 +856,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/homepage.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TownController.java">
@@ -960,14 +900,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MuleConfig.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mule.PNG">
@@ -980,58 +920,30 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MuleConfigController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+          <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
           <folding>
-            <element signature="e#1565#1566#0" expanded="true" />
-            <element signature="e#1615#1616#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1909#1910#0" expanded="false" />
+            <element signature="e#1959#1960#0" expanded="false" />
+            <element signature="e#2454#2455#0" expanded="false" />
+            <element signature="e#2487#2488#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StoreController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.344828">
+        <state vertical-scroll-proportion="0.0">
           <caret line="123" column="9" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CoolMule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="e#279#280#0" expanded="true" />
-            <element signature="e#310#311#0" expanded="true" />
-            <element signature="e#360#361#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#498#499#0" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PlacementController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="264" column="25" selection-start-line="264" selection-start-column="25" selection-end-line="264" selection-end-column="25" />
-          <folding>
-            <element signature="e#6181#6182#0" expanded="true" />
-            <element signature="e#6259#6260#0" expanded="true" />
-            <element signature="e#13023#13024#0" expanded="true" />
-            <element signature="e#13055#13056#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#5565#5566#0" expanded="false" />
+            <element signature="e#5602#5603#0" expanded="false" />
+            <element signature="e#5658#5659#0" expanded="false" />
+            <element signature="e#5691#5692#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1039,14 +951,6 @@
     <entry file="file://$PROJECT_DIR$/src/GreenMule.PNG">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Property.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MapController.java">
@@ -1057,14 +961,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/PlacementController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="264" column="25" selection-start-line="264" selection-start-column="25" selection-end-line="264" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EnergyItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Property.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MULE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CoolMule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#458#459#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.0">
+          <caret line="167" column="5" selection-start-line="167" selection-start-column="5" selection-end-line="167" selection-end-column="5" />
+          <folding>
+            <element signature="e#3920#3921#0" expanded="true" />
+            <element signature="e#3966#3967#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MuleModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5083714">
-          <caret line="690" column="43" selection-start-line="690" selection-start-column="43" selection-end-line="690" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.12652068">
+          <caret line="416" column="52" selection-start-line="416" selection-start-column="52" selection-end-line="416" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#initializeTimer#0;class#MuleModel#0" expanded="false" />
-            <element signature="class#7063:7469" expanded="false" />
             <element signature="method#initializeBuyData#0;class#MuleModel#0" expanded="false" />
             <element signature="method#initializeConfigData#0;class#MuleModel#0" expanded="false" />
             <element signature="method#initializeBuyDataBeginner#0;class#MuleModel#0" expanded="false" />
@@ -1075,12 +1030,7 @@
             <element signature="method#enoughResources#0;class#MuleModel#0" expanded="false" />
             <element signature="method#toInteger#0;class#MuleModel#0" expanded="false" />
             <element signature="method#isNumeric#0;class#MuleModel#0" expanded="false" />
-            <element signature="e#12593#12594#0" expanded="true" />
-            <element signature="e#12623#12624#0" expanded="true" />
-            <element signature="e#12654#12655#0" expanded="true" />
-            <element signature="e#12682#12683#0" expanded="true" />
             <element signature="method#begin#0;class#MuleModel#0" expanded="false" />
-            <element signature="method#enterMap#0;class#MuleModel#0" expanded="false" />
             <element signature="method#enterEndTurnScreen#0;class#MuleModel#0" expanded="false" />
             <element signature="method#enterTown#0;class#MuleModel#0" expanded="false" />
             <element signature="method#enterMuleConfig#0;class#MuleModel#0" expanded="false" />
@@ -1090,15 +1040,9 @@
             <element signature="method#enterStore#0;class#MuleModel#0" expanded="false" />
             <element signature="method#enterLandOffice#0;class#MuleModel#0" expanded="false" />
             <element signature="method#endGame#0;class#MuleModel#0" expanded="false" />
-            <element signature="e#20921#20922#0" expanded="true" />
-            <element signature="e#20957#20958#0" expanded="true" />
-            <element signature="e#20986#20987#0" expanded="true" />
-            <element signature="e#21014#21015#0" expanded="true" />
-            <element signature="method#claimProperty#0;class#MuleModel#0" expanded="false" />
             <element signature="method#isOwned#0;class#MuleModel#0" expanded="false" />
             <element signature="method#squarifyNode#0;class#MuleModel#0" expanded="false" />
             <element signature="method#updatePlayerInfoText#0;class#MuleModel#0" expanded="false" />
-            <element signature="method#removeColor#0;class#MuleModel#0" expanded="false" />
             <element signature="method#gamble#0;class#MuleModel#0" expanded="false" />
             <element signature="method#buyResource#0;class#MuleModel#0" expanded="false" />
             <element signature="method#sellResource#0;class#MuleModel#0" expanded="false" />

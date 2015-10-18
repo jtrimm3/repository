@@ -145,27 +145,26 @@ public class Player implements Comparable<Player> {
     }
 
     public int getSmithore() {
-        return smithore;
+        return resources.get("Smithore");
     }
 
-    public void setSmithore(int smithore) {
-        this.smithore = smithore;
+    public void setSmithore(int smithore) {resources.put("Smithore", smithore);
     }
 
     public int getEnergy() {
-        return energy;
+        return resources.get("Energy");
     }
 
     public void setEnergy(int energy) {
-        this.energy = energy;
+        resources.put("Energy", energy);
     }
 
     public int getFood() {
-        return food;
+        return resources.get("Food");
     }
 
     public void setFood(int food) {
-        this.food = food;
+        resources.put("Food", food);
     }
 
     public void removeMule(){
