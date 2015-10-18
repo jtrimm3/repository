@@ -57,6 +57,7 @@ public class MuleConfigController implements Initializable, Controller{
         food.setToggleGroup(group);
         energy.setToggleGroup(group);
         ore.setToggleGroup(group);
+        energy.fire();
         food.fire();
         if(muleModel.getTurningPlayer().getMoney()<25){
             food.setDisable(true);
