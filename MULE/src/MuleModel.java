@@ -841,7 +841,7 @@ public class MuleModel {
     public void sellResource(String soldResource, int soldAmount) {
         if ((Integer) getTurningPlayer().getResources().get(soldResource) >= soldAmount) {
             getTurningPlayer().sellResource(soldResource, soldAmount);
-            getTurningPlayer().setMoney(getTurningPlayer().getMoney() + resources.get(soldResource) * soldAmount);
+            getTurningPlayer().setMoney(getTurningPlayer().getMoney() + resourceSellPrices.get(soldResource) * soldAmount);
         } else {
             System.out.println("You don't have enough to sell");
         }
