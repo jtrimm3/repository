@@ -418,172 +418,244 @@ public class MuleModel {
             if (c.equals(Color.RED)) {
                 for (CoolMule cool : redMules) {
                     Point p = cool.getLocation().getPoint();
-                    if (riverCoordinates.contains(p)) {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 4);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 2);
-                        }
-                    } else if (plainCoordinates.contains(p)) {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 2);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 3);
+                    if( getTurningPlayer().getEnergy() >= 1 ) {
+
+
+                        if (riverCoordinates.contains(p)) {
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 4);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 2);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
+                        } else if (plainCoordinates.contains(p)) {
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 2);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 3);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else {
+                                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
+                        } else if (mountain1Coordinates.contains(p)) {
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else {
+                                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 2);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
+                        } else if (mountain2Coordinates.contains(p)) {
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else {
+                                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 3);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
                         } else {
-                            getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 1);
-                        }
-                    } else if (mountain1Coordinates.contains(p)) {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
-                        } else {
-                            getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 2);
-                        }
-                    } else if (mountain2Coordinates.contains(p)) {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
-                        } else {
-                            getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 3);
-                        }
-                    } else {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
-                        } else {
-                            getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 4);
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else {
+                                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 4);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
                         }
                     }
                 }
             } else if (c.equals(Color.BLUE)) {
                 for (CoolMule cool : blueMules) {
                     Point p = cool.getLocation().getPoint();
-                    if (riverCoordinates.contains(p)) {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 4);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 2);
-                        }
-                    } else if (plainCoordinates.contains(p)) {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 2);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 3);
+                    if(getTurningPlayer().getEnergy() >= 1) {
+
+
+                        if (riverCoordinates.contains(p)) {
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 4);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 2);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
+                        } else if (plainCoordinates.contains(p)) {
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 2);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 3);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else {
+                                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
+                        } else if (mountain1Coordinates.contains(p)) {
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else {
+                                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 2);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
+                        } else if (mountain2Coordinates.contains(p)) {
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else {
+                                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 3);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
                         } else {
-                            getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 1);
-                        }
-                    } else if (mountain1Coordinates.contains(p)) {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
-                        } else {
-                            getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 2);
-                        }
-                    } else if (mountain2Coordinates.contains(p)) {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
-                        } else {
-                            getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 3);
-                        }
-                    } else {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
-                        } else {
-                            getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 4);
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else {
+                                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 4);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
                         }
                     }
                 }
             } else if (c.equals(Color.GREEN)) {
                 for (CoolMule cool : greenMules) {
                     Point p = cool.getLocation().getPoint();
-                    if (riverCoordinates.contains(p)) {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 4);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 2);
-                        }
-                    } else if (plainCoordinates.contains(p)) {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 2);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 3);
+                    if(getTurningPlayer().getEnergy() >= 1) {
+
+
+                        if (riverCoordinates.contains(p)) {
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 4);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 2);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
+                        } else if (plainCoordinates.contains(p)) {
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 2);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 3);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else {
+                                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
+                        } else if (mountain1Coordinates.contains(p)) {
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else {
+                                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 2);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
+                        } else if (mountain2Coordinates.contains(p)) {
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else {
+                                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 3);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
                         } else {
-                            getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 1);
-                        }
-                    } else if (mountain1Coordinates.contains(p)) {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
-                        } else {
-                            getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 2);
-                        }
-                    } else if (mountain2Coordinates.contains(p)) {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
-                        } else {
-                            getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 3);
-                        }
-                    } else {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
-                        } else {
-                            getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 4);
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else {
+                                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 4);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
                         }
                     }
                 }
             } else {
                 for (CoolMule cool : yellowMules) {
                     Point p = cool.getLocation().getPoint();
-                    if (riverCoordinates.contains(p)) {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 4);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 2);
-                        }
-                    } else if (plainCoordinates.contains(p)) {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 2);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 3);
+                    if(getTurningPlayer().getEnergy() >= 1) {
+
+
+                        if (riverCoordinates.contains(p)) {
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 4);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 2);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
+                        } else if (plainCoordinates.contains(p)) {
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 2);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 3);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else {
+                                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
+                        } else if (mountain1Coordinates.contains(p)) {
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else {
+                                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 2);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
+                        } else if (mountain2Coordinates.contains(p)) {
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else {
+                                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 3);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
                         } else {
-                            getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 1);
-                        }
-                    } else if (mountain1Coordinates.contains(p)) {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
-                        } else {
-                            getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 2);
-                        }
-                    } else if (mountain2Coordinates.contains(p)) {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
-                        } else {
-                            getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 3);
-                        }
-                    } else {
-                        if (cool.getType().equals("Food")) {
-                            getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
-                        } else if (cool.getType().equals("Energy")) {
-                            getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
-                        } else {
-                            getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 4);
+                            if (cool.getType().equals("Food")) {
+                                getTurningPlayer().setFood(getTurningPlayer().getFood() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else if (cool.getType().equals("Energy")) {
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            } else {
+                                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 4);
+                                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() - 1);
+                            }
                         }
                     }
                 }
