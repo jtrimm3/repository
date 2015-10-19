@@ -205,6 +205,7 @@ public class MuleModel {
 
 
     public int calculateTimeForTurn(Player p) {
+        if(getTurningPlayer()==null) return 50;
         if(getTurningPlayer().getFood() == 0) return 5;
         if(round<5){
             if(getTurningPlayer().getFood() < 3) return 30;
