@@ -121,6 +121,8 @@ public class StoreController implements Initializable, Controller{
 //        buyCombo.setItems(items);
         if (boughtItem.equals("Mule")) {
             muleModel.enterMuleConfig();
+        } else {
+            muleModel.enterStore();
         }
 
     }
@@ -130,8 +132,9 @@ public class StoreController implements Initializable, Controller{
         int amountSold = Integer.valueOf(soldAmount.getText());
         System.out.println("Sold Item: " + soldItem);
         muleModel.sellResource(soldItem, amountSold);
-        ObservableList<Map.Entry<String, Integer>> itemsToSell = FXCollections.observableArrayList(muleModel.getTurningPlayer().getResources().entrySet());
-        sellCombo.setItems(itemsToSell);
+        muleModel.enterStore();
+//        ObservableList<Map.Entry<String, Integer>> itemsToSell = FXCollections.observableArrayList(muleModel.getTurningPlayer().getResources().entrySet());
+//        sellCombo.setItems(itemsToSell);
     }
 
     @FXML
