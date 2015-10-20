@@ -14,6 +14,8 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.awt.Point;
@@ -31,14 +33,14 @@ public class MuleConfigController implements Initializable, Controller{
     private MuleModel muleModel;
     public String type;
 
+    @FXML
+    private Text errorText = new Text();
 
     @FXML
     final private ToggleGroup group = new ToggleGroup();
 
-
-
     @FXML
-    private Button muleConfig = new Button();
+    private Button ok = new Button();
 
     @FXML
     private RadioButton food = new RadioButton();
@@ -54,19 +56,25 @@ public class MuleConfigController implements Initializable, Controller{
 
     @Override  //PRESUMES ALL BUTTONS BE SQUARE! AND SAME SIZE!
     public void initialize(URL url, ResourceBundle rb) {
+        errorText.setFill(Color.RED);
         food.setToggleGroup(group);
         energy.setToggleGroup(group);
         ore.setToggleGroup(group);
         energy.fire();
         food.fire();
-        if(muleModel.getTurningPlayer().getMoney()<25){
-            food.setDisable(true);
-            muleModel.enterMap();
-        }if(muleModel.getTurningPlayer().getMoney()<50){
-            energy.setDisable(true);
-        }if(muleModel.getTurningPlayer().getMoney()<75){
-            ore.setDisable(true);
-        }
+        RadioButton check = (RadioButton) group.getSelectedToggle();
+        type = check.getText();
+        group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+
+            @Override
+            public void changed(ObservableValue<? extends Toggle> ov, Toggle t, Toggle t1) {
+                RadioButton check = (RadioButton) t1.getToggleGroup().getSelectedToggle();
+                type = check.getText();
+                System.out.println(type);
+                String message = muleModel.muleConfigEnoughMoney(type, ok);
+                errorText.setText(message);
+            }
+        });
 
 
     }
@@ -76,18 +84,7 @@ public class MuleConfigController implements Initializable, Controller{
         muleModel.enterMulePlacement(type);
     }
 
-    @FXML
-    private void selectType() {
-        group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
 
-            @Override
-            public void changed(ObservableValue<? extends Toggle> ov, Toggle t, Toggle t1) {
-                RadioButton check = (RadioButton)t1.getToggleGroup().getSelectedToggle();
-                type = check.getText();
-                System.out.println(type);
-            }
-        });
-    }
 
 
 

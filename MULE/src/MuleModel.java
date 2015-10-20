@@ -301,6 +301,9 @@ public class MuleModel {
     }
     public boolean enoughMoney(String boughtResource, int boughtAmount) {
         double price = resourceBuyPrices.get(boughtResource);
+        if (boughtResource.equals("Mule")) {
+            price = price + 25;
+        }
         double totalPrice = price * boughtAmount;
         double playerMoney = getTurningPlayer().getMoney();
         return playerMoney >= totalPrice;
@@ -839,9 +842,11 @@ public class MuleModel {
 
         if (turnCount % numberOfPlayers == 0) {
             Collections.sort(playerList);
+            calculateProduction();
+            printPlayerStats();
 
         }
-        if (getRound() - 1 > lastRoundNum) {
+        if (getRound() - 1 > lastRoundNum) {//ROUND ENDS
             roundMessage = "Start of round " + getRound() +"!";
             lastRoundNum++;
             passedThisRoundCount = 0;
@@ -850,6 +855,99 @@ public class MuleModel {
             passedThisRoundCount++;
         }
         return roundMessage;
+    }
+
+    private void printPlayerStats() {
+        System.out.println("Players in next round's order: ");
+        System.out.println("===============================");
+        int count = 1;
+        for (Player p : playerList) {
+            System.out.println(count + ". Name: " + p.getName() + " Color: " + p.getColor() + " Race: " + p.getRace());
+            System.out.println("    Money: $" + p.getMoney() + "   delta: " + p.getMoneyDelta());
+            System.out.println("    Food: " + p.getFood() + "         delta: " + p.getFoodDelta());
+            System.out.println("    Energy: " + p.getEnergy() + "       delta: " + p.getEnergyDelta());
+            System.out.println("    Ore: " + p.getSmithore() + "          delta: " + p.getOreDelta());
+            System.out.println("    SCORE: " + p.getScore() + "   delta: " + p.getScoreDelta());
+            p.resetDeltas();
+            p.setLastScore(p.getScore());
+            count++;
+        }
+    }
+
+    private void calculateProduction() {
+        ArrayList<CoolMule> playerMules = new ArrayList<>();
+        for (Player p: playerList) {
+            if (p.getColor().equals(Color.RED)) {
+                playerMules = redMules;
+            } else if (p.getColor().equals(Color.GREEN)) {
+                playerMules = greenMules;
+            } else if (p.getColor().equals(Color.BLUE)) {
+                playerMules = blueMules;
+            } else if (p.getColor().equals(Color.YELLOW)) {
+                playerMules = yellowMules;
+            }
+            if (p.getEnergy() >= playerMules.size()) {
+                p.setEnergy(p.getEnergy() - playerMules.size());
+                p.setEnergyDelta(p.getEnergyDelta() - playerMules.size());
+                for (CoolMule mule : playerMules) {
+                    if (riverCoordinates.contains(mule.getLocation().getPoint())) {
+                        if (mule.getType().equals("Food")) {
+                            p.setFood(p.getFood() + 4);
+                            p.setFoodDelta(p.getFoodDelta() + 4);
+                        } else if (mule.getType().equals("Energy")) {
+                            p.setEnergy(p.getEnergy() + 2);
+                            p.setEnergyDelta(p.getEnergyDelta() + 2);
+                        } else if (mule.getType().equals("Ore")) {
+                            //DO NOTHING
+                        }
+                    } else if (plainCoordinates.contains(mule.getLocation().getPoint())) {
+                        if (mule.getType().equals("Food")) {
+                            p.setFood(p.getFood() + 2);
+                            p.setFoodDelta(p.getFoodDelta() + 2);
+                        } else if (mule.getType().equals("Energy")) {
+                            p.setEnergy(p.getEnergy() + 3);
+                            p.setEnergyDelta(p.getEnergyDelta() + 3);
+                        } else if (mule.getType().equals("Ore")) {
+                            p.setSmithore(p.getSmithore() + 1);
+                            p.setOreDelta(p.getOreDelta() + 1);
+                        }
+                    } else if (mountain1Coordinates.contains(mule.getLocation().getPoint())) {
+                        if (mule.getType().equals("Food")) {
+                            p.setFood(p.getFood() + 1);
+                            p.setFoodDelta(p.getFoodDelta() + 1);
+                        } else if (mule.getType().equals("Energy")) {
+                            p.setEnergy(p.getEnergy() + 1);
+                            p.setEnergyDelta(p.getEnergyDelta() + 1);
+                        } else if (mule.getType().equals("Ore")) {
+                            p.setSmithore(p.getSmithore() + 2);
+                            p.setOreDelta(p.getOreDelta() + 2);
+                        }
+                    } else if (mountain2Coordinates.contains(mule.getLocation().getPoint())) {
+                        if (mule.getType().equals("Food")) {
+                            p.setFood(p.getFood() + 1);
+                            p.setFoodDelta(p.getFoodDelta() + 1);
+                        } else if (mule.getType().equals("Energy")) {
+                            p.setEnergy(p.getEnergy() + 1);
+                            p.setEnergyDelta(p.getEnergyDelta() + 1);
+                        } else if (mule.getType().equals("Ore")) {
+                            p.setSmithore(p.getSmithore() + 3);
+                            p.setOreDelta(p.getOreDelta() + 3);
+                        }
+                    } else if (mountain3Coordinates.contains(mule.getLocation().getPoint())) {
+                        if (mule.getType().equals("Food")) {
+                            p.setFood(p.getFood() + 1);
+                            p.setFoodDelta(p.getFoodDelta() + 1);
+                        } else if (mule.getType().equals("Energy")) {
+                            p.setEnergy(p.getEnergy() + 1);
+                            p.setEnergyDelta(p.getEnergyDelta() + 1);
+                        } else if (mule.getType().equals("Ore")) {
+                            p.setSmithore(p.getSmithore() + 4);
+                            p.setOreDelta(p.getOreDelta() + 4);
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public void postselectionphase() {
@@ -1029,6 +1127,7 @@ public class MuleModel {
         }
         int moneyGained = Math.min(moneyBonus, 250);
         Player turningPlayer = getTurningPlayer();
+        turningPlayer.setMoneyDelta(turningPlayer.getMoneyDelta() + moneyGained);
         turningPlayer.setMoney(turningPlayer.getMoney() + moneyGained);
         enterEndTurnScreen("Congratulations! You just earned " + moneyGained + " dollars!");
     }
@@ -1046,12 +1145,16 @@ public class MuleModel {
                 System.out.println(itemsForSaleOther);
                 if (prevAmount - boughtAmount >= 0) {
                     getTurningPlayer().buyResource(boughtResource, boughtAmount);
+                    getTurningPlayer().setMoneyDelta(getTurningPlayer().getMoneyDelta() - paymentPrice);
                     getTurningPlayer().setMoney(getTurningPlayer().getMoney() - paymentPrice);
                     if (boughtResource.equals("Food")) {
+                        getTurningPlayer().setFoodDelta(getTurningPlayer().getFoodDelta() + boughtAmount);
                         foodOther = newAmount;
                     } else if (boughtResource.equals("Energy")) {
+                        getTurningPlayer().setEnergyDelta(getTurningPlayer().getEnergyDelta() + boughtAmount);
                         energyOther = newAmount;
                     } else if (boughtResource.equals("Smithore")) {
+                        getTurningPlayer().setOreDelta(getTurningPlayer().getOreDelta() + boughtAmount);
                         smithoreOther = newAmount;
                     } else if (boughtResource.equals("Crystite")) {
                         crystiteOther = newAmount;
@@ -1074,12 +1177,16 @@ public class MuleModel {
                 System.out.println(itemsForSaleBeginner);
                 if (prevAmount - boughtAmount >= 0) {
                     getTurningPlayer().buyResource(boughtResource, boughtAmount);
+                    getTurningPlayer().setMoneyDelta(getTurningPlayer().getMoneyDelta() - paymentPrice);
                     getTurningPlayer().setMoney(getTurningPlayer().getMoney() - paymentPrice);
                     if (boughtResource.equals("Food")) {
+                        getTurningPlayer().setFoodDelta(getTurningPlayer().getFoodDelta() + boughtAmount);
                         foodBeg = newAmount;
                     } else if (boughtResource.equals("Energy")) {
+                        getTurningPlayer().setEnergyDelta(getTurningPlayer().getEnergyDelta() + boughtAmount);
                         energyBeg = newAmount;
                     } else if (boughtResource.equals("Smithore")) {
+                        getTurningPlayer().setOreDelta(getTurningPlayer().getOreDelta() + boughtAmount);
                         smithoreBeg = newAmount;
                     } else if (boughtResource.equals("Crystite")) {
                         crystiteBeg = newAmount;
@@ -1098,6 +1205,14 @@ public class MuleModel {
     public void sellResource(String soldResource, int soldAmount) {
         if ((Integer) getTurningPlayer().getResources().get(soldResource) >= soldAmount) {
             getTurningPlayer().sellResource(soldResource, soldAmount);
+            if (soldResource.equals("Food")) {
+                getTurningPlayer().setFoodDelta(getTurningPlayer().getFoodDelta() - soldAmount);
+            } else if (soldResource.equals("Energy")) {
+                getTurningPlayer().setEnergyDelta(getTurningPlayer().getEnergyDelta() - soldAmount);
+            } else if (soldResource.equals("Ore")) {
+                getTurningPlayer().setOreDelta(getTurningPlayer().getOreDelta() - soldAmount);
+            }
+            getTurningPlayer().setMoneyDelta(getTurningPlayer().getMoneyDelta() + resourceSellPrices.get(soldResource) * soldAmount);
             getTurningPlayer().setMoney(getTurningPlayer().getMoney() + resourceSellPrices.get(soldResource) * soldAmount);
         } else {
             System.out.println("You don't have enough to sell");
@@ -1106,6 +1221,9 @@ public class MuleModel {
 
     public void enterMulePlacement(String type) {
         try {
+            double cost = type.equals("Food") ? 25 : type.equals("Energy") ? 50 : type.equals("Ore") ? 75 : 0;
+            getTurningPlayer().setMoney(getTurningPlayer().getMoney() - cost);
+            getTurningPlayer().setMoneyDelta(getTurningPlayer().getMoneyDelta() - cost);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Map.fxml"));
             PlacementController controller = new PlacementController();
             controller.loadModel(this);
@@ -1128,25 +1246,30 @@ public class MuleModel {
 
     }
 
+    public String muleConfigEnoughMoney(String type, Button button) {
+        Player p = getTurningPlayer();
+        String message;
+        double additionalCost = 0;
+        if (type.equals("Food")) {
+            additionalCost = 25;
+        } else if (type.equals("Energy")) {
+            additionalCost = 50;
+        } else if (type.equals("Ore")) {
+            additionalCost = 75;
+        }
+        if (p.getMoney() >= additionalCost) {
+            button.setDisable(false);
+            message = null;
+        } else {
+            button.setDisable(true);
+            message = "Not enough money for that type of MULE!";
+        }
+        return message;
+    }
+
 
 
     public String placeMule(String type, Property location) {
-        if(type.equals("Food")){
-            getTurningPlayer().setMoney(getTurningPlayer().getMoney() - 25);
-            if(getTurningPlayer().getMoney() < 0) getTurningPlayer().setMoney(0);
-
-        }
-        if(type.equals("Energy")){
-            getTurningPlayer().setMoney(getTurningPlayer().getMoney() - 50);
-            if(getTurningPlayer().getMoney() < 0) getTurningPlayer().setMoney(0);
-        }
-        if(type.equals("Ore")){
-            getTurningPlayer().setMoney(getTurningPlayer().getMoney() - 75);
-            if(getTurningPlayer().getMoney() < 0) getTurningPlayer().setMoney(0);
-        }
-
-
-
 
         String message = "You don't own that property!";
         if (getTurningPlayer().getProperties().contains(location)) {
@@ -1177,6 +1300,9 @@ public class MuleModel {
                 yellowMules.add(new CoolMule(type, location));
             }
             message = null;
+        }
+        if (message == null){
+            getTurningPlayer().setMuleDelta(getTurningPlayer().getMuleDelta() + 1);
         }
         return message;
     }

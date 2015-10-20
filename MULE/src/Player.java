@@ -21,12 +21,18 @@ public class Player implements Comparable<Player> {
     private ArrayList<Property> foodMules;
     private ArrayList<Property> energyMules;
     private ArrayList<Property> oreMules;
+    private int foodDelta, energyDelta, oreDelta, muleDelta;
+    private double moneyDelta;
+    private double lastScore;
 
     //ENUM FOR RACES AND THEIR INFO
 
 
 
     public Player(String name, int playerNumber, String race, Color color, Map<String, Integer> resources) {
+        foodDelta =0; energyDelta = 0; oreDelta = 0; muleDelta = 0;
+        moneyDelta = 0;
+        resources.put("Smithore", 0);
         foodMules = new ArrayList<>();
         energyMules = new ArrayList<>();
         oreMules = new ArrayList<>();
@@ -48,6 +54,14 @@ public class Player implements Comparable<Player> {
                 break;
         }
 
+    }
+
+    public void resetDeltas() {
+        setFoodDelta(0);
+        setEnergyDelta(0);
+        setOreDelta(0);
+        setMuleDelta(0);
+        setMoneyDelta(0);
     }
 
     public String getRace() {
@@ -104,7 +118,7 @@ public class Player implements Comparable<Player> {
     }
 
     public void buyResource(String resource, int amount) {
-        if (resources.get(resource) != null ) {
+        if (resources.get(resource) != null) {
             int prevAmount = resources.get(resource);
             resources.put(resource, prevAmount + amount);
             System.out.println(resources);
@@ -171,4 +185,55 @@ public class Player implements Comparable<Player> {
         resources.put("Mule",0);
     }
 
+    public int getMuleDelta() {
+        return muleDelta;
+    }
+
+    public void setMuleDelta(int muleDelta) {
+        this.muleDelta = muleDelta;
+    }
+
+    public int getOreDelta() {
+        return oreDelta;
+    }
+
+    public void setOreDelta(int oreDelta) {
+        this.oreDelta = oreDelta;
+    }
+
+    public int getEnergyDelta() {
+        return energyDelta;
+    }
+
+    public void setEnergyDelta(int energyDelta) {
+        this.energyDelta = energyDelta;
+    }
+
+    public int getFoodDelta() {
+        return foodDelta;
+    }
+
+    public void setFoodDelta(int foodDelta) {
+        this.foodDelta = foodDelta;
+    }
+
+    public double getMoneyDelta() {
+        return moneyDelta;
+    }
+
+    public void setMoneyDelta(double moneyDelta) {
+        this.moneyDelta = moneyDelta;
+    }
+
+    public double getLastScore() {
+        return lastScore;
+    }
+
+    public void setLastScore(double lastScore) {
+        this.lastScore = lastScore;
+    }
+
+    public double getScoreDelta() {
+        return getScore() - lastScore;
+    }
 }
