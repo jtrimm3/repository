@@ -1060,4 +1060,60 @@ public class MuleModel {
         }
         return message;
     }
+
+    public void randomEvent(){
+        double m;
+        if(round < 4) m = 25;
+        else if(round < 8) m = 50;
+        else if(round < 12) m = 75;
+        else m = 100;
+
+        int randomNum = 1 + (int)(Math.random()*100);
+        if(randomNum <= 27){
+            System.out.println(getTurningPlayer().getResources());
+            System.out.println(getTurningPlayer().getMoney());
+            System.out.println("RANDOM EVENT!!!");
+            int randomNum2 = 1 + (int)(Math.random()*7);
+            if(randomNum2 == 1){
+                System.out.println("YOU JUST RECIEVED A PACKAGE FROM THE GT ALUMNI CONTAINING 3 FOOD AND 2 ENERGY UNITS");
+                getTurningPlayer().setFood(getTurningPlayer().getFood() + 3);
+                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 2);
+            }
+
+            if(randomNum2 == 2){
+                System.out.println("A WANDERING TECH STUDENT REPAID YOUR HOSPITALITY BY LEAVING TWO BARS OF ORE");
+                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() + 2);
+            }
+
+            if(randomNum2 == 3){
+                System.out.println("THE MUSEUM BOUGHT YOUR ANTIQUE PERSONAL COMPUTER FOR $" + m * 8.0);
+                getTurningPlayer().setMoney(getTurningPlayer().getMoney() + (m * 8.0));
+            }
+
+            if(randomNum2 == 4){
+                System.out.println("YOU FOUND A DEAD MOOSE RAT AND SOLD THE HIDE FOR $" + m * 2.0);
+                getTurningPlayer().setMoney(getTurningPlayer().getMoney() + (m * 2.0));
+            }
+
+            if(randomNum2 == 5){
+                System.out.println("FLYING CAT-BUGS ATE THE ROOF OFF YOUR HOUSE. REPAIRS COST $" + m * 4);
+                getTurningPlayer().setMoney(getTurningPlayer().getMoney() - (m * 4.0));
+            }
+
+            if(randomNum2 == 6){
+                System.out.println("MISCHIEVOUS UGA STUDENT BROKE INTO YOUR STORAGE SHED AND STOLE HALF YOUR FOOD");
+                getTurningPlayer().setFood((int)Math.floor(getTurningPlayer().getFood()/2));
+            }
+
+            if(randomNum2 == 7){
+                System.out.println("YOUR SPACE GYPSY INLAWS MADE A MESS OF THE TOWN. IT COST YOU $" + 6.0 * m + " TO CLEAN IT UP.");
+                getTurningPlayer().setMoney(getTurningPlayer().getMoney() - (m * 6.0));
+            }
+            System.out.println(getTurningPlayer().getResources());
+            System.out.println(getTurningPlayer().getMoney());
+        }else System.out.println("No Random event occured.");
+
+
+    }
+
 }
