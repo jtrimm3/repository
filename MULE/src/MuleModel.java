@@ -592,6 +592,7 @@ public class MuleModel {
     public String endTurn() {
         String roundMessage = "";
         String turnOrderMessage = "";
+        randomEvent();
         System.out.println("ENDED TURN FOR PLAYER" + getTurningPlayer() + " ROUND " + getRound());
 
         if (turnCount % numberOfPlayers == 0) {
@@ -1067,7 +1068,10 @@ public class MuleModel {
         else if(round < 8) m = 50;
         else if(round < 12) m = 75;
         else m = 100;
-
+        Player worstPlayer = getWorstPlayer();
+        if (worstPlayer == getTurningPlayer()) {
+            return;
+        }
         int randomNum = 1 + (int)(Math.random()*100);
         if(randomNum <= 27){
             System.out.println(getTurningPlayer().getResources());
@@ -1114,6 +1118,17 @@ public class MuleModel {
         }else System.out.println("No Random event occured.");
 
 
+    }
+
+    private Player getWorstPlayer() {
+        Player p = null;
+        double minScore = Double.MAX_VALUE;
+        for (Player player : playerList) {
+            if (player.getScore() < minScore) {
+                p = player;
+            }
+        }
+        return p;
     }
 
 }
