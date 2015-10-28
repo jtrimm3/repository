@@ -587,12 +587,12 @@ public class MuleModel {
         round = (turnCount / numberOfPlayers) + 1;
         turningPlayer = playerList.get(turnCount % numberOfPlayers);
         turnCount++;
+        randomEvent();
     }
 
     public String endTurn() {
         String roundMessage = "";
         String turnOrderMessage = "";
-        randomEvent();
         System.out.println("ENDED TURN FOR PLAYER" + getTurningPlayer() + " ROUND " + getRound());
 
         if (turnCount % numberOfPlayers == 0) {
