@@ -408,6 +408,7 @@ public class MuleModel {
         if (!hasBegun) {
             initializeTimer();
             startNextTurn();
+            randomEvent();
             hasBegun = true;
         }
         try {
@@ -461,6 +462,7 @@ public class MuleModel {
                         switch (event.getCode()) {
                             case ENTER:
                                 enterMap();
+                                randomEvent();
                                 initializeTimer();
                         }
                     }
@@ -587,7 +589,6 @@ public class MuleModel {
         round = (turnCount / numberOfPlayers) + 1;
         turningPlayer = playerList.get(turnCount % numberOfPlayers);
         turnCount++;
-        randomEvent();
     }
 
     public String endTurn() {
