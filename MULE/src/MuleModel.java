@@ -74,7 +74,7 @@ public class MuleModel {
     private Map<String, Double> resourceBuyPrices = new HashMap<>();
     private Map<String, Integer> resources = new HashMap<>();
 
-    private ArrayList<Player> playerList;
+    public ArrayList<Player> playerList;
 
     private ArrayList<CoolMule> redMules = new ArrayList<>();
     private ArrayList<CoolMule> greenMules = new ArrayList<>();
@@ -205,17 +205,35 @@ public class MuleModel {
 
 
     public int calculateTimeForTurn(Player p) {
-        if(getTurningPlayer()==null) return 50;
-        if(getTurningPlayer().getFood() == 0) return 5;
+        if(p ==null) return 50;
+        if(p.getFood() == 0) return 5;
         if(round<5){
-            if(getTurningPlayer().getFood() < 3) return 30;
+            if(p.getFood() < 3) return 30;
         }
-        if(round <9){
-            if(getTurningPlayer().getFood() < 4) return 30;
+        else if (round < 9){
+            if(p.getFood() < 4) return 30;
         }
-        if(getTurningPlayer().getFood() < 5) return 30;
+        else if (round < 13) {
+            if (p.getFood() < 5) return 30;
+        }
         return 50;
     }
+
+
+//    public int calculateTimeForTurn(Player p, int round) {
+//        if(p ==null) return 50;
+//        if(p.getFood() == 0) return 5;
+//        if(round<5){
+//            if(p.getFood() < 3) return 30;
+//        }
+//        else if(round < 9){
+//            if(p.getFood() < 4) return 30;
+//        }
+//        else if (round < 13) {
+//            if(p.getFood() < 5) return 30;
+//        }
+//        return 50;
+//    }
 
     public int getSecondsLeft() {
         return secondsLeft;
@@ -630,7 +648,7 @@ public class MuleModel {
         }
     }
 
-    private void calculateProduction() {
+    public void calculateProduction() {
         ArrayList<CoolMule> playerMules = new ArrayList<>();
         for (Player p: playerList) {
             if (p.getColor().equals(Color.RED)) {
