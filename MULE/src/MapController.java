@@ -128,8 +128,7 @@ public class MapController implements Initializable, Controller {
         muleModel.updatePlayerInfoText(playerInfoText);
         muleModel.setTimerTextReference(timerText);
         for (Node node : paneChildren) {
-            muleModel.initializeCounter();
-            muleModel.startTimer();
+            muleModel.initializeTimer();
             Integer xInd = mapGridPane.getColumnIndex(node);
             Integer yInd = mapGridPane.getRowIndex(node);
             if (townCoordinates.contains(new Point(xInd, yInd))) {

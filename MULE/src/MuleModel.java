@@ -53,13 +53,7 @@ public class MuleModel implements Serializable {
     private int boughtOnThisTurnCount;
     private String level;
     private String map;
-<<<<<<< HEAD
-    private ArrayList<Player> playerList;
-    //private HashMap<Integer, Player> playerHashMap;
-    private Stage stage;
-    protected Timer timer;
-    protected int secondsLeft;
-=======
+
     private Map<String, Integer> itemsForSaleBeginner;
     private Map<String, Integer> itemsForSaleOther;
     private static int foodBeg = 16;
@@ -98,7 +92,6 @@ public class MuleModel implements Serializable {
     private transient Timer timer;
     private int secondsLeft;
     private transient Text timerText;
->>>>>>> M6
 
     private ArrayList<Point> riverCoordinates = new ArrayList<>();
     private ArrayList<Point> townCoordinates = new ArrayList<>();
@@ -187,29 +180,6 @@ public class MuleModel implements Serializable {
 
     }
 
-<<<<<<< HEAD
-    public void initializeCounter() {
-        secondsLeft = getTime();
-        timer = new Timer(1000, new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-                if(secondsLeft < 1) {
-                    endTurn();
-                } else {
-                    System.out.println(secondsLeft);
-                    secondsLeft--;
-                }
-            }
-        });
-
-
-    }
-
-    public int getTime() {
-        return 50;
-    }
-
-=======
     public void initializeTimer() {
         secondsLeft = calculateTimeForTurn(getTurningPlayer());
         timer.cancel();
@@ -272,26 +242,16 @@ public class MuleModel implements Serializable {
 //        return 50;
 //    }
 
->>>>>>> M6
     public int getSecondsLeft() {
         return secondsLeft;
     }
 
-<<<<<<< HEAD
-    public void startTimer() {
-        timer.start();
-    }
 
-
-
-    public void initializeConfigData(int numberOfPlayers) {
-=======
 //    public void startTimer() {
 //        timer.start();
 //    }
 
     public void initializeConfigData(int numberOfPlayers, String level) {
->>>>>>> M6
         this.numberOfPlayers = numberOfPlayers;
         this.playerList = new ArrayList<>();
         this.level = level;
@@ -1128,8 +1088,7 @@ public class MuleModel implements Serializable {
 
 
 
-<<<<<<< HEAD
-=======
+
     public String placeMule(String type, Property location) {
 
         String message = "You don't own that property!";
@@ -1313,5 +1272,5 @@ public class MuleModel implements Serializable {
             throw new RuntimeException("Error reading data");
         }
     }
->>>>>>> M6
+
 }
