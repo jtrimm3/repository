@@ -1,7 +1,9 @@
+import java.io.Serializable;
+
 /**
  * Created by Peter on 10/15/2015.
  */
-public class CoolMule {
+public class CoolMule implements Serializable {
     private Property location;
     private String type;
 

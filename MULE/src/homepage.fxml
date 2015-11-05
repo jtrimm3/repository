@@ -20,5 +20,6 @@
       <RadioButton fx:id="numPlay2" layoutX="277.0" layoutY="266.0" mnemonicParsing="false" onAction="#selectPlayerNum" text="2" />
       <RadioButton fx:id="numPlay3" layoutX="323.0" layoutY="266.0" mnemonicParsing="false" onAction="#selectPlayerNum" text="3" />
       <RadioButton fx:id="numPlay4" layoutX="365.0" layoutY="266.0" mnemonicParsing="false" onAction="#selectPlayerNum" text="4" />
+      <Button layoutX="457.0" layoutY="317.0" mnemonicParsing="false" onAction="#load" text="Load" />
    </children>
 </AnchorPane>

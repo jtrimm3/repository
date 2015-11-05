@@ -1,5 +1,7 @@
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 
 import java.net.URL;
@@ -41,6 +43,9 @@ public class EndturnController implements Controller, Initializable {
     @FXML
     private Text nextMessageText = new Text();
 
+    @FXML
+    private Button saveButton = new Button();
+
 
 
     @Override
@@ -54,6 +59,12 @@ public class EndturnController implements Controller, Initializable {
         nextMoneyText.setText("$" + newPlayer.getMoney());
         overMessageText.setText(oldMessage);
         nextMessageText.setText(newMessgae);
+    }
+
+    @FXML
+    private void saveButtonPress(ActionEvent event) {
+        muleModel.enterSaveScreen(topMessage,oldPlayer,newPlayer,oldMessage,newMessgae);
+
     }
 
     public void setTopMessageText(String str) {

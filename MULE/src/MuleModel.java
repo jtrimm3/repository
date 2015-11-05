@@ -26,17 +26,18 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.awt.*;
-import java.io.IOException;
+import java.io.*;
 import java.time.Duration;
 import java.util.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 /**
  * Created by Peter on 9/19/2015.
  */
-public class MuleModel {
+public class MuleModel implements Serializable {
     private int round;
     private boolean hasBegun = false;
     private ArrayList<String> availableColors;
@@ -82,10 +83,10 @@ public class MuleModel {
     private ArrayList<CoolMule> yellowMules = new ArrayList<>();
 
 
-    private Stage stage;
-    private Timer timer;
+    private transient Stage stage;
+    private transient Timer timer;
     private int secondsLeft;
-    private Text timerText;
+    private transient Text timerText;
 
     private ArrayList<Point> riverCoordinates = new ArrayList<>();
     private ArrayList<Point> townCoordinates = new ArrayList<>();
@@ -104,6 +105,7 @@ public class MuleModel {
 
     private int[] roundBonus;
     private Player lastPlayer;
+    private String saveName;
 
     public MuleModel(Stage stage) {
         this.stage = stage;
@@ -386,6 +388,10 @@ public class MuleModel {
         return stage;
     }
 
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
 
 
 
@@ -428,7 +434,7 @@ public class MuleModel {
             });
             stage.setScene(scene);
         } catch (Exception n) {
-            System.out.println("oops");
+            System.out.println(n.getMessage());
         }
 
     }
@@ -452,7 +458,7 @@ public class MuleModel {
                 controller.setTopMessageText(topMessageToDisplay);
                 controller.setOldPlayer(oldPlayer, oldPlayerMessage);
                 controller.setNewPlayer(getTurningPlayer(), newPlayerMessage);
-
+                controller.loadModel(this);
 
                 loader.setController(controller);
                 Scene scene = new Scene(loader.load());
@@ -470,6 +476,38 @@ public class MuleModel {
                 stage.setScene(scene);
             }
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void backFromSaveScreen(String top, Player oldp, Player newp, String oldm, String newm) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("endturn.fxml"));
+            EndturnController controller = new EndturnController();
+           // loader.setLocation(getClass().getResource("endturn.fxml"));
+            controller.setTopMessageText(top);
+            controller.setOldPlayer(getTurningPlayer(), oldm);
+            controller.setNewPlayer(getTurningPlayer(), newm);
+            timer = new java.util.Timer();
+            timerText = new Text();
+            controller.loadModel(this);
+
+
+            loader.setController(controller);
+            Scene scene = new Scene(loader.load());
+            scene.setOnKeyPressed(new EventHandler<KeyEvent>() {  //ENTER ENDS TURN
+                @Override
+                public void handle(KeyEvent event) {
+                    switch (event.getCode()) {
+                        case ENTER:
+                            enterMap();
+                            randomEvent();
+                            initializeTimer();
+                    }
+                }
+            });
+            stage.setScene(scene);
+        }  catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -1132,4 +1170,80 @@ public class MuleModel {
         return p;
     }
 
+    public void enterSaveScreen(String top, Player oldp, Player newp, String newm, String oldm) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("save.fxml"));
+            SaveController controller = new SaveController();
+            controller.loadModel(this);
+            controller.loadEndTurnData(top,oldp,newp,newm,oldm);
+            loader.setController(controller);
+            Scene scene = new Scene(loader.load());
+            scene.setOnKeyPressed(new EventHandler<KeyEvent>() {  //ENTER ENDS TURN
+                @Override
+                public void handle(KeyEvent event) {
+                    switch (event.getCode()) {
+                        case ENTER:
+                            enterMap();
+                            randomEvent();
+                            initializeTimer();
+                    }
+                }
+            });
+            stage.setScene(scene);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void saveGame(String name) {
+        try {
+            saveName = name;
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(name));
+            out.writeObject(this);
+            out.close();
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void enterLoadScreen() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("load.fxml"));
+            LoadController controller = new LoadController();
+            controller.loadModel(this);
+            controller.setFileList(getSaveGames());
+            loader.setController(controller);
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        } catch (Exception e) {
+            throw new RuntimeException("HEY!");
+        }
+    }
+
+    public MuleModel loadGame(String name) {
+        try {
+            FileInputStream is = new FileInputStream(name);
+            ObjectInputStream reader = new ObjectInputStream(is);
+            return (MuleModel) reader.readObject();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    public List<File> getSaveGames() {
+        try {
+            File currentDir = new File(System.getProperty("user.dir"));
+            ArrayList<File> list = new ArrayList<File>(Arrays.asList(currentDir.listFiles()));
+            ArrayList<File> gameSaveFiles = new ArrayList<File>();
+            for (File file : list) {
+                if (file.isFile() && file.getName().startsWith("m") && file.getName().endsWith(".mul")) {
+                    gameSaveFiles.add(file);
+                }
+            }
+            return gameSaveFiles;
+        } catch (Exception e){
+            throw new RuntimeException("Error reading data");
+        }
+    }
 }

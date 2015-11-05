@@ -146,6 +146,13 @@ public class HomepageController implements Initializable, Controller {
         muleModel.continuePlayerConfig();
     }
 
+    @FXML
+    private void load(ActionEvent event) throws IOException {
+        muleModel.enterLoadScreen();
+
+
+    }
+
     public void loadModel(MuleModel model) {
         muleModel = model;
     }

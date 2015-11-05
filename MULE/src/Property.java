@@ -1,9 +1,10 @@
 import java.awt.*;
+import java.io.Serializable;
 
 /**
  * Created by Peter on 9/20/2015.
  */
-public class Property {
+public class Property implements Serializable{
     private Point location;
     private double price;
 

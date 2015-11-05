@@ -1,4 +1,7 @@
 import java.awt.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -8,10 +11,10 @@ import javafx.scene.paint.Color;
 /**
  * Created by Peter on 9/15/2015.
  */
-public class Player implements Comparable<Player> {
+public class Player implements Comparable<Player>, Serializable {
     private MuleModel muleModel;
     private double money;
-    private Color color;
+    private transient Color color;
     private int food, energy, smithore;
     private String name;
     private String race;
@@ -24,6 +27,10 @@ public class Player implements Comparable<Player> {
     private int foodDelta, energyDelta, oreDelta, muleDelta;
     private double moneyDelta;
     private double lastScore;
+    private String redString = Color.RED.toString();
+    private String greenString = Color.GREEN.toString();
+    private String blueString = Color.BLUE.toString();
+    private String yellowString = Color.YELLOW.toString();
 
     //ENUM FOR RACES AND THEIR INFO
 
@@ -54,6 +61,34 @@ public class Player implements Comparable<Player> {
                 break;
         }
 
+    }
+
+    private void writeObject(java.io.ObjectOutputStream stream)
+            throws IOException {
+        stream.defaultWriteObject();
+        if (color.equals(Color.RED)) {
+            stream.writeObject(redString);
+        } else if (color.equals(Color.GREEN)) {
+            stream.writeObject(greenString);
+        } else if (color.equals(Color.BLUE)) {
+            stream.writeObject(blueString);
+        } else if (color.equals(Color.YELLOW)) {
+            stream.writeObject(yellowString);
+        }
+    }
+
+    private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
+        stream.defaultReadObject();
+        String str = (String) stream.readObject();
+        if (str.equals(redString)) {
+            this.color = Color.RED;
+        } else if (str.equals(blueString)) {
+            this.color = Color.BLUE;
+        } else if (str.equals(greenString)) {
+            this.color = Color.GREEN;
+        } else if (str.equals(yellowString)) {
+            this.color = Color.YELLOW;
+        }
     }
 
     public void resetDeltas() {
