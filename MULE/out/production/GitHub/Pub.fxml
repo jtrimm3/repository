@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <Text layoutX="171.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Pub!">
+      <font>
+        <Font size="26.0" />
+      </font>
+    </Text>
+    <Button id="gamble" fx:id="gambleButton" layoutX="263.0" layoutY="105.0" mnemonicParsing="false" text="Gamble!" />
+    <Button id="backTown" fx:id="townButton" layoutX="247.0" layoutY="190.0" mnemonicParsing="false" onAction="#returnToTown" text="Back to Town" />
+    <Button id="backMap" fx:id="mapButton" layoutX="251.0" layoutY="291.0" mnemonicParsing="false" onAction="#returnToMap" text="Back to Map" />
+  </children>
+</AnchorPane>

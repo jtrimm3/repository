@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.effect.Blend;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.effect.ColorInput;
@@ -39,7 +40,10 @@ public class MapController implements Initializable, Controller {
     private ArrayList<Point> mountain1Coordinates = new ArrayList<>();
     private ArrayList<Point> mountain2Coordinates = new ArrayList<>();
     private ArrayList<Point> mountain3Coordinates = new ArrayList<>();
-    private long time = 50;
+
+
+    @FXML
+    private Label titleText = new Label();
 
 
     @FXML
@@ -53,6 +57,9 @@ public class MapController implements Initializable, Controller {
 
     @FXML
     private Text errorText = new Text();
+
+    @FXML
+    private Text timerText = new Text();
 
 
 
@@ -119,6 +126,7 @@ public class MapController implements Initializable, Controller {
         ObservableList<Node> paneChildren = mapGridPane.getChildren();
         muleModel.updatePropertyImages(mapGridPane);
         muleModel.updatePlayerInfoText(playerInfoText);
+        muleModel.setTimerTextReference(timerText);
         for (Node node : paneChildren) {
             muleModel.initializeCounter();
             muleModel.startTimer();
@@ -259,9 +267,10 @@ public class MapController implements Initializable, Controller {
                 });
             }
         }
-        roundText.setText("Round " + muleModel.getRound());
-    }
 
+        roundText.setText("Round " + muleModel.getRound());
+
+    }
 
 
 

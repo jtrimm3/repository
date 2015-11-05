@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <Label layoutX="267.0" layoutY="0.0" text="Map">
+    <Label fx:id="titleText" layoutX="267.0" layoutY="0.0" text="Map">
       <font>
         <Font size="32.0" />
       </font>
@@ -89,5 +89,6 @@
       <Text fx:id="playerInfoText" layoutX="381.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="168.0" />
       <Text fx:id="roundText" layoutX="116.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Text fx:id="errorText" layoutX="36.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="timerText" layoutX="454.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" />
   </children>
 </AnchorPane>
