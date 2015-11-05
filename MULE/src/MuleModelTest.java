@@ -83,13 +83,13 @@ public class MuleModelTest extends TestCase {
         assertEquals("Test with no food round 4", 5, m.calculateTimeForTurn(makePlayerNoFood()), 4);
         assertEquals("Test with no food round 5", 5, m.calculateTimeForTurn(makePlayerNoFood()), 5);
         assertEquals("Test with no food round 10", 5, m.calculateTimeForTurn(makePlayerNoFood()), 10);
-        assertEquals("Test with null player", 50, m.calculateTimeForTurn(null, 4));
-        assertEquals("Test low round insufficient food", 30, m.calculateTimeForTurn(makePlayerFoodRound4(), 4));
-        assertEquals("Test mid round insufficient food", 30, m.calculateTimeForTurn(makePlayerFoodRound5(), 5));
-        assertEquals("Test high round insufficient food", 30, m.calculateTimeForTurn(makePlayerFoodRound10(), 10));
-        assertEquals("Test low round sufficient food", 50, m.calculateTimeForTurn(makePlayerMoreFoodRound4(), 4));
-        assertEquals("Test mid round sufficient food", 50, m.calculateTimeForTurn(makePlayerMoreFoodRound5(), 5));
-        assertEquals("Test for high round with sufficient food", 50,  m.calculateTimeForTurn(makePlayerMoreFoodRound10(), 10));
+        assertEquals("Test with null player", 50, m.calculateTimeForTurn(null), 4);
+        assertEquals("Test low round insufficient food", 30, m.calculateTimeForTurn(makePlayerFoodRound4()), 4);
+        assertEquals("Test mid round insufficient food", 30, m.calculateTimeForTurn(makePlayerFoodRound5()), 5);
+        assertEquals("Test high round insufficient food", 30, m.calculateTimeForTurn(makePlayerFoodRound10()), 10);
+        assertEquals("Test low round sufficient food", 50, m.calculateTimeForTurn(makePlayerMoreFoodRound4()), 4);
+        assertEquals("Test mid round sufficient food", 50, m.calculateTimeForTurn(makePlayerMoreFoodRound5()), 5);
+        assertEquals("Test for high round with sufficient food", 50,  m.calculateTimeForTurn(makePlayerMoreFoodRound10()), 10);
 
         //get player with food
         //get player no food
