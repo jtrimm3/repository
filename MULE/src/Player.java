@@ -12,10 +12,8 @@ import javafx.scene.paint.Color;
  * Created by Peter on 9/15/2015.
  */
 public class Player implements Comparable<Player>, Serializable {
-    private MuleModel muleModel;
     private double money;
     private transient Color color;
-    private int food, energy, smithore;
     private String name;
     private String race;
     private ArrayList<Property> properties;

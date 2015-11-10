@@ -12,19 +12,19 @@ public class CoolMule implements Serializable {
         this.type = type;
     }
 
-    public Property getLocation() {
+    public final Property getLocation() {
         return location;
     }
 
-    public void setLocation(Property location) {
+    public final void setLocation(Property location) {
         this.location = location;
     }
 
-    public String getType() {
+    public final String getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public final void setType(String type) {
         this.type = type;
     }
 

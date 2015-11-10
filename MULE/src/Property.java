@@ -6,7 +6,6 @@ import java.io.Serializable;
  */
 public class Property implements Serializable{
     private Point location;
-    private double price;
 
     public Property(Point location) {
         this.location = location;

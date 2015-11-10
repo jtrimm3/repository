@@ -1,4 +1,4 @@
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
@@ -37,7 +37,7 @@ public class SaveController implements Controller, Initializable {
     }
 
     @FXML
-    private void save(ActionEvent event) {
+    public void save() {
         timesPressed++;
         String fileName = name.getText();
         messageText.setText(null);
@@ -69,7 +69,7 @@ public class SaveController implements Controller, Initializable {
     }
 
     @FXML
-    private void back(ActionEvent event) {
+    public void back() {
         muleModel.backFromSaveScreen(top, oldp, newp, oldm, newm);
     }
 

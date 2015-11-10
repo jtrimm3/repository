@@ -7,7 +7,7 @@
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
@@ -15,11 +15,10 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
+
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
@@ -34,22 +33,21 @@ import javafx.stage.Stage;
 public class HomepageController implements Initializable, Controller {
     private MuleModel muleModel;
     @FXML
-    final private ToggleGroup group = new ToggleGroup();
-    final private ToggleGroup group2 = new ToggleGroup();
+    private final ToggleGroup group = new ToggleGroup();
+    private final ToggleGroup group2 = new ToggleGroup();
     
-    public int players;
-    public int playerPageCount;
+    private int players;
     private String level = "Beginner";
     
-    public HomepageController() {
-        this.players = players;
-    }
+//    public HomepageController() {
+//        this.players = players;
+//    }
     
     public int getPlayers() {
         return players;
     }
 
-    private String selectedMap;
+    //private String selectedMap;
     private List<String> mapChoices;
     
     @FXML
@@ -73,15 +71,15 @@ public class HomepageController implements Initializable, Controller {
     @FXML
     private ComboBox  map = new ComboBox();
     
-    @FXML
-    private Button contin = new Button();
+    //@FXML
+    //private Button contin = new Button();
     
     
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public final void initialize(URL url, ResourceBundle rb) {
         beginner.setToggleGroup(group);
         standard.setToggleGroup(group);
         tournament.setToggleGroup(group);
@@ -102,19 +100,19 @@ public class HomepageController implements Initializable, Controller {
     }    
     
     @FXML
-    private void selectMap() {
+    public void selectMap() {
         map.getSelectionModel().selectedIndexProperty().addListener(
             new ChangeListener<Number>() {
                 public void changed(ObservableValue v, Number val, Number newVal) {
                     String sel = mapChoices.get(newVal.intValue());
-                    selectedMap = sel;
+                    //selectedMap = sel;
                 }
     });
     
     }
     
     @FXML
-    private void selectPlayerNum()  {
+    public void selectPlayerNum()  {
         group2.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> ov, Toggle t, Toggle t1) {
@@ -126,20 +124,19 @@ public class HomepageController implements Initializable, Controller {
     }
 
     @FXML
-    private void selectLevel() {
+    public void selectLevel() {
         group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> ov, Toggle t, Toggle t1) {
                 RadioButton check = (RadioButton)t1.getToggleGroup().getSelectedToggle();
                 level = check.getText();
-                System.out.println(level);
             }
         });
     }
 
     
     @FXML
-    private void next(ActionEvent event) throws IOException {
+    public void next(ActionEvent event) throws IOException {
         muleModel.initializeConfigData(players, level);
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
@@ -147,13 +144,13 @@ public class HomepageController implements Initializable, Controller {
     }
 
     @FXML
-    private void load(ActionEvent event) throws IOException {
+    public void load() throws IOException {
         muleModel.enterLoadScreen();
 
 
     }
 
-    public void loadModel(MuleModel model) {
+    public final void loadModel(MuleModel model) {
         muleModel = model;
     }
 }

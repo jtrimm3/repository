@@ -2,29 +2,14 @@ import javafx.collections.ObservableList;
 import javafx.event.*;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.effect.Blend;
-import javafx.scene.effect.BlendMode;
-import javafx.scene.effect.ColorInput;
-import javafx.scene.effect.ImageInput;
-import javafx.scene.image.*;
-import javafx.scene.image.Image;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.scene.control.Button;
-import javafx.scene.Parent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
-
-import javax.print.DocFlavor;
 import java.awt.Point;
-import java.awt.event.MouseEvent;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -128,8 +113,8 @@ public class PlacementController implements Initializable, Controller {
         muleModel.updatePlayerInfoText(playerInfoText);
         muleModel.setTimerTextReference(timerText);
         for (Node node : paneChildren) {
-            Integer xInd = mapGridPane.getColumnIndex(node);
-            Integer yInd = mapGridPane.getRowIndex(node);
+            Integer xInd = GridPane.getColumnIndex(node);
+            Integer yInd = GridPane.getRowIndex(node);
             if (townCoordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
                 button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED, new EventHandler<javafx.scene.input.MouseEvent>() {

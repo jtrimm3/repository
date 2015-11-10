@@ -1,12 +1,12 @@
 public abstract class Item {
 
-	abstract public String name();
-	abstract public int price();
-	public int hashcode() {
+	public abstract  String name();
+	public abstract int price();
+	public final int hashcode() {
 		String a = name();
 		return a.length();
 	}
-	public String toString() {
+	public final String toString() {
 		return name() + " "	+ price();
 	}
 

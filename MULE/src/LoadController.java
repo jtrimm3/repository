@@ -1,13 +1,11 @@
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -18,19 +16,19 @@ public class LoadController implements Controller, Initializable {
     private MuleModel muleModel;
     private List<File> fileList;
 
-    @FXML
-    private Button load = new Button();
+    //@FXML
+    //private Button load = new Button();
 
     @FXML
     private ComboBox<File> box = new ComboBox<>();
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public final void initialize(URL url, ResourceBundle rb) {
         box.setItems(FXCollections.observableArrayList(fileList));
     }
 
     @FXML
-    private void load() {
+    public void load() {
         File file = box.getValue();
         Stage stage = muleModel.getStage();
         MuleModel newModel = muleModel.loadGame(file.getName());

@@ -1,24 +1,12 @@
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundSize;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
-
-import javax.swing.*;
-import java.awt.Point;
-import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 /**
@@ -26,18 +14,18 @@ import java.util.ResourceBundle;
  */
 public class TownController implements Initializable, Controller {
     private MuleModel muleModel;
-    private ArrayList<Point> pubCoordinates = new ArrayList<>();
-    private ArrayList<Point> storeCoordinates = new ArrayList<>();
-    private ArrayList<Point> assayCoordinates = new ArrayList<>();
-    private ArrayList<Point> landCoordinates = new ArrayList<>();
+//    private ArrayList<Point> pubCoordinates = new ArrayList<>();
+//    private ArrayList<Point> storeCoordinates = new ArrayList<>();
+//    private ArrayList<Point> assayCoordinates = new ArrayList<>();
+//    private ArrayList<Point> landCoordinates = new ArrayList<>();
 
-    private final String PUB_IMAGE = "pub.png";
-    private final String STORE_IMAGE = "store.png";
-    private final String ASSAY_IMAGE = "assay.png";
-    private final String LAND_IMAGE = "land.png";
+    private static final String PUB_IMAGE = "pub.png";
+    private static final String STORE_IMAGE = "store.png";
+    private static final String ASSAY_IMAGE = "assay.png";
+    private static final String LAND_IMAGE = "land.png";
 
-    @FXML
-    private GridPane townGridPane = new GridPane();
+//    @FXML
+//    private GridPane townGridPane = new GridPane();
 
     @FXML
     private Button pubButton = new Button();
@@ -65,23 +53,23 @@ public class TownController implements Initializable, Controller {
     }
 
     @FXML
-    private void returnToMap(ActionEvent event) {
+    public void returnToMap() {
         muleModel.enterMap();
 
     }
 
     @FXML
-    private void enterPub(ActionEvent event){
+    public void enterPub(){
         muleModel.enterPub();
     }
 
     @FXML
-    private void enterStore(ActionEvent event) {
+    public void enterStore() {
         muleModel.enterStore();
     }
 
     @FXML
-    private void enterLandOffice(ActionEvent event) {
+    public void enterLandOffice() {
         muleModel.enterLandOffice();
     }
 

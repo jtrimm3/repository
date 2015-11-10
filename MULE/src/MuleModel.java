@@ -100,13 +100,13 @@ public class MuleModel implements Serializable {
     private ArrayList<Point> mountain2Coordinates = new ArrayList<>();
     private ArrayList<Point> mountain3Coordinates = new ArrayList<>();
 
-    private final String TOWN_IMAGE = "town.png";
-    private final String RIVER_IMAGE = "river.png";
-    private final String PLAIN_IMAGE = "plain.png";
-    private final String M1_IMAGE = "mountain1.png";
-    private final String M2_IMAGE = "mountain2.png";
-    private final String M3_IMAGE = "mountain3.png";
-    private final String SQUARE_IMAGE = "TransparentSquare.png";
+    private static final String TOWN_IMAGE = "town.png";
+    private static final String RIVER_IMAGE = "river.png";
+    private static final String PLAIN_IMAGE = "plain.png";
+    private static final String M1_IMAGE = "mountain1.png";
+    private static final String M2_IMAGE = "mountain2.png";
+    private static final String M3_IMAGE = "mountain3.png";
+    private static final String SQUARE_IMAGE = "TransparentSquare.png";
 
     private int[] roundBonus;
     private Player lastPlayer;
@@ -336,10 +336,7 @@ public class MuleModel implements Serializable {
     }
 
     public boolean enoughResources(String soldResource, int soldAmount) {
-        if( (int) getTurningPlayer().getResources().get(soldResource) >= soldAmount) {
-            return true;
-        }
-        return false;
+        return (int) getTurningPlayer().getResources().get(soldResource) >= soldAmount;
     }
     private int toInteger(String str) {
         if(isNumeric(str)) {

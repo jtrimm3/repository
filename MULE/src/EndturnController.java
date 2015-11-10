@@ -1,11 +1,11 @@
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+
 import javafx.scene.text.Text;
 
 import java.net.URL;
-import java.util.ArrayList;
+
 import java.util.ResourceBundle;
 
 /**
@@ -43,13 +43,13 @@ public class EndturnController implements Controller, Initializable {
     @FXML
     private Text nextMessageText = new Text();
 
-    @FXML
-    private Button saveButton = new Button();
+    //@FXML
+    //private Button saveButton = new Button();
 
 
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public final void initialize(URL url, ResourceBundle rb) {
         text.setText(topMessage);
         pOverText.setText("Last Player");
         pNextText.setText("Next Player");
@@ -62,27 +62,27 @@ public class EndturnController implements Controller, Initializable {
     }
 
     @FXML
-    private void saveButtonPress(ActionEvent event) {
+    public void saveButtonPress() {
         muleModel.enterSaveScreen(topMessage,oldPlayer,newPlayer,oldMessage,newMessgae);
 
     }
 
-    public void setTopMessageText(String str) {
+    public final void setTopMessageText(String str) {
         topMessage = str;
     }
 
-    public void setNewPlayer(Player turningPlayer, String message) {
+    public final void setNewPlayer(Player turningPlayer, String message) {
         newMessgae = message;
         newPlayer = turningPlayer;
     }
 
-    public void setOldPlayer(Player oldPlayer, String message) {
+    public final void setOldPlayer(Player oldPlayer, String message) {
         oldMessage = message;
         this.oldPlayer = oldPlayer;
     }
 
 
-    public void loadModel(MuleModel model) {
+    public final void loadModel(MuleModel model) {
         muleModel = model;
     }
 

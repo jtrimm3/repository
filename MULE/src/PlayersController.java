@@ -9,19 +9,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
@@ -86,10 +79,10 @@ public class PlayersController implements Initializable, Controller {
 
     
     @FXML
-    private void complete(ActionEvent event) throws IOException {
-        String playerName = (String) name.getCharacters().toString();
+    public void complete(ActionEvent event) throws IOException {
+        String playerName = name.getCharacters().toString();
         String playerRace = (String) raceBox.getValue();
-        String playerColorString = (String) colorBox.getValue();
+        String playerColorString = colorBox.getValue();
         Color playerColor = muleModel.removeColor(playerColorString);
         Integer playerCount = muleModel.getPlayerList().size();
         Map<String, Integer> resources = new HashMap<>();

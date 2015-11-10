@@ -1,13 +1,10 @@
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
+
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
 import javafx.scene.layout.BackgroundSize;
 
-import java.awt.*;
-import java.awt.Button;
+
 import java.net.URL;
-import java.util.ArrayList;
+
 import java.util.ResourceBundle;
 
 /**
@@ -15,28 +12,28 @@ import java.util.ResourceBundle;
  */
 public class LandOfficeController implements Initializable, Controller{
     private MuleModel muleModel;
-    private ArrayList<Point> buyCoordinates = new ArrayList<>();
-    private ArrayList<Point> sellCoordinates = new ArrayList<>();
-    private ArrayList<Point> townCoordinates = new ArrayList<>();
+    //private ArrayList<Point> buyCoordinates = new ArrayList<>();
+    //private ArrayList<Point> sellCoordinates = new ArrayList<>();
+    //private ArrayList<Point> townCoordinates = new ArrayList<>();
 
-    @FXML
-    private Button buyButton = new Button();
+//    @FXML
+//    private Button buyButton = new Button();
 
-    @FXML
-    private Button sellButton = new Button();
+//    @FXML
+//    private Button sellButton = new Button();
 
     @Override  //PRESUMES ALL BUTTONS BE SQUARE! AND SAME SIZE!
-    public void initialize(URL url, ResourceBundle rb) {
+    public final void initialize(URL url, ResourceBundle rb) {
         BackgroundSize size = new BackgroundSize(150, 150, false, false, false, false);//HARDCODED BUTTON SIZE?
 
     }
 
-    @FXML
-    private void returnToTown(ActionEvent event){
-        muleModel.enterTown();
-    }
+//    @FXML
+//    private void returnToTown(ActionEvent event){
+//        muleModel.enterTown();
+//    }
 
-    public void loadModel(MuleModel model) {
+    public final void loadModel(MuleModel model) {
         muleModel = model;
     }
 
