@@ -112,9 +112,10 @@ public class MapController implements Initializable, Controller {
         muleModel.updatePlayerInfoText(playerInfoText);
         muleModel.setTimerTextReference(timerText);
         for (Node node : paneChildren) {
-            muleModel.initializeTimer();
-            Integer xInd = GridPane.getColumnIndex(node);
-            Integer yInd = GridPane.getRowIndex(node);
+
+            //muleModel.initializeTimer();
+            Integer xInd = mapGridPane.getColumnIndex(node);
+            Integer yInd = mapGridPane.getRowIndex(node);
             if (townCoordinates.contains(new Point(xInd, yInd))) {
                 Button button = (Button) node;
                 button.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED, new EventHandler<javafx.scene.input.MouseEvent>() {
