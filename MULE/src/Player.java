@@ -38,9 +38,9 @@ public class Player implements Comparable<Player>, Serializable {
 
 
     public Player(String n, int num, String r, Color col, Map<String, Integer> res) {
-        foodDelta =0; energyDelta = 0; oreDelta = 0; muleDelta = 0;
+        foodDelta = 0; energyDelta = 0; oreDelta = 0; muleDelta = 0;
         moneyDelta = 0;
-        resources.put("Smithore", 0);
+        res.put("Smithore", 0);
         this.properties = new ArrayList<Property>();
         this.name = n;
         this.playerNumber = num;
