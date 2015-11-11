@@ -7,19 +7,23 @@ import java.io.Serializable;
 public class Property implements Serializable{
     private Point location;
 
-    public Property(Point location) {
-        this.location = location;
+    public Property(Point loc) {
+        this.location = loc;
     }
 
-    public Point getPoint() {
+    public final Point getPoint() {
         return location;
     }
 
-    public boolean equals(Object p) {
-        if (p != null && p instanceof Property) {
+    public final boolean equals(Object p) {
+        if (p instanceof Property) {
             Property property = (Property) p;
             return property.getPoint().equals(this.getPoint());
         }
         return false;
+    }
+
+    public final int hashCode() {
+        return getPoint().hashCode();
     }
 }

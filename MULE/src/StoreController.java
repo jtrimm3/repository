@@ -24,7 +24,7 @@ public class StoreController implements Initializable, Controller{
     private MuleModel muleModel;
     private String boughtItem;
     private String soldItem;
-    private HashMap<String, Integer> buyItems = new HashMap<>();
+    private Map<String, Integer> buyItems = new HashMap<>();
 //    private ArrayList<Point> sellCoordinates = new ArrayList<>();
 //    private ArrayList<Point> townCoordinates = new ArrayList<>();
 
@@ -54,7 +54,7 @@ public class StoreController implements Initializable, Controller{
 
     @FXML
     @Override  //PRESUMES ALL BUTTONS BE SQUARE! AND SAME SIZE!
-    public void initialize(URL url, ResourceBundle rb) {
+    public final void initialize(URL url, ResourceBundle rb) {
         errorBuy.setFill(Color.RED);
         errorSell.setFill(Color.RED);
         buyCombo.setValue("Available Store Resources");
@@ -108,7 +108,7 @@ public class StoreController implements Initializable, Controller{
 
 
     @FXML
-    public void confirmBuy() throws IOException {
+    public final void confirmBuy() throws IOException {
         int amountBought = Integer.valueOf(buyAmount.getText());
         muleModel.buyResource(boughtItem, amountBought);
 //        ObservableList<Map.Entry<String, Integer>> items = FXCollections.observableArrayList(buyItems.entrySet());
@@ -122,7 +122,7 @@ public class StoreController implements Initializable, Controller{
     }
 
     @FXML
-    public void confirmSell() throws IOException {
+    public final void confirmSell() throws IOException {
         int amountSold = Integer.valueOf(soldAmount.getText());
         System.out.println("Sold Item: " + soldItem);
         muleModel.sellResource(soldItem, amountSold);
@@ -132,7 +132,7 @@ public class StoreController implements Initializable, Controller{
     }
 
     @FXML
-    public void returnToTown() {
+    public final void returnToTown() {
         muleModel.enterTown();
     }
 
@@ -146,7 +146,7 @@ public class StoreController implements Initializable, Controller{
 
 
 
-    public void loadModel(MuleModel model) {
+    public final void loadModel(MuleModel model) {
         muleModel = model;
     }
 

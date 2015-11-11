@@ -28,7 +28,7 @@ public class LoadController implements Controller, Initializable {
     }
 
     @FXML
-    public void load() {
+    public final void load() {
         File file = box.getValue();
         Stage stage = muleModel.getStage();
         MuleModel newModel = muleModel.loadGame(file.getName());
@@ -38,11 +38,11 @@ public class LoadController implements Controller, Initializable {
     }
 
 
-    public void setFileList(List<File> list) {
+    public final void setFileList(List<File> list) {
         fileList = list;
     }
 
-    public void loadModel(MuleModel model) {
+    public final void loadModel(MuleModel model) {
         this.muleModel = model;
     }
 

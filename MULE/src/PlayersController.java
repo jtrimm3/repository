@@ -14,12 +14,10 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -28,9 +26,12 @@ import javafx.stage.Stage;
  */
 public class PlayersController implements Initializable, Controller {
     private MuleModel muleModel;
-    private List<String> races;
-    private String selectedRace;
-    private Color selectedColor;
+    private static final int NORMAL_FOOD_STARTING_INV = 4;
+    private static final int BEGINNER_FOOD_STARTING_INV = 8;
+    private static final int NORMAL_ENERGY_STARTING_INV = 2;
+    private static final int BEGINNER_ENERGY_STARTING_INV = 4;
+    //private String selectedRace;
+    //private Color selectedColor;
     
     @FXML
     private TextField name = new TextField();
@@ -53,19 +54,17 @@ public class PlayersController implements Initializable, Controller {
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public final void initialize(URL url, ResourceBundle rb) {
         errorTextArea.setFill(Color.RED);
         colorBox.setItems(FXCollections.observableArrayList(muleModel.getAvailableColors()));
         colorBox.setValue(muleModel.getAvailableColors().get(0));
         validateName();
-        races = new ArrayList<>();
+        List<String> races = new ArrayList<>();
         races.add("Human");
         races.add("Flapper");
         races.add("Bonzoid");
         races.add("Ugaite");
         races.add("Buzzite");
-        selectedRace = null;
-        selectedColor = null;
         raceBox.setValue(races.get(0));
         raceBox.setItems(FXCollections.observableArrayList(races));
         playerNum.setText("Create Player " + (muleModel.getPlayerList().size() + 1));
@@ -79,7 +78,7 @@ public class PlayersController implements Initializable, Controller {
 
     
     @FXML
-    public void complete(ActionEvent event) throws IOException {
+    public final void complete(ActionEvent event) throws IOException {
         String playerName = name.getCharacters().toString();
         String playerRace = (String) raceBox.getValue();
         String playerColorString = colorBox.getValue();
@@ -87,15 +86,15 @@ public class PlayersController implements Initializable, Controller {
         Integer playerCount = muleModel.getPlayerList().size();
         Map<String, Integer> resources = new HashMap<>();
         if (!muleModel.getLevel().equals("Beginner")) {
-            resources.put("Food", 4);
-            resources.put("Energy", 2);
+            resources.put("Food", NORMAL_FOOD_STARTING_INV);
+            resources.put("Energy", NORMAL_ENERGY_STARTING_INV);
         } else {
-            resources.put("Food", 8);
-            resources.put("Energy", 4);
+            resources.put("Food", BEGINNER_FOOD_STARTING_INV);
+            resources.put("Energy", BEGINNER_ENERGY_STARTING_INV);
         }
         muleModel.addPlayer(new Player(playerName, playerCount + 1, playerRace, playerColor, resources));
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
+//        Node node = (Node) event.getSource();
+//        Stage stage = (Stage) node.getScene().getWindow();
         muleModel.continuePlayerConfig();
         //Testing
         for (Player p: muleModel.getPlayerList()) {
@@ -114,7 +113,7 @@ public class PlayersController implements Initializable, Controller {
         errorTextArea.setText(validationMessage);
     }
 
-    public void loadModel(MuleModel model) {
+    public final void loadModel(MuleModel model) {
         muleModel = model;
     }
 }

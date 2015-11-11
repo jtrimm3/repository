@@ -28,23 +28,23 @@ public class PubController implements Initializable, Controller{
     }
 
     @FXML
-    public void gamble() {
+    public final void gamble() {
         muleModel.gamble();
     }
 
     @FXML
-    public void returnToMap() {
+    public final void returnToMap() {
         muleModel.enterMap();
     }
 
     @FXML
-    public void returnToTown(){
+    public final void returnToTown(){
         muleModel.enterTown();
     }
 
 
 
-    public void loadModel(MuleModel model) {
+    public final void loadModel(MuleModel model) {
         muleModel = model;
     }
 

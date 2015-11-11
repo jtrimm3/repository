@@ -1,9 +1,9 @@
-import java.awt.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javafx.scene.paint.Color;
@@ -12,16 +12,14 @@ import javafx.scene.paint.Color;
  * Created by Peter on 9/15/2015.
  */
 public class Player implements Comparable<Player>, Serializable {
+    static final long serialVersionUID = 12312211L;
     private double money;
     private transient Color color;
     private String name;
     private String race;
-    private ArrayList<Property> properties;
+    private List<Property> properties;
     private int playerNumber;
     private Map<String, Integer> resources = new HashMap<>();
-    private ArrayList<Property> foodMules;
-    private ArrayList<Property> energyMules;
-    private ArrayList<Property> oreMules;
     private int foodDelta, energyDelta, oreDelta, muleDelta;
     private double moneyDelta;
     private double lastScore;
@@ -29,33 +27,35 @@ public class Player implements Comparable<Player>, Serializable {
     private String greenString = Color.GREEN.toString();
     private String blueString = Color.BLUE.toString();
     private String yellowString = Color.YELLOW.toString();
+    private static final int HUMAN_STARTING_MONEY = 600;
+    private static final int FLAPPER_STARTING_MONEY = 1600;
+    private static final int DEFAULT_STARTING_MONEY = 1000;
+    private static final int PROPERTY_COST = 300;
+    private static final int PROPERTY_SCORE_MULTIPLIER = 500;
 
     //ENUM FOR RACES AND THEIR INFO
 
 
 
-    public Player(String name, int playerNumber, String race, Color color, Map<String, Integer> resources) {
+    public Player(String n, int num, String r, Color col, Map<String, Integer> res) {
         foodDelta =0; energyDelta = 0; oreDelta = 0; muleDelta = 0;
         moneyDelta = 0;
         resources.put("Smithore", 0);
-        foodMules = new ArrayList<>();
-        energyMules = new ArrayList<>();
-        oreMules = new ArrayList<>();
         this.properties = new ArrayList<Property>();
-        this.name = name;
-        this.playerNumber = playerNumber;
-        this.race = race;
-        this.color = color;
-        this.resources = resources;
+        this.name = n;
+        this.playerNumber = num;
+        this.race = r;
+        this.color = col;
+        this.resources = res;
         switch (race) {
             case("Human"):
-                money = 600;
+                money = HUMAN_STARTING_MONEY;
                 break;
             case("Flapper"):
-                money = 1600;
+                money = FLAPPER_STARTING_MONEY;
                 break;
             default:
-                money = 1000;
+                money = DEFAULT_STARTING_MONEY;
                 break;
         }
 
@@ -89,7 +89,7 @@ public class Player implements Comparable<Player>, Serializable {
         }
     }
 
-    public void resetDeltas() {
+    public final void resetDeltas() {
         setFoodDelta(0);
         setEnergyDelta(0);
         setOreDelta(0);
@@ -97,60 +97,60 @@ public class Player implements Comparable<Player>, Serializable {
         setMoneyDelta(0);
     }
 
-    public String getRace() {
+    public final String getRace() {
         return race;
     }
 
-    public void setRace(String race) {
-        this.race = race;
+    public final void setRace(String r) {
+        this.race = r;
     }
 
-    public double getMoney() {
+    public final double getMoney() {
         return money;
     }
 
-    public void setMoney(double money) {
-        this.money = money;
+    public final void setMoney(double m) {
+        this.money = m;
     }
 
-    public Map getResources() { return resources; }
+    public final Map getResources() { return resources; }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public final void setName(String n) {
+        this.name = n;
     }
 
-    public Color getColor() {
+    public final Color getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
-        this.color = color;
+    public final void setColor(Color col) {
+        this.color = col;
     }
 
-    public int getPlayerNumber() {
+    public final int getPlayerNumber() {
         return playerNumber;
     }
 
-    public void setPlayerNumber(int playerNumber) {
-        this.playerNumber = playerNumber;
+    public final void setPlayerNumber(int num) {
+        this.playerNumber = num;
     }
 
-    public String toString() {
+    public final String toString() {
         return name + playerNumber + race + money + color;
     }
 
-    public void buyProperty(Property property, Integer round) {
+    public final void buyProperty(Property property, Integer round) {
         if (round > 2) {
-            money = money - 300;
+            money = money - PROPERTY_COST;
         }
         properties.add(property);
     }
 
-    public void buyResource(String resource, int amount) {
+    public final void buyResource(String resource, int amount) {
         if (resources.get(resource) != null) {
             int prevAmount = resources.get(resource);
             resources.put(resource, prevAmount + amount);
@@ -161,7 +161,7 @@ public class Player implements Comparable<Player>, Serializable {
     }
 
 
-    public void sellResource(String resource, int amount) {
+    public final void sellResource(String resource, int amount) {
 
         int prevAmount = resources.get(resource);
         if (prevAmount - amount >= 0) {
@@ -173,15 +173,15 @@ public class Player implements Comparable<Player>, Serializable {
         }
     }
 
-    public ArrayList<Property> getProperties(){
+    public final List<Property> getProperties(){
         return properties;
     }
 
-    public double getScore() {
-        return getMoney() + 500 * getProperties().size(); // + getNumberOfGoods() implemented later
+    public final double getScore() {
+        return getMoney() + PROPERTY_SCORE_MULTIPLIER * getProperties().size(); // + getNumberOfGoods() implemented later
     }
 
-    public int compareTo(Player otherPlayer) {
+    public final int compareTo(Player otherPlayer) {
         if (this.getScore() > otherPlayer.getScore()) {
             return 1;
         } else if (this.getScore() < otherPlayer.getScore()) {
@@ -191,82 +191,94 @@ public class Player implements Comparable<Player>, Serializable {
         }
     }
 
-    public int getSmithore() {
+    public final boolean equals(Object other) {
+        if (!(other instanceof Player)) {
+            return false;
+        }
+        return this.name.equals(((Player) other).getName())
+                && this.getScore() == ((Player) other).getScore();
+    }
+
+    public final int hashCode() {
+        return this.getName().hashCode() + (int) this.getScore();
+    }
+
+    public final int getSmithore() {
         return resources.get("Smithore");
     }
 
-    public void setSmithore(int smithore) {resources.put("Smithore", smithore);
+    public final void setSmithore(int smithore) {resources.put("Smithore", smithore);
     }
 
-    public int getEnergy() {
+    public final int getEnergy() {
         return resources.get("Energy");
     }
 
-    public void setEnergy(int energy) {
+    public final void setEnergy(int energy) {
         resources.put("Energy", energy);
     }
 
-    public int getFood() {
+    public final int getFood() {
         return resources.get("Food");
     }
 
-    public void setFood(int food) {
+    public final void setFood(int food) {
         resources.put("Food", food);
     }
 
-    public void removeMule(){
+    public final void removeMule(){
         resources.put("Mule",0);
     }
 
-    public int getMuleDelta() {
+    public final int getMuleDelta() {
         return muleDelta;
     }
 
-    public void setMuleDelta(int muleDelta) {
-        this.muleDelta = muleDelta;
+    public final void setMuleDelta(int d) {
+        this.muleDelta = d;
     }
 
-    public int getOreDelta() {
+    public final int getOreDelta() {
         return oreDelta;
     }
 
-    public void setOreDelta(int oreDelta) {
-        this.oreDelta = oreDelta;
+    public final void setOreDelta(int d) {
+        this.oreDelta = d;
     }
 
-    public int getEnergyDelta() {
+    public final int getEnergyDelta() {
         return energyDelta;
     }
 
-    public void setEnergyDelta(int energyDelta) {
-        this.energyDelta = energyDelta;
+    public final void setEnergyDelta(int d) {
+        this.energyDelta = d;
     }
 
-    public int getFoodDelta() {
+    public final int getFoodDelta() {
         return foodDelta;
     }
 
-    public void setFoodDelta(int foodDelta) {
-        this.foodDelta = foodDelta;
+    public final void setFoodDelta(int d) {
+        this.foodDelta = d;
     }
 
-    public double getMoneyDelta() {
+    public final double getMoneyDelta() {
         return moneyDelta;
     }
 
-    public void setMoneyDelta(double moneyDelta) {
-        this.moneyDelta = moneyDelta;
+    public final void setMoneyDelta(double d) {
+        this.moneyDelta = d;
     }
 
-    public double getLastScore() {
+    public final double getLastScore() {
         return lastScore;
     }
 
-    public void setLastScore(double lastScore) {
-        this.lastScore = lastScore;
+    public final void setLastScore(double score) {
+        this.lastScore = score;
     }
 
-    public double getScoreDelta() {
+    public final double getScoreDelta() {
         return getScore() - lastScore;
     }
 }

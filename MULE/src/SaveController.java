@@ -30,14 +30,14 @@ public class SaveController implements Controller, Initializable {
 
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public final void initialize(URL url, ResourceBundle rb) {
         messageText.setFill(Color.RED);
         messageText.setText(null);
         timesPressed = 0;
     }
 
     @FXML
-    public void save() {
+    public final void save() {
         timesPressed++;
         String fileName = name.getText();
         messageText.setText(null);
@@ -69,20 +69,20 @@ public class SaveController implements Controller, Initializable {
     }
 
     @FXML
-    public void back() {
+    public final void back() {
         muleModel.backFromSaveScreen(top, oldp, newp, oldm, newm);
     }
 
     @Override
-    public void loadModel(MuleModel model) {
+    public final void loadModel(MuleModel model) {
         muleModel = model;
     }
 
-    public void loadEndTurnData(String top, Player oldp, Player newp, String oldm, String newm) {
-        this.top = top;
-        this.oldp = oldp;
-        this.newp = newp;
-        this.oldm = oldm;
-        this.newm = newm;
+    public final void loadEndTurnData(String topm, Player old, Player newpl, String oldmo, String newmo) {
+        this.top = topm;
+        this.oldp = old;
+        this.newp = newpl;
+        this.oldm = oldmo;
+        this.newm = newmo;
     }
 }

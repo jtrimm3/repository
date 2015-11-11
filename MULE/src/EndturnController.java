@@ -62,7 +62,7 @@ public class EndturnController implements Controller, Initializable {
     }
 
     @FXML
-    public void saveButtonPress() {
+    public final void saveButtonPress() {
         muleModel.enterSaveScreen(topMessage,oldPlayer,newPlayer,oldMessage,newMessgae);
 
     }
@@ -76,9 +76,9 @@ public class EndturnController implements Controller, Initializable {
         newPlayer = turningPlayer;
     }
 
-    public final void setOldPlayer(Player oldPlayer, String message) {
+    public final void setOldPlayer(Player old, String message) {
         oldMessage = message;
-        this.oldPlayer = oldPlayer;
+        this.oldPlayer = old;
     }
 
 

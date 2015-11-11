@@ -42,6 +42,7 @@ import java.util.List;
  * Created by Peter on 9/19/2015.
  */
 public class MuleModel implements Serializable {
+    static final long serialVersionUID = 1231241L;
     private int round;
     private boolean hasBegun = false;
     private ArrayList<String> availableColors;
@@ -56,21 +57,21 @@ public class MuleModel implements Serializable {
 
     private Map<String, Integer> itemsForSaleBeginner;
     private Map<String, Integer> itemsForSaleOther;
-    private static int foodBeg = 16;
-    private static int foodOther = 8;
-    private static int energyBeg = 16;
-    private static int energyOther = 8;
-    private static int smithoreBeg =0;
-    private static int smithoreOther = 8;
-    private static int crystiteBeg = 0;
-    private static int crystiteOther = 0;
-    private static int muleBeg = 25;
-    private static int muleOther = 14;
-    private static double foodPrice = 30;
-    private static double energyPrice = 25;
-    private static double smithorePrice = 50;
-    private static double crystitePrice = 100;
-    private static double mulePrice = 100;
+    private int foodBeg = 16;
+    private int foodOther = 8;
+    private int energyBeg = 16;
+    private int energyOther = 8;
+    private int smithoreBeg =0;
+    private int smithoreOther = 8;
+    private int crystiteBeg = 0;
+    private int crystiteOther = 0;
+    private int muleBeg = 25;
+    private int muleOther = 14;
+    private double foodPrice = 30;
+    private double energyPrice = 25;
+    private double smithorePrice = 50;
+    private double crystitePrice = 100;
+    private double mulePrice = 100;
     private double foodSellPrice = 15;
     private double energySellPrice = 18;
     private double smithoreSellPrice = 25;
@@ -201,7 +202,7 @@ public class MuleModel implements Serializable {
 
     }
 
-    public void initializeBuyData(HashMap<String, Integer> buyItems) {
+    public void initializeBuyData(Map<String, Integer> buyItems) {
         if (!getLevel().equals("Beginner")) {
             initializeBuyDataOther(buyItems);
         } else {
@@ -347,7 +348,7 @@ public class MuleModel implements Serializable {
 
     public static boolean isNumeric(String str) {
         try {
-            int d = Integer.parseInt(str);
+            Integer.parseInt(str);
         }
         catch(NumberFormatException nfe) {
             return false;
@@ -622,8 +623,8 @@ public class MuleModel implements Serializable {
     public void enterLandOffice() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Land Office.fxml"));
-            Controller controller = new LandOfficeController();
-            controller.loadModel(this);
+            LandOfficeController controller = new LandOfficeController();
+            //controller.loadModel(this);
             loader.setController(controller);
             Scene scene = new Scene(loader.load());
             stage.setScene(scene);
@@ -1134,12 +1135,13 @@ public class MuleModel implements Serializable {
         if (worstPlayer == getTurningPlayer()) {
             return;
         }
-        int randomNum = 1 + (int)(Math.random()*100);
+        Random rand = new Random();
+        int randomNum = 1 + rand.nextInt(100);
         if(randomNum <= 27){
             System.out.println(getTurningPlayer().getResources());
             System.out.println(getTurningPlayer().getMoney());
             System.out.println("RANDOM EVENT!!!");
-            int randomNum2 = 1 + (int)(Math.random()*7);
+            int randomNum2 = 1 + rand.nextInt(7);
             if(randomNum2 == 1){
                 System.out.println("YOU JUST RECIEVED A PACKAGE FROM THE GT ALUMNI CONTAINING 3 FOOD AND 2 ENERGY UNITS");
                 getTurningPlayer().setFood(getTurningPlayer().getFood() + 3);
@@ -1168,7 +1170,7 @@ public class MuleModel implements Serializable {
 
             if(randomNum2 == 6){
                 System.out.println("MISCHIEVOUS UGA STUDENT BROKE INTO YOUR STORAGE SHED AND STOLE HALF YOUR FOOD");
-                getTurningPlayer().setFood((int)Math.floor(getTurningPlayer().getFood()/2));
+                getTurningPlayer().setFood(getTurningPlayer().getFood()/2);
             }
 
             if(randomNum2 == 7){
@@ -1247,7 +1249,10 @@ public class MuleModel implements Serializable {
         try {
             FileInputStream is = new FileInputStream(name);
             ObjectInputStream reader = new ObjectInputStream(is);
-            return (MuleModel) reader.readObject();
+            MuleModel model = (MuleModel) reader.readObject();
+            is.close();
+            reader.close();
+            return model;
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -1257,7 +1262,11 @@ public class MuleModel implements Serializable {
     public List<File> getSaveGames() {
         try {
             File currentDir = new File(System.getProperty("user.dir"));
-            ArrayList<File> list = new ArrayList<File>(Arrays.asList(currentDir.listFiles()));
+            File[] files = currentDir.listFiles();
+            if (files == null) {
+                throw new RuntimeException("Error reading files");
+            }
+            ArrayList<File> list = new ArrayList<File>(Arrays.asList(files));
             ArrayList<File> gameSaveFiles = new ArrayList<File>();
             for (File file : list) {
                 if (file.isFile() && file.getName().startsWith("m") && file.getName().endsWith(".mul")) {
@@ -1266,7 +1275,7 @@ public class MuleModel implements Serializable {
             }
             return gameSaveFiles;
         } catch (Exception e){
-            throw new RuntimeException("Error reading data");
+            return null;
         }
     }
 

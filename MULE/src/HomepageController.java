@@ -17,13 +17,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
-import javafx.stage.Stage;
+
 
 /**
  * FXML Controller class
@@ -43,13 +42,12 @@ public class HomepageController implements Initializable, Controller {
 //        this.players = players;
 //    }
     
-    public int getPlayers() {
+    public final int getPlayers() {
         return players;
     }
 
     //private String selectedMap;
-    private List<String> mapChoices;
-    
+
     @FXML
     private RadioButton beginner = new RadioButton();
     
@@ -89,7 +87,7 @@ public class HomepageController implements Initializable, Controller {
         numPlay2.fire();
         players = 2;
         beginner.fire();
-        mapChoices = new ArrayList<>();
+        List<String> mapChoices = new ArrayList<>();
         mapChoices.add("Forrest");
         mapChoices.add("Space");
         mapChoices.add("Desert");
@@ -100,19 +98,19 @@ public class HomepageController implements Initializable, Controller {
     }    
     
     @FXML
-    public void selectMap() {
+    public final void selectMap() {
         map.getSelectionModel().selectedIndexProperty().addListener(
             new ChangeListener<Number>() {
                 public void changed(ObservableValue v, Number val, Number newVal) {
-                    String sel = mapChoices.get(newVal.intValue());
-                    //selectedMap = sel;
+//                    String sel = mapChoices.get(newVal.intValue());
+//                    selectedMap = sel;
                 }
     });
     
     }
     
     @FXML
-    public void selectPlayerNum()  {
+    public final void selectPlayerNum()  {
         group2.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> ov, Toggle t, Toggle t1) {
@@ -124,7 +122,7 @@ public class HomepageController implements Initializable, Controller {
     }
 
     @FXML
-    public void selectLevel() {
+    public final void selectLevel() {
         group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> ov, Toggle t, Toggle t1) {
@@ -136,15 +134,13 @@ public class HomepageController implements Initializable, Controller {
 
     
     @FXML
-    public void next(ActionEvent event) throws IOException {
+    public final void next(ActionEvent event) throws IOException {
         muleModel.initializeConfigData(players, level);
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
         muleModel.continuePlayerConfig();
     }
 
     @FXML
-    public void load() throws IOException {
+    public final void load() throws IOException {
         muleModel.enterLoadScreen();
 
 

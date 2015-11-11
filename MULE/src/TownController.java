@@ -23,6 +23,7 @@ public class TownController implements Initializable, Controller {
     private static final String STORE_IMAGE = "store.png";
     private static final String ASSAY_IMAGE = "assay.png";
     private static final String LAND_IMAGE = "land.png";
+    private static final int SQUARE_DIM = 150;
 
 //    @FXML
 //    private GridPane townGridPane = new GridPane();
@@ -40,8 +41,8 @@ public class TownController implements Initializable, Controller {
     private Button landButton = new Button();
 
     @Override  //PRESUMES ALL BUTTONS BE SQUARE! AND SAME SIZE!
-    public void initialize(URL url, ResourceBundle rb) {
-        BackgroundSize size = new BackgroundSize(150, 150, false, false, false, false);//HARDCODED BUTTON SIZE?
+    public final void initialize(URL url, ResourceBundle rb) {
+        BackgroundSize size = new BackgroundSize(SQUARE_DIM, SQUARE_DIM, false, false, false, false);//HARDCODED BUTTON SIZE?
         BackgroundImage pubImage = new BackgroundImage(new Image(PUB_IMAGE),null,null,null,size);
         pubButton.setBackground(new Background(pubImage));
         BackgroundImage storeImage = new BackgroundImage(new Image(STORE_IMAGE),null,null,null,size);
@@ -53,27 +54,27 @@ public class TownController implements Initializable, Controller {
     }
 
     @FXML
-    public void returnToMap() {
+    public final void returnToMap() {
         muleModel.enterMap();
 
     }
 
     @FXML
-    public void enterPub(){
+    public final void enterPub(){
         muleModel.enterPub();
     }
 
     @FXML
-    public void enterStore() {
+    public final void enterStore() {
         muleModel.enterStore();
     }
 
     @FXML
-    public void enterLandOffice() {
+    public final void enterLandOffice() {
         muleModel.enterLandOffice();
     }
 
-    public void loadModel(MuleModel model) {
+    public final void loadModel(MuleModel model) {
         muleModel = model;
     }
 }

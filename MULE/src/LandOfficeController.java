@@ -1,6 +1,5 @@
 
 import javafx.fxml.Initializable;
-import javafx.scene.layout.BackgroundSize;
 
 
 import java.net.URL;
@@ -10,8 +9,8 @@ import java.util.ResourceBundle;
 /**
  * Created by Julianna on 9/25/2015.
  */
-public class LandOfficeController implements Initializable, Controller{
-    private MuleModel muleModel;
+public class LandOfficeController implements Initializable {
+    //private MuleModel muleModel;
     //private ArrayList<Point> buyCoordinates = new ArrayList<>();
     //private ArrayList<Point> sellCoordinates = new ArrayList<>();
     //private ArrayList<Point> townCoordinates = new ArrayList<>();
@@ -24,7 +23,7 @@ public class LandOfficeController implements Initializable, Controller{
 
     @Override  //PRESUMES ALL BUTTONS BE SQUARE! AND SAME SIZE!
     public final void initialize(URL url, ResourceBundle rb) {
-        BackgroundSize size = new BackgroundSize(150, 150, false, false, false, false);//HARDCODED BUTTON SIZE?
+//        BackgroundSize size = new BackgroundSize(150, 150, false, false, false, false);//HARDCODED BUTTON SIZE?
 
     }
 
@@ -33,9 +32,9 @@ public class LandOfficeController implements Initializable, Controller{
 //        muleModel.enterTown();
 //    }
 
-    public final void loadModel(MuleModel model) {
-        muleModel = model;
-    }
+//    public final void loadModel(MuleModel model) {
+//        muleModel = model;
+//    }
 
 
 }

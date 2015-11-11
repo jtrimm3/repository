@@ -39,7 +39,7 @@ public class MuleConfigController implements Initializable, Controller{
 
 
     @Override  //PRESUMES ALL BUTTONS BE SQUARE! AND SAME SIZE!
-    public void initialize(URL url, ResourceBundle rb) {
+    public final void initialize(URL url, ResourceBundle rb) {
         errorText.setFill(Color.RED);
         food.setToggleGroup(group);
         energy.setToggleGroup(group);
@@ -64,7 +64,7 @@ public class MuleConfigController implements Initializable, Controller{
     }
 
     @FXML
-    public void toPlaceMule() {
+    public final void toPlaceMule() {
         muleModel.enterMulePlacement(type);
     }
 
@@ -74,7 +74,7 @@ public class MuleConfigController implements Initializable, Controller{
 
 
 
-    public void loadModel(MuleModel model) {
+    public final void loadModel(MuleModel model) {
         muleModel = model;
     }
 
