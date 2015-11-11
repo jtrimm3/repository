@@ -783,6 +783,10 @@ public class MuleModel implements Serializable {
         return turningPlayer;
     }
 
+    public final void setTurningPlayer(Player aPlayer) {
+        this.turningPlayer = aPlayer;
+    }
+
     public int getRound() {
         return round;
     }
