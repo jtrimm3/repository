@@ -6,6 +6,7 @@
 
 import java.io.IOException;
 
+import com.guigarage.flatterfx.FlatterFX;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -18,6 +19,7 @@ public class MULE extends Application {
         @Override
         public final void start(Stage stage) throws IOException {
             MuleModel muleModel = new MuleModel(stage);
+            setUserAgentStylesheet(STYLESHEET_CASPIAN);
             muleModel.begin();
         }
         
