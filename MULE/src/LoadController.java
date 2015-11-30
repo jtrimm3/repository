@@ -2,8 +2,11 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import javax.swing.*;
+import javax.swing.filechooser.FileFilter;
 import java.io.File;
 import java.net.URL;
 import java.util.List;
@@ -22,6 +25,9 @@ public class LoadController implements Controller, Initializable {
     @FXML
     private ComboBox<File> box = new ComboBox<>();
 
+
+
+
     @Override
     public final void initialize(URL url, ResourceBundle rb) {
         box.setItems(FXCollections.observableArrayList(fileList));
@@ -35,6 +41,25 @@ public class LoadController implements Controller, Initializable {
         loadModel(newModel);
         muleModel.setStage(stage);
         muleModel.backFromSaveScreen(null, null, null, null, null);
+    }
+
+    private final void load(File file) {
+        Stage stage = muleModel.getStage();
+        MuleModel newModel = muleModel.loadGame(file.getName());
+        loadModel(newModel);
+        muleModel.setStage(stage);
+        muleModel.backFromSaveScreen(null, null, null, null, null);
+    }
+
+    @FXML
+    public final void openFileExplorer() {
+        FileChooser fc = new FileChooser();
+        fc.setTitle("Navigate to a .mul file!");
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("MUL", "*.mul"));
+        File file = fc.showOpenDialog(muleModel.getStage());
+        if (file != null) {
+            load(file);
+        }
     }
 
 

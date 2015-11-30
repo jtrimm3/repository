@@ -16,6 +16,7 @@ public class Player implements Comparable<Player>, Serializable {
     private double money;
     private transient Color color;
     private String name;
+    private String email;
     private String race;
     private List<Property> properties;
     private int playerNumber;
@@ -37,12 +38,13 @@ public class Player implements Comparable<Player>, Serializable {
 
 
 
-    public Player(String n, int num, String r, Color col, Map<String, Integer> res) {
+    public Player(String n, String mail, int num, String r, Color col, Map<String, Integer> res) {
         foodDelta = 0; energyDelta = 0; oreDelta = 0; muleDelta = 0;
         moneyDelta = 0;
         res.put("Smithore", 0);
         this.properties = new ArrayList<Property>();
         this.name = n;
+        this.email = mail;
         this.playerNumber = num;
         this.race = r;
         this.color = col;
@@ -280,5 +282,9 @@ public class Player implements Comparable<Player>, Serializable {
 
     public final double getScoreDelta() {
         return getScore() - lastScore;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }

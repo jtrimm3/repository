@@ -37,6 +37,10 @@ import java.util.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import javax.mail.*;
+import javax.activation.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 /**
  * Created by Peter on 9/19/2015.
@@ -468,6 +472,7 @@ public class MuleModel implements Serializable {
             Player oldPlayer = getTurningPlayer();
             String roundMessage = endTurn();
             startNextTurn();
+            sendNotificaionEmail();
             if (passedThisRoundCount == numberOfPlayers) {
                 postselectionphase();
             } else if (getRound() > 12) {
@@ -1283,4 +1288,49 @@ public class MuleModel implements Serializable {
         }
     }
 
+    private void sendNotificaionEmail() {
+        String from = "mulenotifier@gmail.com";
+        String pass = "mulepassword";
+        String to = getTurningPlayer().getEmail();
+
+        Properties properties = System.getProperties();
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "587");
+        Session session = Session.getInstance(properties,
+                new Authenticator() {
+                    @Override
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(from, pass);
+                    }
+                });
+
+        try {
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+            message.setSubject("Your turn in MULE!");
+            message.setText("It's your turn, " + getTurningPlayer().getName());
+            createAttachment(message);
+            Transport.send(message);
+            System.out.println("Message successfully sent...");
+        } catch (MessagingException e) {
+            System.out.println("Invalid email address: " + getTurningPlayer().getEmail());
+        }
+    }
+
+    private void createAttachment(Message m) {
+        try {
+            String fileName = "tempSaveFile.mul";
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fileName));
+            out.writeObject(this);
+            out.close();
+            DataSource source = new FileDataSource(fileName);
+            m.setDataHandler(new DataHandler(source));
+            m.setFileName(fileName);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
