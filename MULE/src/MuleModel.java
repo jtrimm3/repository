@@ -1145,9 +1145,9 @@ public class MuleModel implements Serializable {
             System.out.println(getTurningPlayer().getResources());
             System.out.println(getTurningPlayer().getMoney());
             System.out.println("RANDOM EVENT!!!");
-            int randomNum2 = 1 + rand.nextInt(7);
+            int randomNum2 = 1 + rand.nextInt(12);
             if(randomNum2 == 1){
-                System.out.println("YOU JUST RECIEVED A PACKAGE FROM THE GT ALUMNI CONTAINING 3 FOOD AND 2 ENERGY UNITS");
+                System.out.println("YOU JUST RECEIVED A PACKAGE FROM THE GT ALUMNI CONTAINING 3 FOOD AND 2 ENERGY UNITS");
                 getTurningPlayer().setFood(getTurningPlayer().getFood() + 3);
                 getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 2);
             }
@@ -1181,9 +1181,35 @@ public class MuleModel implements Serializable {
                 System.out.println("YOUR SPACE GYPSY INLAWS MADE A MESS OF THE TOWN. IT COST YOU $" + 6.0 * m + " TO CLEAN IT UP.");
                 getTurningPlayer().setMoney(getTurningPlayer().getMoney() - (m * 6.0));
             }
+
+            if(randomNum2 == 8){
+                System.out.println("COPS CAUGHT YOU ROBBING THE STORE. PAY $" + 5.0 * m + " TO REPAY WHAT YOU STOLE.");
+                getTurningPlayer().setMoney(getTurningPlayer().getMoney() - (m * 5.0));
+            }
+
+            if(randomNum2 == 9){
+                System.out.println("YOU ACCIDENTALLY GOT HIGH AND ATE ALL OF YOUR FOOD.");
+                getTurningPlayer().setFood(0);
+            }
+
+            if (randomNum2 == 10){
+                System.out.println("RYAN GOSLING STOPPED BY AND TOLD YOU YOU WOULD DO GREAT ON FINALS, SO YOUR ENERGY HAS RISEN");
+                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy() + 1);
+            }
+
+            if (randomNum2 == 11){
+                System.out.println("YOU HAD TOO MUCH FUN PLAYING THIS GAME THAT YOU LOST SOME ENERGY AND NEED TO NAP");
+                getTurningPlayer().setEnergy(getTurningPlayer().getEnergy()/2);
+            }
+
+            if (randomNum2 == 12){
+                System.out.println("YOU LOST A BAR OF ORE AS YOU WERE TRAVELLING THROUGH YOUR LAND.");
+                getTurningPlayer().setSmithore(getTurningPlayer().getSmithore() - 1);
+            }
+
             System.out.println(getTurningPlayer().getResources());
             System.out.println(getTurningPlayer().getMoney());
-        }else System.out.println("No Random event occured.");
+        }else System.out.println("No Random event occurred.");
 
 
     }
