@@ -24,14 +24,15 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import java.net.URL;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import java.awt.*;
 
 import java.io.*;
-import java.time.Duration;
+import javafx.util.Duration;
 import java.util.*;
 
 import java.awt.event.ActionEvent;
@@ -54,7 +55,7 @@ public class MuleModel implements Serializable {
     private int boughtOnThisTurnCount;
     private String level;
     private String map;
-
+    private MediaPlayer mediaPlayer;
     private Map<String, Integer> itemsForSaleBeginner;
     private Map<String, Integer> itemsForSaleOther;
     private int foodBeg = 16;
