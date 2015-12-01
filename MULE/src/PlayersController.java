@@ -37,6 +37,9 @@ public class PlayersController implements Initializable, Controller {
     private TextField name = new TextField();
 
     @FXML
+    private TextField email = new TextField();
+
+    @FXML
     private Text errorTextArea = new Text();
     
     @FXML
@@ -80,6 +83,7 @@ public class PlayersController implements Initializable, Controller {
     @FXML
     public final void complete(ActionEvent event) throws IOException {
         String playerName = name.getCharacters().toString();
+        String emailString = email.getCharacters().toString();
         String playerRace = (String) raceBox.getValue();
         String playerColorString = colorBox.getValue();
         Color playerColor = muleModel.removeColor(playerColorString);
@@ -92,7 +96,7 @@ public class PlayersController implements Initializable, Controller {
             resources.put("Food", BEGINNER_FOOD_STARTING_INV);
             resources.put("Energy", BEGINNER_ENERGY_STARTING_INV);
         }
-        muleModel.addPlayer(new Player(playerName, playerCount + 1, playerRace, playerColor, resources));
+        muleModel.addPlayer(new Player(playerName, emailString, playerCount + 1, playerRace, playerColor, resources));
 //        Node node = (Node) event.getSource();
 //        Stage stage = (Stage) node.getScene().getWindow();
         muleModel.continuePlayerConfig();
