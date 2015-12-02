@@ -68,6 +68,10 @@ public class PlayersController implements Initializable, Controller {
         races.add("Bonzoid");
         races.add("Ugaite");
         races.add("Buzzite");
+        races.add("Clemsonite");
+        races.add("FSUite");
+        races.add("Dukeite");
+        races.add("TarHeelite");
         raceBox.setValue(races.get(0));
         raceBox.setItems(FXCollections.observableArrayList(races));
         playerNum.setText("Create Player " + (muleModel.getPlayerList().size() + 1));
