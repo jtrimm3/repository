@@ -21,7 +21,7 @@ public class Player implements Comparable<Player>, Serializable {
     private List<Property> properties;
     private int playerNumber;
     private Map<String, Integer> resources = new HashMap<>();
-    private int foodDelta, energyDelta, oreDelta, muleDelta;
+    private int foodDelta, energyDelta, oreDelta, muleDelta, crystiteDelta;
     private double moneyDelta;
     private double lastScore;
     private String redString = Color.RED.toString();
@@ -233,6 +233,10 @@ public class Player implements Comparable<Player>, Serializable {
         resources.put("Food", food);
     }
 
+    public final int getCrystite() { return resources.get("Crystite"); }
+
+    public final void setCrystite(int crystite) { resources.put("Crystite", crystite);}
+
     public final void removeMule(){
         resources.put("Mule",0);
     }
@@ -268,6 +272,10 @@ public class Player implements Comparable<Player>, Serializable {
     public final void setFoodDelta(int d) {
         this.foodDelta = d;
     }
+
+    public final int getCrystiteDelta() { return crystiteDelta; }
+
+    public final void setCrystiteDelta(int d) { this.crystiteDelta = d; }
 
     public final double getMoneyDelta() {
         return moneyDelta;

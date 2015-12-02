@@ -35,6 +35,13 @@ public class MuleConfigController implements Initializable, Controller{
     @FXML
     private RadioButton ore = new RadioButton();
 
+    @FXML
+    private RadioButton crystite = new RadioButton();
+
+    @FXML
+    private RadioButton special = new RadioButton();
+
+
 
 
 
@@ -44,6 +51,8 @@ public class MuleConfigController implements Initializable, Controller{
         food.setToggleGroup(group);
         energy.setToggleGroup(group);
         ore.setToggleGroup(group);
+        crystite.setToggleGroup(group);
+        special.setToggleGroup(group);
         energy.fire();
         food.fire();
         RadioButton check = (RadioButton) group.getSelectedToggle();

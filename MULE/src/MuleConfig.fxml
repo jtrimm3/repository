@@ -14,14 +14,17 @@
         <Font size="26.0" />
       </font>
     </Text>
-    <RadioButton fx:id="food" layoutX="126.0" layoutY="177.0" mnemonicParsing="false" text="Food" />
-    <RadioButton fx:id="energy" layoutX="268.0" layoutY="177.0" mnemonicParsing="false" text="Energy" />
-    <RadioButton fx:id="ore" layoutX="422.0" layoutY="177.0" minHeight="14.0" mnemonicParsing="false" prefHeight="14.000099999997474" text="Ore" />
+    <RadioButton fx:id="food" layoutX="87.0" layoutY="176.0" mnemonicParsing="false" text="Food" />
+    <RadioButton fx:id="energy" layoutX="179.0" layoutY="177.0" mnemonicParsing="false" text="Energy" />
+    <RadioButton fx:id="ore" layoutX="292.0" layoutY="178.0" minHeight="14.0" mnemonicParsing="false" prefHeight="14.000099999997474" text="Ore" />
     <Button fx:id="ok" layoutX="280.0" layoutY="290.0" mnemonicParsing="false" onAction="#toPlaceMule" text="Ok" />
-      <Text fx:id="errorText" layoutX="285.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Text layoutX="87.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="125" />
-      <Text layoutX="233.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="150" />
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="391.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="175" />
+      <Text fx:id="errorText" layoutX="393.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="1.0" />
+      <Text layoutX="60.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="125" />
+      <Text layoutX="153.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="150" />
+      <Text layoutX="352.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="200" />
+      <Text layoutX="260.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="175" />
+      <RadioButton fx:id="crystite" layoutX="379.0" layoutY="177.0" mnemonicParsing="false" text="Crystite" />
+      <Text layoutX="458.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="800" />
+      <RadioButton fx:id="special" layoutX="484.0" layoutY="177.0" mnemonicParsing="false" text="Special" />
   </children>
 </AnchorPane>

@@ -721,6 +721,16 @@ public class MuleModel implements Serializable {
                             p.setEnergyDelta(p.getEnergyDelta() + 2);
                         } else if (mule.getType().equals("Ore")) {
                             //DO NOTHING
+                        } else if (mule.getType().equals("Crystite")) {
+                            p.setCrystite(p.getCrystite() + 1);
+                            p.setCrystiteDelta(p.getCrystiteDelta() + 1);
+                        } else if (mule.getType().equals("Special")) {
+                            p.setFood(p.getFood() + 4);
+                            p.setFoodDelta(p.getFoodDelta() + 4);
+                            p.setEnergy(p.getEnergy() + 2);
+                            p.setEnergyDelta(p.getEnergyDelta() + 2);
+                            p.setCrystite(p.getCrystite() + 1);
+                            p.setCrystiteDelta(p.getCrystiteDelta() + 1);
                         }
                     } else if (plainCoordinates.contains(mule.getLocation().getPoint())) {
                         if (mule.getType().equals("Food")) {
@@ -732,6 +742,18 @@ public class MuleModel implements Serializable {
                         } else if (mule.getType().equals("Ore")) {
                             p.setSmithore(p.getSmithore() + 1);
                             p.setOreDelta(p.getOreDelta() + 1);
+                        } else if (mule.getType().equals("Crystite")) {
+                            p.setCrystite(p.getCrystite() + 1);
+                            p.setCrystiteDelta(p.getCrystiteDelta() + 1);
+                        } else if (mule.getType().equals("Special")) {
+                            p.setFood(p.getFood() + 2);
+                            p.setFoodDelta(p.getFoodDelta() + 2);
+                            p.setEnergy(p.getEnergy() + 3);
+                            p.setEnergyDelta(p.getEnergyDelta() + 3);
+                            p.setSmithore(p.getSmithore() + 1);
+                            p.setOreDelta(p.getOreDelta() + 1);
+                            p.setCrystite(p.getCrystite() + 1);
+                            p.setCrystiteDelta(p.getCrystiteDelta() + 1);
                         }
                     } else if (mountain1Coordinates.contains(mule.getLocation().getPoint())) {
                         if (mule.getType().equals("Food")) {
@@ -743,6 +765,18 @@ public class MuleModel implements Serializable {
                         } else if (mule.getType().equals("Ore")) {
                             p.setSmithore(p.getSmithore() + 2);
                             p.setOreDelta(p.getOreDelta() + 2);
+                        } else if (mule.getType().equals("Crystite")) {
+                            p.setCrystite(p.getCrystite() + 1);
+                            p.setCrystiteDelta(p.getCrystiteDelta() + 1);
+                        } else if (mule.getType().equals("Special")) {
+                            p.setFood(p.getFood() + 1);
+                            p.setFoodDelta(p.getFoodDelta() + 1);
+                            p.setEnergy(p.getEnergy() + 1);
+                            p.setEnergyDelta(p.getEnergyDelta() + 1);
+                            p.setSmithore(p.getSmithore() + 2);
+                            p.setOreDelta(p.getOreDelta() + 2);
+                            p.setCrystite(p.getCrystite() + 1);
+                            p.setCrystiteDelta(p.getCrystiteDelta() + 1);
                         }
                     } else if (mountain2Coordinates.contains(mule.getLocation().getPoint())) {
                         if (mule.getType().equals("Food")) {
@@ -754,6 +788,18 @@ public class MuleModel implements Serializable {
                         } else if (mule.getType().equals("Ore")) {
                             p.setSmithore(p.getSmithore() + 3);
                             p.setOreDelta(p.getOreDelta() + 3);
+                        } else if (mule.getType().equals("Crystite")) {
+                            p.setCrystite(p.getCrystite() + 1);
+                            p.setCrystiteDelta(p.getCrystiteDelta() + 1);
+                        } else if (mule.getType().equals("Special")) {
+                            p.setFood(p.getFood() + 1);
+                            p.setFoodDelta(p.getFoodDelta() + 1);
+                            p.setEnergy(p.getEnergy() + 1);
+                            p.setEnergyDelta(p.getEnergyDelta() + 1);
+                            p.setSmithore(p.getSmithore() + 3);
+                            p.setOreDelta(p.getOreDelta() + 3);
+                            p.setCrystite(p.getCrystite() + 1);
+                            p.setCrystiteDelta(p.getCrystiteDelta() + 1);
                         }
                     } else if (mountain3Coordinates.contains(mule.getLocation().getPoint())) {
                         if (mule.getType().equals("Food")) {
@@ -765,6 +811,18 @@ public class MuleModel implements Serializable {
                         } else if (mule.getType().equals("Ore")) {
                             p.setSmithore(p.getSmithore() + 4);
                             p.setOreDelta(p.getOreDelta() + 4);
+                        } else if (mule.getType().equals("Crystite")) {
+                            p.setCrystite(p.getCrystite() + 1);
+                            p.setCrystiteDelta(p.getCrystiteDelta() + 1);
+                        } else if (mule.getType().equals("Special")) {
+                            p.setFood(p.getFood() + 1);
+                            p.setFoodDelta(p.getFoodDelta() + 1);
+                            p.setEnergy(p.getEnergy() + 1);
+                            p.setEnergyDelta(p.getEnergyDelta() + 1);
+                            p.setSmithore(p.getSmithore() + 4);
+                            p.setOreDelta(p.getOreDelta() + 4);
+                            p.setCrystite(p.getCrystite() + 1);
+                            p.setCrystiteDelta(p.getCrystiteDelta() + 1);
                         }
                     }
                 }
