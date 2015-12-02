@@ -33,9 +33,7 @@ public class Player implements Comparable<Player>, Serializable {
     private static final int DEFAULT_STARTING_MONEY = 1000;
     private static final int PROPERTY_COST = 300;
     private static final int PROPERTY_SCORE_MULTIPLIER = 500;
-    private static final int BONZOID_STARTING_MONEY = 800;
-    private static final int UGAITE_STARTING_MONEY = 200;
-    private static final int BUZZITE_STARTING_MONEY = 2400;
+  
 
     //ENUM FOR RACES AND THEIR INFO
 
@@ -58,15 +56,6 @@ public class Player implements Comparable<Player>, Serializable {
                 break;
             case("Flapper"):
                 money = FLAPPER_STARTING_MONEY;
-                break;
-            case("Bonzoid"):
-                money = BONZOID_STARTING_MONEY;
-                break;
-            case("Ugaite"):
-                money = UGAITE_STARTING_MONEY;
-                break;
-            case("Buzzite"):
-                money = BUZZITE_STARTING_MONEY;
                 break;
             default:
                 money = DEFAULT_STARTING_MONEY;
