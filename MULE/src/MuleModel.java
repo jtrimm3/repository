@@ -664,6 +664,7 @@ public class MuleModel implements Serializable {
 
         if (turnCount % numberOfPlayers == 0) {
             Collections.sort(playerList);
+            randomRoundEvent();
             calculateProduction();
             printPlayerStats();
 
@@ -677,6 +678,48 @@ public class MuleModel implements Serializable {
             passedThisRoundCount++;
         }
         return roundMessage;
+    }
+
+    private void randomRoundEvent() {
+        Random rand = new Random();
+        int randNum = 1 + rand.nextInt(100);
+        if(randNum <= 25) {
+            System.out.println("RANDOM ROUND EVENT!!");
+            int randNum2 = 1 + rand.nextInt(5);
+            if(randNum2 == 1) {
+                System.out.println("DRANK A RED BULL! INCREASE ENERGY BY 2 FOR ALL!");
+                for(Player p : playerList) {
+                    p.setEnergy(p.getEnergy() + 2);
+                }
+            }
+            if(randNum2 == 2) {
+                System.out.println("UGA Bulldog got into food supply: Lose 2 food");
+                for(Player p : playerList) {
+                    p.setFood(p.getFood() - 2);
+                }
+            }
+            if(randNum2 == 3) {
+                System.out.println("Hackers from Georgia Tech stole $100 from your bank account");
+                for(Player p : playerList) {
+                    p.setMoney(p.getMoney() - 100);
+                }
+            }
+            if(randNum2 == 4) {
+                System.out.println("You bet all your Ore in an arm-wrestling match and lost");
+                for(Player p : playerList) {
+                    p.setSmithore(0);
+                }
+            }
+            if(randNum2 == 5) {
+                System.out.println("You lost all your Energy studying for finals");
+                for(Player p : playerList) {
+                    p.setEnergy(0);
+                }
+            }
+        } else {
+            System.out.println("NO RANDOM ROUND EVENT OCCURRED");
+        }
+
     }
 
     private void printPlayerStats() {
